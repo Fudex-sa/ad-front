@@ -55,9 +55,6 @@ export default {
         this.toggleNotifications()
 
     },
-    props() {
-        return ['role']
-    },
     computed: {
         notifications: {
             get() {
