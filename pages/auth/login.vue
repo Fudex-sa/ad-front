@@ -19,7 +19,7 @@
                   placeholder="Enter Your Email"
                   v-model="form.email"
                 />
-                <p class="text-danger pl-4" v-for="error in errors.email">{{error}}</p>
+                <p class="text-danger pl-4" v-for="error in errors.email" :key="error">{{error}}</p>
               </div>
 
               <div class="form-group">
@@ -30,7 +30,7 @@
                   placeholder="Enter password"
                   v-model="form.password"
                 />
-                <p class="text-danger pl-4" v-for="error in errors.password">{{error}}</p>
+                <p class="text-danger pl-4" v-for="error in errors.password" :key="error">{{error}}</p>
               </div>
               <div class="checkbox form-group2">
                 <label>
@@ -68,15 +68,20 @@ export default {
   methods: {
     login() {
       try {
-        let response = this.$auth.loginWith("local", {
+         this.$auth.loginWith("local", {
           data: this.form,
-        });
+        }).then(()=>{
+           this.$router.push({
+             path: "/" + this.$auth.state.user.role + "/dashboard",
+           });
+        }).catch(err => console.log(err));
 
-        setTimeout(() => {
-          this.$router.push({
-            path: "/" + this.$auth.state.user.role + "/dashboard",
-          });
-        }, 500);
+        // setTimeout(() => {
+        //   this.$router.push({
+        //     path: "/" + this.$auth.state.user.role + "/dashboard",
+        //   });
+        // }, 500);
+        // console.log(this.$auth.state.user.role);
       } catch (err) {
         console.log(err);
       }
