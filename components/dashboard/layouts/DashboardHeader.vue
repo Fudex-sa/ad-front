@@ -62,10 +62,6 @@
 
 		mounted() {
 			this.toggleNotifications()
-			console.log(role);
-		},
-		props(){
-		 return	['role']
 		},
 		computed: {
 			notifications: {
@@ -77,7 +73,6 @@
 				},
 			},
 		},
-
 		methods: {
 			toggleNotifications() {
 				$(function() {

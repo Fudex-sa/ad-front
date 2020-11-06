@@ -8,9 +8,9 @@
 				<Responsive />
 				<!-- start left-content -->
 				<div class="left-content col-xs-3 col-md-2 p-0">
-					<AdminSidebar v-if="role == 'admin'" />
-					<AdvertiserSidebar v-if="role == 'advertiser'" />
-					<SoldierSidebar v-if="role == 'soldier'" />
+					<AdminSidebar v-if= "role == 'admin'" />
+					<AdvertiserSidebar v-else-if= "role == 'advertiser'" />
+					<SoldierSidebar v-else-if= "role == 'soldier'" />
 				</div>
 				<!-- end left-content -->
 				<!-- start right-content -->
@@ -56,7 +56,6 @@
 
 		beforeMount() {
 			// this.page = this.page.substring(this.page.lastIndexOf('/')+1)
-			// console.log(this.role)
 			this.setNotifications()
 		},
 

@@ -21,12 +21,12 @@
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               Ads
             </a>
-            <ul class="sidebar-menu sub-tab" v-if="adSubTabs">
+            <ul class="sidebar-menu sub-tab" v-if= "adSubTabs">
               <li>
                 <nuxt-link :to="{ name: 'admin-dashboard-ads' }">
                   <img src="@/assets/img/img2-a.png" class="icon-a" />
                   <img src="@/assets/img/img2-b.png" class="icon-b" />
-                  <span>All Ads</span>
+                  <span>Admin Ads</span>
                 </nuxt-link>
               </li>
               <li>
