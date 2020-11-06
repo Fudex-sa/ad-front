@@ -53,6 +53,7 @@ export default {
 
     mounted() {
         this.toggleNotifications()
+
     },
     props() {
         return ['role']

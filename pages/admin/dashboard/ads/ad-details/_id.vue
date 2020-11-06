@@ -59,6 +59,7 @@ export default {
     //     }
     //   ]
     // },
+    name: "ad-details",
 
     props: ['ad'],
 
