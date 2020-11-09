@@ -51,7 +51,7 @@
                       v-model="form.email"
                       :class="{ 'is-invalid': errors.email }"
                     />
-                    <p class="text-danger p-2" v-for="error in errors.email">
+                    <p class="text-danger p-2" v-for="error in errors.email" :key="error">
                       {{ error }}
                     </p>
                   </div>
@@ -63,7 +63,7 @@
                       v-model="form.username"
                       :class="{ 'is-invalid': errors.username }"
                     />
-                    <p class="text-danger p-2" v-for="error in errors.username">
+                    <p class="text-danger p-2" v-for="error in errors.username" :key="error">
                       {{ error }}
                     </p>
                   </div>
@@ -75,7 +75,7 @@
                       v-model="form.password"
                       :class="{ 'is-invalid': errors.password }"
                     />
-                    <p class="text-danger p-2" v-for="error in errors.password">
+                    <p class="text-danger p-2" v-for="error in errors.password" :key="error">
                       {{ error }}
                     </p>
                   </div>
@@ -88,7 +88,7 @@
                     />
                     <p
                       class="text-danger p-2"
-                      v-for="error in errors.password_confirmation"
+                      v-for="error in errors.password_confirmation" :key="error"
                     >
                       {{ error }}
                     </p>

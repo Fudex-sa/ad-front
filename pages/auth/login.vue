@@ -83,7 +83,11 @@ export default {
         // }, 500);
         // console.log(this.$auth.state.user.role);
       } catch (err) {
-        console.log(err);
+          if (err.response.status == 401 || err.response.status == 422) {
+            $nuxt.error({
+              message: error.response.data.errors,
+            });
+          }
       }
     },
   },
