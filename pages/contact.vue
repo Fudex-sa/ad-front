@@ -3,11 +3,7 @@
 		<!-- start page-title -->
 		<div class="page-title">
 			<div class="container">
-				<ul
-					:class="
-						`${this.$i18n.locale == 'ar' ? 'breadcrumb-ar' : 'breadcrumb'}`
-					"
-				>
+				<ul :class="'breadcrumb'">
 					<li>
 						<a href="#"><img src="~/assets/img/home.png" />Home</a>
 					</li>
