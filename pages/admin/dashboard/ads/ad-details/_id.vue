@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <!-- if media type is image -->
-    <div v-if="(ad.media && ad.media_type == 'image') || 'slider'" v-for="media in ad.media" class="col-xs-6 col-md-4 img-box">
+    <div v-if="(ad.media && ad.media_type == 'image') || ad.media_type == 'slider'" v-for="media in ad.media" :key="media" class="col-xs-6 col-md-4 img-box">
         <img :src="imagePath(media)" class="thumbnail" />
     </div>
     <!-- if media type is video -->
@@ -10,7 +10,7 @@
         <template v-if="!videoPath(ad.media[0]).includes('mp4')">
             <img :src="videoPath(ad.media[0])" />
         </template>
-        <video :src="videoPath(ad.media[0])" controls v-else v-for="media in ad.media"></video>
+        <video :src="videoPath(ad.media[0])" controls v-else v-for="media in ad.media" :key="media"></video>
     </template>
     <!-- content -->
     <div class="row mt-30">

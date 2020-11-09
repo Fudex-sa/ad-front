@@ -64,7 +64,6 @@ params: { id: ad.id },
 }">Edit</nuxt-link>
                             </template>
                             <!-- Preview as visitor -->
-                            <nuxt-link class="btn btn-info action-btn" :to="{name: 'admin-dashboard-ads-ad-details'}">Preview</nuxt-link>
 
                             <nuxt-link class="btn btn-info action-btn" :to="`ads/${ad.id}`">View</nuxt-link>
                             <!-- Reviewing -->
