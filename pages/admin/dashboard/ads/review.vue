@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <h1>Review Ads</h1>
-    <ads-index :initialAds="ads" />
+    <ads-index :initialAds="ads"  :review="review"/>
   </div>
 </template>
 
@@ -12,7 +12,8 @@ import AdsIndex from "@/components/dashboard/ads/index";
 export default {
   data() {
     return {
-      ads: []
+      ads: [],
+      review : true,
     };
   },
   components: {
