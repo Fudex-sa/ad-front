@@ -65,7 +65,7 @@ params: { id: ad.id },
                             </template>
                             <!-- Preview as visitor -->
 
-                            <nuxt-link class="btn btn-info action-btn" :to="`ads/${ad.id}`">View</nuxt-link>
+                            <nuxt-link class="btn btn-info action-btn" :to="`ads/${ad.id}`"> View</nuxt-link>
                             <!-- Reviewing -->
                             <button class="btn btn-success action-btn" @click="activateAd(ad.id)" v-if="user.role === 'admin' && ad.status == 'reviewing'">
                                 Activate
