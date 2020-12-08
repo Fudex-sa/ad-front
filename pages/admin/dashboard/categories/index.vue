@@ -1,5 +1,9 @@
 <template>
+
+
     <libraries-categories-index :librariesCategories="librariesCategories" />
+
+
 </template>
 
 <script>

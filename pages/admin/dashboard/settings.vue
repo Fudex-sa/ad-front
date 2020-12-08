@@ -18,7 +18,7 @@
             Settings
         },
         async asyncData({app}){
-            let response = await app.$axios.$get('/settings')
+            let response = await app.$axios.$get('/settings/list')
             return {
                 settings: response.data
             }

@@ -10,7 +10,7 @@
             placeholder="Description"
             v-model="initialSettings.about_us"
           ></textarea>
-          <p class="text-danger p-2" v-for="error in errors.about_us">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.about_us" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -41,7 +41,7 @@
             placeholder="Description"
             v-model="initialSettings.mission"
           ></textarea>
-          <p class="text-danger p-2" v-for="error in errors.mission">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.mission" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -72,7 +72,7 @@
             placeholder="Description"
             v-model="initialSettings.vision"
           ></textarea>
-          <p class="text-danger p-2" v-for="error in errors.vision">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.vision" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -104,7 +104,7 @@
             v-model="initialSettings.intro_video"
             :class="{ 'is-invalid' : errors.intro_video}"
           />
-          <p class="text-danger p-2" v-for="error in errors.intro_video">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.intro_video" :key="error">{{error}}</p>
         </div>
       </div>
     </div>
@@ -120,7 +120,7 @@
             v-model="initialSettings.email"
             :class="{ 'is-invalid' : errors.email}"
           />
-          <p class="text-danger p-2" v-for="error in errors.email">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.email" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -133,7 +133,7 @@
             v-model="initialSettings.address"
             :class="{ 'is-invalid' : errors.address}"
           />
-          <p class="text-danger p-2" v-for="error in errors.address">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.address" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -146,7 +146,7 @@
             v-model="initialSettings.mobile"
             :class="{ 'is-invalid' : errors.mobile}"
           />
-          <p class="text-danger p-2" v-for="error in errors.mobile">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.mobile" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -159,7 +159,7 @@
             v-model="initialSettings.facebook"
             :class="{ 'is-invalid' : errors.facebook}"
           />
-          <p class="text-danger p-2" v-for="error in errors.facebook">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.facebook" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -172,7 +172,7 @@
             v-model="initialSettings.instagram"
             :class="{ 'is-invalid' : errors.instagram}"
           />
-          <p class="text-danger p-2" v-for="error in errors.instagram">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.instagram" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -185,7 +185,7 @@
             v-model="initialSettings.twitter"
             :class="{ 'is-invalid' : errors.twitter}"
           />
-          <p class="text-danger p-2" v-for="error in errors.twitter">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.twitter" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -198,7 +198,7 @@
             v-model="initialSettings.lng"
             :class="{ 'is-invalid' : errors.lng}"
           />
-          <p class="text-danger p-2" v-for="error in errors.lng">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.lng" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -211,7 +211,7 @@
             v-model="initialSettings.lat"
             :class="{ 'is-invalid' : errors.lat}"
           />
-          <p class="text-danger p-2" v-for="error in errors.lat">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.lat" :key="error">{{error}}</p>
         </div>
       </div>
     </div>
@@ -227,7 +227,7 @@
             v-model="initialSettings.campaign_min_Duration"
             :class="{ 'is-invalid' : errors.campaign_min_Duration}"
           />
-          <p class="text-danger p-2" v-for="error in errors.campaign_min_Duration">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.campaign_min_Duration" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -240,7 +240,7 @@
             v-model="initialSettings.campaign_min_budget"
             :class="{ 'is-invalid' : errors.campaign_min_budget}"
           />
-          <p class="text-danger p-2" v-for="error in errors.campaign_min_budget">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.campaign_min_budget" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -253,7 +253,7 @@
             v-model="initialSettings.ad_min_budget"
             :class="{ 'is-invalid' : errors.ad_min_budget}"
           />
-          <p class="text-danger p-2" v-for="error in errors.ad_min_budget">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.ad_min_budget" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
@@ -266,7 +266,7 @@
             v-model="initialSettings.task_min_click_price"
             :class="{ 'is-invalid' : errors.task_min_click_price}"
           />
-          <p class="text-danger p-2" v-for="error in errors.task_min_click_price">{{error}}</p>
+          <p class="text-danger p-2" v-for="error in errors.task_min_click_price" :key="error">{{error}}</p>
         </div>
       </div>
     </div>

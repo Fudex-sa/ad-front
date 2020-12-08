@@ -1,10 +1,10 @@
 <template>
     <div class="row">
-        <div class="col-xs-6 col-md-4 text-center" v-for="gallery in galleries.data" :key="gallery">
+        <div class="col-xs-6 col-md-4 text-center" v-for="gallery in galleries" :key="gallery">
           <nuxt-link :to="libraryLink(gallery.id)" class="text-center">
                <!-- if media is images -->
                <img 
-                :src="imagePath(gallery.media[0])" 
+                :src="gallery.media[0]" 
                 class="thumbnail m-auto" 
                 v-if="gallery.media_type == 'image'">
                 <!-- if media is video -->

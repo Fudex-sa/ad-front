@@ -1,5 +1,7 @@
 <template>
     <div>
+
+     
         <!-- Libraries of this category -->
         <gallery :galleries="category.libraries" />
         <!-- pagination buttons -->
@@ -16,7 +18,7 @@
     export default{
         data() {
             return {
-                category: [],
+                category: {},
                 next_link: '',
                 prev_link: '',
             }
@@ -55,7 +57,7 @@
                 let response = await app.$axios.$get(`libraries/categories/${params.categoryId}`);
                 return {
                     category: response.data,
-                    next_link: response.data.libraries.links.next_page_url
+                    // next_link: response.data.libraries.links.next_page_url
                 }
             } catch(e) {
                error({statusCode: e.status, message: e.message})

@@ -10,8 +10,8 @@
                         :key="category.id"
                     >
                         <nuxt-link :to="categoryLink(category.id)">
-                            <img :src="imagePath(category.cover_img)" alt="ad1">
-                            <h3>{{category.name}}</h3>
+                            <img :src="category.cover_img">
+                            <h3>{{category.title}}</h3>
                         </nuxt-link>
                     </div>
                     <div class="col-sm-6 col-md-3 no-padd">
