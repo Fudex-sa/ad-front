@@ -362,7 +362,7 @@
             v-model="form.call_of_action_txt"
             :class="{ 'is-invalid': errors.call_of_action_txt }"
           />
-          <p class="text-danger p-2" v-for="error in errors.call_of_action_txt">
+          <p class="text-danger p-2" v-for="(error, index) in errors.call_of_action_txt" :key="index">
             {{ error }}
           </p>
         </div>
@@ -377,7 +377,7 @@
             v-model="form.call_of_action_url"
             :class="{ 'is-invalid': errors.call_of_action_url }"
           />
-          <p class="text-danger p-2" v-for="error in errors.call_of_action_url">
+          <p class="text-danger p-2" v-for="(error, index) in errors.call_of_action_url" :key="index">
             {{ error }}
           </p>
         </div>

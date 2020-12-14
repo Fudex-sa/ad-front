@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <h2 class="pl-4">About</h2>
+      <h2 class="pl-4">About us</h2>
       <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <textarea
