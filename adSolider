@@ -1,0 +1,1173 @@
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_19_46_380Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_19_49_529Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_19_52_608Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_19_55_721Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_19_58_854Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_03_584Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_08_457Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_14_456Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_17_476Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_20_554Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_23_697Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_26_881Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_29_912Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_33_167Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_36_204Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_39_261Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_42_336Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_45_455Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_48_633Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_51_789Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_54_856Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_20_58_070Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_01_125Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_07_127Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address 0.0.0.0:12348 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at doListen (net.js:1501:7)
+  at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+
+   ╭───────────────────────────────────────────────────────╮
+   │                                                       │
+   │   ✖ Nuxt Fatal Error                                  │
+   │                                                       │
+   │   Error: Address `0.0.0.0:12348` is already in use.   │
+   │                                                       │
+   ╰───────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_10_374Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_13_503Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_16_638Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_19_762Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_22_874Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_26_013Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_29_119Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_32_218Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_35_316Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_38_456Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_41_498Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_44_645Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_47_861Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_50_920Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+
+
+ FATAL  Address localhost:3000 is already in use.
+
+  at Server.setupListenHandle [as _listen2] (net.js:1316:16)
+  at listenInCluster (net.js:1364:12)
+  at GetAddrInfoReqWrap.doListen [as callback] (net.js:1501:7)
+  at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:68:8)
+
+
+   ╭────────────────────────────────────────────────────────╮
+   │                                                        │
+   │   ✖ Nuxt Fatal Error                                   │
+   │                                                        │
+   │   Error: Address `localhost:3000` is already in use.   │
+   │                                                        │
+   ╰────────────────────────────────────────────────────────╯
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! client@1.0.0 start: `nuxt start`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the client@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/bsamat/.npm/_logs/2020-12-14T13_21_53_926Z-debug.log
+
+ WARN  mode option is deprecated. You can safely remove it from nuxt.config
+

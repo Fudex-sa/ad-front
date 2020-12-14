@@ -1,14 +1,16 @@
 import webpack from "webpack";
 
 export default {
-  mode: "universal",
-  server: {
-    port: 12345,
-    host: "0.0.0.0", // default: localhost
-  },
+//   mode: "universal",
+//   server: {
+//     port: 12348,
+//     host: "0.0.0.0", // default: localhost
+//   },
   /*
    ** Headers of the page
    */
+   
+  ssr: true,
   head: {
     title: process.env.npm_package_name || "",
     meta: [

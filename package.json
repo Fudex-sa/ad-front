@@ -9,7 +9,7 @@
 		"build": "nuxt build",
 		"start": "nuxt start",
 		"generate": "nuxt generate",
-		"prod": "pm2 start npm ecosystem.config.js --name adsoldier-client -- start"
+		"prod": "pm2 start npm ecosystem.config.js --name adSoldier -- start"
 	},
 	"dependencies": {
 		"@nuxtjs/auth": "^4.8.5",
@@ -20,9 +20,9 @@
 		"bootstrap": "^3.3.5",
 		"chart.js": "^2.9.3",
 		"hchs-vue-charts": "^1.2.8",
-		"jquery": "^1.12.4",
-		"node-sass": "^4.13.0",
-		"nuxt": "^2.11.0",
+		"jquery": "^3.5.1",
+		"node-sass": "^4.14.1",
+		"nuxt": "^2.14.11",
 		"nuxt-vue-multiselect": "^1.0.4",
 		"nuxt-vuex-localstorage": "^1.2.6",
 		"sass-loader": "^8.0.2",
