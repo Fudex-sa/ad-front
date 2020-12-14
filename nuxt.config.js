@@ -1,37 +1,14 @@
 import webpack from "webpack";
 
 export default {
-<<<<<<< HEAD
+
 //   mode: "universal",
-//   server: {
-//     port: 12348,
-//     host: "0.0.0.0", // default: localhost
-//   },
   /*
    ** Headers of the page
    */
    
   ssr: true,
-  head: {
-    title: process.env.npm_package_name || "",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: process.env.npm_package_description || "",
-      },
-=======
-    ssr: true,
-    // mode: "universal",
-    // server: {
-    //   port: 12345,
-    //   host: "0.0.0.0", // default: localhost
-    // },
-    /*
-     ** Headers of the page
-     */
+
     head: {
         title: process.env.npm_package_name || "",
         meta: [
@@ -60,7 +37,6 @@ export default {
     css: [
         "~/node_modules/bootstrap/dist/css/bootstrap.min.css",
         "@/assets/scss/app.scss",
->>>>>>> 6f77ed2b3061570abfa8dc979069bb30f7b8b469
     ],
     /*
      ** Plugins to load before mounting the App
