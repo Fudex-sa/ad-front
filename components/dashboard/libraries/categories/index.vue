@@ -10,12 +10,19 @@
                         :key="category.id"
                     >
                         <nuxt-link :to="categoryLink(category.id)">
-                            <img :src="category.cover_img">
+
+                            <img v-if="category.cover_img != null" :src="category.cover_img" >
+                        
+                     <img v-else :src="imagePath(category.cover_img)" >
+
+
                             <h3>{{category.title}}</h3>
                         </nuxt-link>
                     </div>
                     <div class="col-sm-6 col-md-3 no-padd">
                         <div class="ad-wrap">
+
+             
                             <h3 class="soon">Soon</h3>
                         </div>
                     </div>

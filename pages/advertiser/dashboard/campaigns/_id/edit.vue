@@ -13,11 +13,12 @@
           v-model="campaign.title"
           :class="{ 'is-invalid' : errors.title}"
         />
+
         <p class="text-danger p-2" v-for="error in errors.title">{{error}}</p>
       </div>
       <!-- create button -->
       <div class="col-sm-12 text-right">
-        <button class="the-btn" @click.prevent="handleSubmition">Create Campaign</button>
+        <button class="the-btn" @click.prevent="handleSubmition">Save Changes</button>
       </div>
     </form>
   </div>
@@ -59,7 +60,7 @@ export default {
   async asyncData({ app, params }) {
     let response = await app.$axios.$get(`campaigns/${params.id}`);
     return {
-      campaign: response.data
+      campaign: response.data[0]
     };
   }
 };

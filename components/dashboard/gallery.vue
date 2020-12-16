@@ -3,6 +3,7 @@
         <div class="col-xs-6 col-md-4 text-center" v-for="gallery in galleries" :key="gallery">
           <nuxt-link :to="libraryLink(gallery.id)" class="text-center">
                <!-- if media is images -->
+         
                <img 
                 :src="gallery.media[0]" 
                 class="thumbnail m-auto" 

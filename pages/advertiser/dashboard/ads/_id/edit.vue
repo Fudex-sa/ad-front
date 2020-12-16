@@ -1,5 +1,7 @@
 <template>
 	<div>
+
+		
 		<div class="row">
 			<div class="fixed alert alert-danger" v-if="successMessage">
 				{{ successMessage }}
@@ -330,12 +332,20 @@
 					</p>
 				</div>
 			</div>
+
+		
 			<!-- mobile preview -->
-			<mobile-preview
+			<mobile-preview 
 				@fileUploaded="handleFileUpload"
 				:initialMediaType="initialForm.media_type.value"
-				:initialMediaPreview="initialForm.media[0]"
+				:initialMediaPreview="initialForm.media.length >0  !== null ?  initialForm.media[0]: null"
 			/>
+
+			<!-- <mobile-preview 
+				@fileUploaded="handleFileUpload"
+				:initialMediaType="initialForm.media_type.value"
+				:initialMediaPreview="initialForm.media.length >0  !== null ?  initialForm.media[0]: null"
+			/> -->
 			<!-- action buttons -->
 			<action-buttons
 				actionBtnText="Update Ad"
@@ -402,6 +412,7 @@
 			this.intialDate()
 			this.formData = new FormData()
 			this.dropdownInitialSetters()
+
 		},
 		methods: {
 			insert(emoji) {

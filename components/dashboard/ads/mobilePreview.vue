@@ -122,7 +122,8 @@
 				)
 			}
 			if (this.initialMediaPreview) {
-				this.form.mediaPreview = require(`@/assets/img/${this.initialMediaPreview}`)
+				// this.form.mediaPreview = require(`@/assets/img/${this.initialMediaPreview}`)
+				this.form.mediaPreview = this.initialMediaPreview
 			}
 		},
 

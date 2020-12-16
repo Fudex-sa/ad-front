@@ -2,15 +2,16 @@ import webpack from "webpack";
 
 export default {
 
-//   mode: "universal",
-  /*
-   ** Headers of the page
-   */
-   
-  ssr: true,
+    //   mode: "universal",
+    /*
+     ** Headers of the page
+     */
+
+    ssr: true,
 
     head: {
-        title: process.env.npm_package_name || "",
+        // title: process.env.npm_package_name || "",
+        title: "Ad Soliders",
         meta: [
             { charset: "utf-8" },
             { name: "viewport", content: "width=device-width, initial-scale=1" },
