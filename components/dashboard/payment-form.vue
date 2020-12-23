@@ -11,6 +11,7 @@
 <script>
 export default {
   computed: {
+
     checkout() {
       return this.$store.getters["localStorage/checkout"];
     },
@@ -27,12 +28,12 @@ export default {
 
   methods: {
     appendPaymentScript() {
-      if (!this.checkout.result.code == "000.200.100") return;
 
+      console.log(this.checkout);
+      if (!this.checkout.result.code == "000.200.100") return;
       let paymentScript = document.createElement("script");
       paymentScript.src =
-        `https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=` +
-        this.checkout.id;
+        `https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=` +this.checkout.id;
       document.body.appendChild(paymentScript);
     },
   },

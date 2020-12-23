@@ -544,12 +544,14 @@ export default {
               "localStorage/SET_PAYMENT_ORDER_NUMBER",
               res.ad_id
             );
+
+          
             this.$store.commit(
               "localStorage/SET_PAYMENT_CHECKOUT_ID",
-              JSON.parse(res.checkout)
+              res.checkout
             );
             this.$router.push({
-              path: `/advertiser/dashboard/ads/${res.ad_id}/pay`,
+              path: `/advertiser/dashboard/payment`,
             });
           }, 1000);
         });

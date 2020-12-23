@@ -54,7 +54,10 @@
             <td class="col-xs-2 col-md-5 text-break">{{ ad.content }}</td>
             <td class="col-sm-2">{{ ad.campaign != null ? ad.campaign.title : "--" }}</td>
             <td class="col-sm-2">{{ ad.clicks || 0 }}</td>
-            <td class="col-sm-1">{{ status(ad.end_date) }}</td>
+
+
+            <td class="col-sm-1" v-if="ad.status == 'active'">{{ status(ad.end_date) }}</td>
+            <td v-else>{{ ad.status }}</td>
             <td class="hidden-sm">
               <!-- Action Buttons -->
               <div class="text-center">

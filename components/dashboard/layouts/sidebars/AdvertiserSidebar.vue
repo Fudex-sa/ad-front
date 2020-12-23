@@ -36,13 +36,13 @@
               <span>Wallet</span>
             </nuxt-link>
           </li>
-          <li>
+          <!-- <li>
             <nuxt-link :to="{ name: 'advertiser-dashboard-payment' }">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>payment</span>
             </nuxt-link>
-          </li>
+          </li> -->
           <li>
             <a @click.prevent="$auth.logout()">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
