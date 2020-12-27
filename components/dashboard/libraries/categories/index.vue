@@ -2,7 +2,7 @@
     <div>
         <div class="div-top">
       <nuxt-link
-        :to="{ name: 'admin-dashboard-categories-create' }"
+        :to="{ name: 'admin-dashboard-categories-new' }"
         class="the-btn hvr-radial-out"
         v-if="role == 'admin'"
         >Create New</nuxt-link
