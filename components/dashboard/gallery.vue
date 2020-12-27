@@ -1,6 +1,26 @@
 <template>
+<div>
+
+ <div class="div-top">
+ <nuxt-link
+        :to="{ name: 'admin-dashboard-categories-categoryId-libraries-new' }"
+        class="the-btn hvr-radial-out"
+        v-if="role == 'admin'"
+        >Create New</nuxt-link
+      >
+ </div>
+
     <div class="row">
-        <div class="col-xs-6 col-md-4 text-center" v-for="gallery in galleries" :key="gallery">
+
+        
+        <div class="col-xs-6 col-md-3 text-center" v-for="(gallery, index) in galleries" :key="gallery">
+            <div class="controls-btns">
+<button class="btn btn-xs btn-danger" @click.prevent="DeleteLibrary(gallery.id, index)">
+    <i class="fa fa-trash-o"></i>
+</button>
+
+<nuxt-link  class="btn btn-xs btn-default" :to="libraryLinkEdit(gallery.id)">   <i class="fa fa-edit"></i></nuxt-link>
+                   </div>
           <nuxt-link :to="libraryLink(gallery.id)" class="text-center">
                <!-- if media is images -->
          
@@ -17,6 +37,7 @@
           </nuxt-link>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -35,7 +56,32 @@
                         id: id
                     } 
                 };
+                
             },
+
+             libraryLinkEdit(id) {
+                return {
+                    path: `libraries/${id}/edit`, 
+                    params: { 
+                        id: id
+                    } 
+                };
+                
+            },
+
+DeleteLibrary(id, index) {
+
+   if(confirm("Do you really want to delete?")){
+
+                this.$axios.delete('/libraries/'+id)
+                .then(resp => {
+                    this.galleries.splice(index, 1);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+   }
+},
         },
     }
 </script>
@@ -44,6 +90,14 @@
     a{
         img, video{
             height: 200px;
+            width: 100%;
         }
     }
+
+.controls-btns{
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+
 </style>

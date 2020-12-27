@@ -6,7 +6,7 @@
 
       <h1>Success Payment</h1>
 
-      <nuxt-link class="btn btn-success mb-20 mt-30 " to="/advertiser/dashboard/ads">Return to Ads page</nuxt-link>
+      <nuxt-link class="btn btn-success mb-20 mt-30 " to="/advertiser/dashboard/ads">Return to Ads page.</nuxt-link>
 
    </div>
 </template>

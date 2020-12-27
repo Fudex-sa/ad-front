@@ -2,6 +2,8 @@
   <div class="row">
     <h1>Review Ads</h1>
     <ads-index :initialAds="ads"  :review="review"/>
+
+    <button>APProve this Ad.</button>
   </div>
 </template>
 

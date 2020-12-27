@@ -2,6 +2,7 @@
     <div>
 
      
+    
         <!-- Libraries of this category -->
         <gallery :galleries="category.libraries" />
         <!-- pagination buttons -->

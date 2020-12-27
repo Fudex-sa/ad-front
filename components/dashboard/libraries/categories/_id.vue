@@ -9,7 +9,7 @@
         v-for="(image, thumbIndex) in library.media"
         :key="thumbIndex"
         class="col-xs-6 col-md-4 img-box">
-        <img :src="imagePath(image)" class="thumbnail">
+        <img :src="image" class="thumbnail">
       </div>
     </div>
     <!-- description -->
@@ -53,9 +53,9 @@
         computed:{
           getMedia() {
             if ( this.library.media_type == 'image' ){
-              return this.library.media.map( (media) => this.imagePath(media))
+              return this.library.media.map( (media) => media)
             }
-            return this.library.media.map( (media) => this.videoPath(media))
+            return this.library.media.map( (media) => media)
           },
           referralLink() {
             return   'http://www.vi.hit/tasks'
