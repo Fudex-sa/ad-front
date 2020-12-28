@@ -19,19 +19,21 @@
                         <p class="text2 mb-20">{{about.mission}}</p>
                     </div>
                     <div class="col-md-6 col-sm-12 p-0">
+                     
+                   
                         <div class="col-sm-12">
                             <div class="about-img">
-                            <img :src=" '_nuxt/assets/img/' + about.about_us_image" alt="about_us_image">
+                            <img :src="about.about_us_image" alt="about_us_image">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="about-img">
-                                <img :src="'_nuxt/assets/img/' + about.vision_image" alt="vision_image">
+                                <img :src="about.vision_image" alt="vision_image">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="about-img">
-                                <img :src=" '_nuxt/assets/img/' + about.mission_image" alt="mission_image">
+                                <img :src="about.mission_image" alt="mission_image">
                             </div>
                         </div>
                     </div>    
@@ -86,7 +88,7 @@
         async asyncData({$axios}) {
             let response = await $axios.get('app/about/settings')
             return{
-                about: response.data
+                about: response.data.data
             }
         }
     }
