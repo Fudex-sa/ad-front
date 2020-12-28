@@ -84,9 +84,9 @@
             window.scrollTo(0, 0)
         },
         async asyncData({$axios}) {
-            let response = await $axios.get('settings/list')
+            let response = await $axios.get('app/about/settings')
             return{
-                about: response.data.data
+                about: response.data
             }
         }
     }
