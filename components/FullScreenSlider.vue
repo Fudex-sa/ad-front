@@ -1,6 +1,9 @@
 <template>
   <div>
     <!-- Image slider -->
+
+
+
     <div
       id="myCarousel"
       class="carousel slide"
@@ -33,7 +36,7 @@
     </div>
     <!-- video -->
     <template v-if=" gallery.media_type == 'video' ">
-      <video :src="videoPath(gallery.media[0])" autoplay></video>
+      <video :src="gallery.media[0]" autoplay></video>
     </template>
   </div>
 </template>
@@ -47,7 +50,7 @@ export default {
   methods: {
     storeAnalytics() {
       this.$axios
-        .$post("analytics", {
+        .$get("analytics", {
           user_utm: `${this.$route.params.utm}`,
           ad_id: `${this.$route.params.id}`
         })

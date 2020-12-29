@@ -70,6 +70,11 @@ export default {
 
     computed: {
         referralLink() {
+
+
+            console.log(this.$route.path.substring(this.$route.path.lastIndexOf('/')) +
+                '/' +
+                this.user.utm);
             return (
                 'http://www.vi.hit/ads' +
                 this.$route.path.substring(this.$route.path.lastIndexOf('/')) +

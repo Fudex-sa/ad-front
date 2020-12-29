@@ -4,6 +4,7 @@
         <a :href="ad.call_of_action" class="btn btn-danger col-sm-2 col-sm-offset-5">تعرف على المزيد</a> 
         <!-- screen slider -->
         <full-screen-slider :gallery="ad" />
+      
     </div>
 </template>
 
@@ -22,6 +23,7 @@
         },
         async asyncData({app, params, error}) {
             try{
+
              let response = await app.$axios.$get(`ads/${params.id}`);             
                 return {
                     ad: response.data
