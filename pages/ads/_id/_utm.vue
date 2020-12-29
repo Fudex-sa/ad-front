@@ -1,7 +1,8 @@
 <template>
     <div class="col-sm-12">
         <!-- button -->
-        <a :href="ad.call_of_action" class="btn btn-danger col-sm-2 col-sm-offset-5">تعرف على المزيد</a> 
+        <a :href="ad.call_of_action_url" class="btn btn-danger col-sm-2 col-sm-offset-5">تعرف على المزيد</a> 
+        <p class="text-center txt col-sm-6 col-sm-offset-3">{{ ad.call_of_action_txt }}</p>
         <!-- screen slider -->
         <full-screen-slider :gallery="ad" />
       
@@ -57,5 +58,12 @@
     }
     .carousel-inner{
         padding: 0 !important
+    }
+    .txt{
+         position: absolute;
+        z-index: 999999;
+        bottom: 100px;
+        font-size: 18px;
+        color: white;
     }
 </style>

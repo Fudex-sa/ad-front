@@ -37,7 +37,7 @@
       <!-- <video :src="gallery.media[0]" autoplay></video> -->
 
       <div style="width: 100%;">
-        <video controls autoplay id="video-background">
+        <video controls autoplay id="video-background" style="width: 100%; height: 99.5vh;">
           <source :src="gallery.media[0]" type="video/mp4" />
           <source :src="gallery.media[0]" type="video/webm" />
         </video>
