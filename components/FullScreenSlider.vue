@@ -2,8 +2,6 @@
   <div>
     <!-- Image slider -->
 
-
-
     <div
       id="myCarousel"
       class="carousel slide"
@@ -36,7 +34,14 @@
     </div>
     <!-- video -->
     <template v-if=" gallery.media_type == 'video' ">
-      <video :src="gallery.media[0]" autoplay></video>
+      <!-- <video :src="gallery.media[0]" autoplay></video> -->
+
+      <div style="width: 100%;">
+        <video controls autoplay id="video-background">
+          <source :src="gallery.media[0]" type="video/mp4" />
+          <source :src="gallery.media[0]" type="video/webm" />
+        </video>
+      </div>
     </template>
   </div>
 </template>
