@@ -1,8 +1,7 @@
 <template>
     <div class="col-sm-12">
         <!-- button -->
-        <a :href="ad.call_of_action_url" class="btn btn-danger col-sm-2 col-sm-offset-5">تعرف على المزيد</a> 
-        <p class="text-center txt col-sm-6 col-sm-offset-3">{{ ad.call_of_action_txt }}</p>
+        <a :href="ad.call_of_action_url" class="btn btn-danger col-sm-2 col-sm-offset-5">{{ ad.call_of_action_txt }}</a> 
         <!-- screen slider -->
         <full-screen-slider :gallery="ad" />
       
