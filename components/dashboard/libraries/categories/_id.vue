@@ -84,6 +84,7 @@
           {}
         )
         .then(res => {
+          console.log(res);
           if (res.status == 200) {
             this.referral_link = res.data.shortUrl;
           }
