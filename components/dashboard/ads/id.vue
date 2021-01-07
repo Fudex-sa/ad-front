@@ -36,7 +36,7 @@ this.ad.content +
 
 '%0A' +
 
-referralLink
+referral_link
 
 " class="btn mb-20" target="_blank">
         <img src="~/assets/img/whatsapp.png" class="icon" />
@@ -44,7 +44,7 @@ referralLink
     <!-- utm Token-->
     <div class="row">
         <div class="col-sm-11">
-            <p v-if="showUTM" class="white-box h4">{{ referralLink }}</p>
+            <p v-if="showUTM" class="white-box h4">{{ referral_link }}</p>
         </div>
     </div>
 </div>
@@ -66,16 +66,20 @@ export default {
     data() {
         return {
             showUTM: false,
+            referral_link:""
         }
     },
 
+mounted(){
+    this.generateShorterLink();
+},
     computed: {
         referralLink() {
 
 
-            console.log(this.$route.path.substring(this.$route.path.lastIndexOf('/')) +
-                '/' +
-                this.user.utm);
+            // console.log(this.$route.path.substring(this.$route.path.lastIndexOf('/')) +
+            //     '/' +
+            //     this.user.utm);
             return (
                 'http://dev.fudexsb.com:55555' +
                 this.$route.path.substring(this.$route.path.lastIndexOf('/')) +
@@ -83,14 +87,36 @@ export default {
                 this.user.utm
             )
         },
-        sharedAd() {
-            return (
-                this.referralLink +
-                `fsdfafasdfasdf
-      dasdasd: asdasdds      sadasddasdasdas`
-            )
-        },
+        
     },
+
+    methods:{
+
+    
+        generateShorterLink(){
+            this.$axios
+        .$post("ads/short/urls", {
+            utm: this.user.utm,
+            ad_id: this.ad.id
+        }, {
+        })
+        .then((res) => {
+       
+   
+   if(res.status == 200){
+       this.referral_link = res.data.shortUrl
+   }
+          
+               
+               
+          
+            // this.$router.push({
+            //   path: `/advertiser/dashboard/payment`,
+            // });
+          
+        });
+        }
+    }
 }
 </script>
 

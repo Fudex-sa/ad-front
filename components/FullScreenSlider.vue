@@ -6,7 +6,7 @@
       id="myCarousel"
       class="carousel slide"
       data-ride="carousel"
-      v-if=" gallery.media_type == 'image' "
+      v-if="gallery.media_type == 'image' "
     >
       <!-- Indicators -->
       <!--            <ol class="carousel-indicators">
@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col-sm-12">
               <!-- image -->
-              <img :src="imagePath(media)" alt />
+              <img :src="media" alt />
             </div>
           </div>
         </div>
