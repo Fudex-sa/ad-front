@@ -21,7 +21,7 @@
     <!-- utm Token-->
     <div class="row">
         <div class="col-sm-11">
-            <p v-if="showUTM" class="white-box h4">{{referralLink}}</p>
+            <p v-if="showUTM" class="white-box h4">{{ referral_link }}</p>
         </div>
     </div>
     <!-- pop up window -->
@@ -42,6 +42,7 @@
             return {
               index: null,
               showUTM: false,
+                referral_link: ""
             }
         },
         props:[
@@ -50,6 +51,9 @@
         components:{
             SingleLibrary
         },
+        mounted() {
+    this.generateShorterLink();
+  },
         computed:{
           getMedia() {
             if ( this.library.media_type == 'image' ){
@@ -57,12 +61,35 @@
             }
             return this.library.media.map( (media) => media)
           },
+
+
+          
           referralLink() {
             return   'http://www.vi.hit/tasks'
                    + this.$route.path.substring(this.$route.path.lastIndexOf('/'))
                    + '/' + this.user.utm 
           }
         },
+        
+          methods: {
+    generateShorterLink() {
+      this.$axios
+        .$post(
+          "ads/short/urls",
+          {
+            utm: this.user.utm,
+            ad_id: this.library.id,
+            short_url_type: "library"
+          },
+          {}
+        )
+        .then(res => {
+          if (res.status == 200) {
+            this.referral_link = res.data.shortUrl;
+          }
+        });
+    }
+  }
     }
 </script>
 

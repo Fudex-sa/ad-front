@@ -2,12 +2,14 @@
     <div>
         <!-- if media type is image -->
         <template v-if="task.media && task.media_type == 'image' " v-for="media in task.media">
-            <img :src="imagePath(media)">
+            <img :src="media">
         </template>
         <!-- if media type is video -->
         <template v-if="task.media_type == 'video' ">   
             <!-- if User have seen the tutorial show a message  -->
-            <div class="row" v-if='user.tasks_lvl !== "1" '>
+
+ 
+            <div class="row" v-if='user.tasks_lvl !== 1 '>
                 <div class="col-sm-12 mb-30 mt-30">
                     <p class="white-box lead">You Have Already Seen The Tutorial</p>
                 </div>
@@ -15,11 +17,11 @@
             <!-- else show him the tutorial to increment his level by one -->
             <template v-else>
                 <!-- if the video of tutorial isn't available get the alt image -->
-                <template v-if="!(videoPath(task.media[0])).includes('mp4')">
-                    <img :src="videoPath(task.media[0])">
+                <template v-if="!(task.media[0]).includes('mp4')">
+                    <img :src="task.media[0]">
                 </template>
                 <!-- video -->
-                <video :src="videoPath(task.media[0])" @ended="taskFinished" autoplay="autoplay" v-else></video>
+                <video :src="task.media[0]" @ended="taskFinished" autoplay="autoplay" v-else></video>
             </template>
         </template>
         <!-- Content -->
