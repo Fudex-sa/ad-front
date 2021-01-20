@@ -16,16 +16,10 @@
                 data-toggle="pill"
                 @click.prevent="changeForm('advertiser')"
                 href="#"
-                >Sign Up as Company</a
-              >
+              >Sign Up as Company</a>
             </li>
             <li :class="{ active: formType == 'soldier' }">
-              <a
-                data-toggle="pill"
-                href="#"
-                @click.prevent="changeForm('soldier')"
-                >Sign Up as User</a
-              >
+              <a data-toggle="pill" href="#" @click.prevent="changeForm('soldier')">Sign Up as User</a>
             </li>
           </ul>
           <!-- end tabs -->
@@ -34,7 +28,7 @@
             <div id="signup-company" class="tab-pane fade in active">
               <div class="layout1">
                 <form>
-                  <div class="form-group" v-if="formType == 'advertiser'">
+                  <!-- <div class="form-group" v-if="formType == 'advertiser'">
                     <input
                       type="text"
                       class="form-control the-input"
@@ -42,7 +36,7 @@
                       v-model="form.company"
                       :class="{ 'is-invalid': errors.company }"
                     />
-                  </div>
+                  </div>-->
                   <div class="form-group">
                     <input
                       type="text"
@@ -51,9 +45,11 @@
                       v-model="form.email"
                       :class="{ 'is-invalid': errors.email }"
                     />
-                    <p class="text-danger p-2" v-for="error in errors.email" :key="error">
-                      {{ error }}
-                    </p>
+                    <p
+                      class="text-danger p-2"
+                      v-for="error in errors.email"
+                      :key="error"
+                    >{{ error }}</p>
                   </div>
                   <div class="form-group">
                     <input
@@ -63,9 +59,11 @@
                       v-model="form.username"
                       :class="{ 'is-invalid': errors.username }"
                     />
-                    <p class="text-danger p-2" v-for="error in errors.username" :key="error">
-                      {{ error }}
-                    </p>
+                    <p
+                      class="text-danger p-2"
+                      v-for="error in errors.username"
+                      :key="error"
+                    >{{ error }}</p>
                   </div>
                   <div class="form-group">
                     <input
@@ -75,9 +73,11 @@
                       v-model="form.password"
                       :class="{ 'is-invalid': errors.password }"
                     />
-                    <p class="text-danger p-2" v-for="error in errors.password" :key="error">
-                      {{ error }}
-                    </p>
+                    <p
+                      class="text-danger p-2"
+                      v-for="error in errors.password"
+                      :key="error"
+                    >{{ error }}</p>
                   </div>
                   <div class="form-group">
                     <input
@@ -88,26 +88,21 @@
                     />
                     <p
                       class="text-danger p-2"
-                      v-for="error in errors.password_confirmation" :key="error"
-                    >
-                      {{ error }}
-                    </p>
+                      v-for="error in errors.password_confirmation"
+                      :key="error"
+                    >{{ error }}</p>
                   </div>
                   <div class="form-group">
                     <button
                       type="submit"
                       class="btn the-btn btn-block hvr-radial-out"
                       @click.prevent="signup"
-                    >
-                      Register
-                    </button>
+                    >Register</button>
                   </div>
                   <div class="form-group text-center">
                     <p class="color2">
                       Already have an account ?
-                      <nuxt-link :to="{ name: 'auth-login' }" class="color1"
-                        >Login</nuxt-link
-                      >
+                      <nuxt-link :to="{ name: 'auth-login' }" class="color1">Login</nuxt-link>
                     </p>
                   </div>
                 </form>
@@ -134,7 +129,8 @@ export default {
         email: "",
         password: "",
         password_confirmation: "",
-      },
+        role: ""
+      }
     };
   },
   methods: {
@@ -145,26 +141,49 @@ export default {
       this.form.email = "";
       this.form.password = "";
       this.form.password_confirmation = "";
+      this.form.role = this.formType;
     },
     signup() {
       this.form.company == "" ? delete this.form.company : "";
+
       this.$axios
         .post("auth/register", this.form)
-        .then((res) => {
+        .then(res => {
           if (res.status == 201) {
-            setTimeout(() => {
-              this.$router.push("/auth/login");
-            }, 1000);
+            try {
+              this.$auth
+                .loginWith("local", {
+                  data: {
+                    email: res.data.data.email,
+                    password: this.form.password
+                  }
+                })
+                .then(() => {
+                  this.$router.push({
+                    path: "/" + this.$auth.state.user.role + "/dashboard"
+                  });
+                })
+                .catch(err => console.log(err));
+            } catch (err) {
+              if (err.response.status == 401 || err.response.status == 422) {
+                $nuxt.error({
+                  message: error.response.data.errors
+                });
+              }
+            }
+            // setTimeout(() => {
+            //   this.$router.push("/auth/login");
+            // }, 1000);
           }
         })
-        .catch((error) => {
+        .catch(error => {
           if (error.response.status == 401) {
             $nuxt.error({
-              message: error.response.data.errors,
+              message: error.response.data.errors
             });
           }
         });
-    },
-  },
+    }
+  }
 };
 </script>

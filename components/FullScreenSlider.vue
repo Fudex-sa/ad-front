@@ -62,6 +62,17 @@ export default {
         .catch(err => {
           console.log(err.response);
         });
+
+        this.$axios
+        .$post("analytics/store", {
+          user_utm: `${this.$route.params.utm}`,
+          ad_id: `${this.$route.params.id}`
+        }).then( res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err.response);
+        });
     }
   }
 };

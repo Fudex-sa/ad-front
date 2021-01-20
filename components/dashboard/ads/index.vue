@@ -35,12 +35,17 @@
             <th scope="col" class="col-sm-2">Campaign</th>
             <th scope="col" class="col-sm-1">Clicks</th>
             <th scope="col" class="col-sm-1">Status</th>
+            <th scope="col" class="col-sm-1">Budget</th>
+            <th scope="col" class="col-sm-1">Start AT</th>
+            <th scope="col" class="col-sm-1">Finished At</th>
+            <th scope="col" class="col-sm-1">Created</th>
             <th scope="col" class="hidden-sm">Action</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(ad, index) in ads.data" :key="ad.id">
             <td class="col-xs-1 col-sm-2">
+            
               <nuxt-link
                 class="link2"
                 :to="{
@@ -58,25 +63,32 @@
 
             <td class="col-sm-1" v-if="ad.status == 'active'">{{ status(ad.end_date) }}</td>
             <td v-else>{{ ad.status }}</td>
+            <td >{{ ad.budget }} SAR</td>
+            <td >{{ ad.start_date }}</td>
+            <td >{{ ad.end_date }}</td>
+            <td >{{ ad.created_at }}
+
+              <!-- {{ ad}} -->
+
+            </td>
+            
+
             <td class="hidden-sm">
               <!-- Action Buttons -->
               <div class="text-center">
                 <template v-if="user.role == 'advertiser'">
                   <!-- Delete -->
-                  <button
-                    class="fa fa-trash-o fa-lg btn btn-danger action-btn"
-                    @click="deleteAd(ad.id, index)"
-                  ></button>
+                 
                   <!-- Edit -->
                   <nuxt-link
                     class="btn btn-info action-btn"
                     :to="{
                       name: 'advertiser-dashboard-ads-id-edit',
-
                       params: { id: ad.id },
                     }"
                     >Edit</nuxt-link
                   >
+                  
                 </template>
                 <!-- Preview as visitor -->
 
@@ -92,7 +104,7 @@
                   @click="activateAd(ad.id)"
                   v-if="user.role === 'admin' && ad.status == 'reviewing'"
                 >
-                  Activate
+                  Approve
                 </button>
                 <!-- Statistics -->
                 <nuxt-link
@@ -105,6 +117,10 @@
                   v-if="ad.status == 'active'"
                   >Statistics</nuxt-link
                 >
+                 <button
+                    class="fa fa-trash-o fa-lg btn btn-danger action-btn"
+                    @click="deleteAd(ad.id, index)"
+                  ></button>
               </div>
             </td>
           </tr>

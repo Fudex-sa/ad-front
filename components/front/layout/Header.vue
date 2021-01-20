@@ -24,7 +24,7 @@
               <li>
                 <nuxt-link
                   :to="{name: 'auth-register', params: { page: 'advertiser'}}"
-                >Publishers signup</nuxt-link>
+                >Sign up</nuxt-link>
               </li>
               <li>
                 <nuxt-link :to="{name: 'auth-login'}">Login</nuxt-link>

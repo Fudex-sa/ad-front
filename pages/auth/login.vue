@@ -39,7 +39,7 @@
                 <nuxt-link :to="{ name: 'auth-forget'}" class="forgot">Forgot Password !</nuxt-link>
               </div>
               <div class="form-group">
-                <input type="submit" class="btn the-btn btn-block hvr-radial-out" value="Login"></input>
+                <input type="submit" class="btn the-btn btn-block hvr-radial-out" value="Login" />
               </div>
               <div class="form-group text-center">
                 <p class="color2">

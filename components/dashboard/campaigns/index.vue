@@ -30,6 +30,8 @@
             <tr>
               <th scope="col" class="col-xs-1 col-sm-2">Title</th>
               <th scope="col" class="col-xs-2 col-md-5">Type</th>
+              <th scope="col" class="col-xs-2 col-md-5">Clicks</th>
+              <th scope="col" class="col-xs-2 col-md-5">Monhly Clicks</th>
               <th scope="col" class="hidden-sm" v-if="user.role == 'advertiser' ">Action</th>
             </tr>
           </thead>
@@ -41,7 +43,20 @@
                   :to="{ path: 'campaigns/' + campaign.id }"
                 >{{campaign.title}}</nuxt-link>
               </td>
-              <td class="col-sm-3">{{campaign.type}}</td>
+              <td class="col-sm-3">{{campaign.type}}
+
+
+         
+              </td>
+              <td class="col-sm-3">
+
+
+                {{ campaign.clicks }}
+    
+              </td>
+              <td class="col-sm-3">
+                {{ campaign.monthly_clicks }}
+              </td>
               <td class="hidden-sm col-md-2" v-if="user.role == 'advertiser' ">
                 <!-- Action Buttons -->
                 <div class="text-center">
@@ -56,10 +71,10 @@
                     :to="{ name: 'advertiser-dashboard-campaigns-id-edit', params: { id:campaign.id } }"
                   >Edit</nuxt-link>
                   <!-- Statistics -->
-                  <nuxt-link
+                  <!-- <nuxt-link
                     class="btn btn-success action-btn"
                     :to="{ name: 'advertiser-dashboard-campaigns-id-statistics', params: { id:campaign.id } }"
-                  >Statistics</nuxt-link>
+                  >Statistics</nuxt-link> -->
                 </div>
               </td>
             </tr>

@@ -5,21 +5,21 @@
         <div class="form-group dash-group">
           <label>Title *</label>
           <input class="form-control dash-input" placeholder="Example Task" type="text" v-model="form.title" :class="{ 'is-invalid' : errors.title}">
-             <p class="text-danger p-2" v-for="error in errors.title">{{error}}</p>
+             <p class="text-danger p-2" v-for="error in errors.title" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12">
         <div class="form-group dash-group">
             <label>Description</label>
             <input class="form-control dash-input" placeholder="Please Enter The Description" v-model="form.description" :class="{ 'is-invalid' : errors.description}"></input>
-            <p class="text-danger p-2" v-for="error in errors.description">{{error}}</p>
+            <p class="text-danger p-2" v-for="error in errors.description" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12">
         <div class="form-group dash-group">
             <label>Content</label>
             <textarea class="form-control dash-input" placeholder="Please Enter The Content" v-model="form.content" :class="{ 'is-invalid' : errors.content}"></textarea>
-            <p class="text-danger p-2" v-for="error in errors.content">{{error}}</p>
+            <p class="text-danger p-2" v-for="error in errors.content" :key="error">{{error}}</p>
         </div>
       </div>
       <div class="col-sm-12">

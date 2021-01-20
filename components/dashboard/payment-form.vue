@@ -17,7 +17,8 @@ export default {
     },
     redirectURL() {
       if (process.client) {
-        return window.location.href + "/status/";
+        return "http://dev.fudexsb.com/demo/adsol-back/public/payment/status/web";
+        // return window.location.href + "/status/";
       }
     },
   },
@@ -29,7 +30,7 @@ export default {
   methods: {
     appendPaymentScript() {
 
-      console.log(this.checkout);
+    
       if (!this.checkout.result.code == "000.200.100") return;
       let paymentScript = document.createElement("script");
       paymentScript.src =

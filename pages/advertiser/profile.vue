@@ -19,7 +19,7 @@ import EditProfile from "@/components/editProfile";
 export default {
   data() {
     return {
-      edit: false
+      edit: this.$route.query.edit?? false
     };
   },
   components: {
