@@ -490,7 +490,7 @@
 					.then((res) => {
 						this.successMessage = res.data.message
 						setTimeout(() => {
-							this.$router.push({ name: 'admin-dashboard-ads' })
+							this.$router.push({ path: `/advertiser/dashboard/ads/${this.$route.params.id}/edit` })
 						}, 1000)
 					})
 					.catch((err) => {

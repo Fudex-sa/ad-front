@@ -15,7 +15,16 @@
               <span>Dashboard</span>
             </nuxt-link>
           </li>
-          <li @click="adSubTabs = !adSubTabs">
+
+          <li>
+            <nuxt-link :to="{ name: 'admin-dashboard-ads-review' }">
+              <img src="@/assets/img/img2-a.png" class="icon-a" />
+              <img src="@/assets/img/img2-b.png" class="icon-b" />
+              <span>Review Ads</span>
+            </nuxt-link>
+          </li>
+          
+          <!-- <li @click="adSubTabs = !adSubTabs">
             <a>
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
@@ -37,7 +46,7 @@
                 </nuxt-link>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li>
             <nuxt-link :to="{ name: 'admin-dashboard-campaigns' }">
               <img src="@/assets/img/img2-a.png" class="icon-a" />

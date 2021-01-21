@@ -1,5 +1,7 @@
 <template>
 <div class="container">
+
+    
     <!-- if media type is image -->
     <div v-if="(ad.media && ad.media_type == 'image') || ad.media_type == 'slider'" v-for="media in ad.media" :key="media" class="col-xs-6 col-md-4 img-box">
         <img :src="imagePath(media)" class="thumbnail" />

@@ -69,7 +69,7 @@ export default {
   //   ]
   // },
 
-  props: ["ad"],
+  props: ["ad", "from"],
 
   data() {
     return {

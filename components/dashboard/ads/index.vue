@@ -1,17 +1,14 @@
 <template>
   <div class="col-md-12">
     <!-- Success Message -->
-    <div :class="`alert ${successMessage_bg}`" v-if="successMessage">
-      {{ successMessage }}
-    </div>
+    <div :class="`alert ${successMessage_bg}`" v-if="successMessage">{{ successMessage }}</div>
     <!-- Create New Ad Component -->
     <div class="div-top">
       <nuxt-link
         :to="{ name: 'advertiser-dashboard-ads-new' }"
         class="the-btn hvr-radial-out"
         v-if="role == 'advertiser'"
-        >Create New</nuxt-link
-      >
+      >Create New</nuxt-link>
       <div class="the-search">
         <form>
           <div class="input-group">
@@ -45,7 +42,6 @@
         <tbody>
           <tr v-for="(ad, index) in ads.data" :key="ad.id">
             <td class="col-xs-1 col-sm-2">
-            
               <nuxt-link
                 class="link2"
                 :to="{
@@ -53,32 +49,26 @@
 
                   params: { id: ad.id },
                 }"
-                >{{ ad.title }}
-              </nuxt-link>
+              >{{ ad.title }}</nuxt-link>
             </td>
             <td class="col-xs-2 col-md-5 text-break">{{ ad.content }}</td>
             <td class="col-sm-2">{{ ad.campaign != null ? ad.campaign.title : "--" }}</td>
             <td class="col-sm-2">{{ ad.clicks || 0 }}</td>
 
-
             <td class="col-sm-1" v-if="ad.status == 'active'">{{ status(ad.end_date) }}</td>
             <td v-else>{{ ad.status }}</td>
-            <td >{{ ad.budget }} SAR</td>
-            <td >{{ ad.start_date }}</td>
-            <td >{{ ad.end_date }}</td>
-            <td >{{ ad.created_at }}
-
+            <td>{{ ad.budget }} SAR</td>
+            <td>{{ ad.start_date }}</td>
+            <td>{{ ad.end_date }}</td>
+            <td>
+              {{ ad.created_at }}
               <!-- {{ ad}} -->
-
             </td>
-            
 
             <td class="hidden-sm">
               <!-- Action Buttons -->
               <div class="text-center">
                 <template v-if="user.role == 'advertiser'">
-                  <!-- Delete -->
-                 
                   <!-- Edit -->
                   <nuxt-link
                     class="btn btn-info action-btn"
@@ -86,26 +76,19 @@
                       name: 'advertiser-dashboard-ads-id-edit',
                       params: { id: ad.id },
                     }"
-                    >Edit</nuxt-link
-                  >
-                  
+                  >Edit</nuxt-link>
                 </template>
                 <!-- Preview as visitor -->
-
                 <nuxt-link
                   class="btn btn-info action-btn"
-                  :to="{ name: 'soldier-dashboard-ads-id', params: { id: ad.id } }"
-                >
-                  View</nuxt-link
-                >
+                  :to="{ path: `/${user.role}/dashboard/ads/${ad.id}` }"
+                >View</nuxt-link>
                 <!-- Reviewing -->
                 <button
                   class="btn btn-success action-btn"
                   @click="activateAd(ad.id)"
                   v-if="user.role === 'admin' && ad.status == 'reviewing'"
-                >
-                  Approve
-                </button>
+                >Approve</button>
                 <!-- Statistics -->
                 <nuxt-link
                   class="btn action-btn btn-primary"
@@ -115,19 +98,17 @@
                     params: { id: ad.id },
                   }"
                   v-if="ad.status == 'active'"
-                  >Statistics</nuxt-link
-                >
-                 <button
-                    class="fa fa-trash-o fa-lg btn btn-danger action-btn"
-                    @click="deleteAd(ad.id, index)"
-                  ></button>
+                >Statistics</nuxt-link>
+                <button
+                  class="fa fa-trash-o fa-lg btn btn-danger action-btn"
+                  @click="deleteAd(ad.id, index)"
+                ></button>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-
 
     <!-- pagination -->
     <nav class="text-center">
@@ -176,8 +157,8 @@ export default {
   scrollToTop: true,
   props: {
     initialAds: {
-      type: Object,
-    },
+      type: Object
+    }
   },
 
   data() {
@@ -186,12 +167,12 @@ export default {
       successMessage_bg: "",
       ads: this.initialAds,
       next_link: "",
-      prev_link: null,
+      prev_link: null
     };
   },
   computed: {
-    status: function () {
-      return function (end_date) {
+    status: function() {
+      return function(end_date) {
         let currentDate = new Date();
         let formattedDate =
           currentDate.getDate() +
@@ -205,31 +186,31 @@ export default {
         }
         return "Active";
       };
-    },
+    }
   },
   mounted() {
-    let currentAd = this.ads.data.filter((ad) => ad.id === 2);
+    let currentAd = this.ads.data.filter(ad => ad.id === 2);
   },
   methods: {
     activateAd(id) {
       this.$axios
         .$post(`ads/${id}/activate`)
-        .then((res) => {
+        .then(res => {
           this.successMessage = res.data.message;
           this.successMessage_bg = "alert-success";
-          this.ads.data.map((ad) => {
+          this.ads.data.map(ad => {
             ad.id === id ? (ad.status = "active") : "";
             return ad;
           });
         })
-        .catch((err) => {
+        .catch(err => {
           this.successMessage = err.data.message;
         });
     },
     deleteAd(adId, index) {
       this.$axios
         .$delete(`ads/${adId}`)
-        .then((res) => {
+        .then(res => {
           // print success message
           this.successMessage = res.data.message;
           this.successMessage_bg = "alert-danger";
@@ -240,7 +221,7 @@ export default {
             this.successMessage = "";
           }, 1200);
         })
-        .catch((err) => {
+        .catch(err => {
           this.successMessage = err.data.message;
         });
     },
@@ -248,35 +229,36 @@ export default {
       if (this.ads.links.next_page_url != null) {
         this.$axios
           .$get(`${this.ads.links.next_page_url}`)
-          .then((res) => {
-            (this.ads = res.data), (this.next_link = this.ads.links.next_page_url);
+          .then(res => {
+            (this.ads = res.data),
+              (this.next_link = this.ads.links.next_page_url);
             this.prev_link = this.ads.links.prev_page_url;
           })
-          .catch((err) => {
+          .catch(err => {
             $nuxt.error({
               statusCode: err.status,
-              message: err.message,
+              message: err.message
             });
           });
       }
     },
     prev() {
-
-          if (this.ads.links.prev_page_url != null) {
-      this.$axios
-        .$get(`${this.ads.links.prev_page_url}`)
-        .then((res) => {
-          (this.ads = res.data), (this.next_link = this.ads.links.next_page_url);
-          this.prev_link = this.ads.links.prev_page_url;
-        })
-        .catch((err) => {
-          $nuxt.error({
-            statusCode: err.status,
-            message: err.message,
+      if (this.ads.links.prev_page_url != null) {
+        this.$axios
+          .$get(`${this.ads.links.prev_page_url}`)
+          .then(res => {
+            (this.ads = res.data),
+              (this.next_link = this.ads.links.next_page_url);
+            this.prev_link = this.ads.links.prev_page_url;
+          })
+          .catch(err => {
+            $nuxt.error({
+              statusCode: err.status,
+              message: err.message
+            });
           });
-        });
-          }
-    },
-  },
+      }
+    }
+  }
 };
 </script>

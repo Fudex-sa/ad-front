@@ -354,7 +354,7 @@
       </div>
       <div class="col-sm-6">
         <div class="form-group dash-group">
-          <label class="col-sm-12 p-0">Text *</label>
+          <label class="col-sm-12 p-0">Button Text *</label>
           <input
             class="form-control dash-input"
             placeholder="Please Enter The Link"
