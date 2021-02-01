@@ -50,6 +50,9 @@
 export default {
   props: ["gallery"],
   mounted() {
+console.log("Form Full Slider")
+    console.log(this.$route.params)
+    
     this.storeAnalytics();
   },
   methods: {

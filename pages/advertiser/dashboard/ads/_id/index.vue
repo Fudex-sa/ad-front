@@ -106,6 +106,9 @@
 
 
 
+
+
+
     <!-- <ad-id :ad="ad" /> -->
   </div>
 
@@ -152,7 +155,9 @@ Payment Not Completed
     </div>
     
 </div>
-<h2 style="margin-top:2em;">Advertisement Media</h2>
+
+
+<!-- <h2 style="margin-top:2em;">Advertisement Media</h2>
 
 <div  v-if="(ad.media && ad.media_type == 'image' || ad.media && ad.media_type == 'slider')">
 
@@ -165,7 +170,7 @@ Payment Not Completed
       <img :src="media" class="thumbnail" />
     </div>
 </div>
-    <!-- if media type is video -->
+ 
     <template v-if="ad.media_type == 'video'">
       <template v-if="!ad.media[0].includes('mp4')">
         <img :src="ad.media[0]" />
@@ -173,8 +178,50 @@ Payment Not Completed
       <video :src="ad.media[0]" controls v-else v-for="media in ad.media" :key="media"></video>
     </template>
      
-</div>
+</div> -->
 
+		<!-- preview  -->
+		<div class="row mobile-preview">
+			<div class="col-sm-12 mb-10">
+				<h2 style="margin-top:2em;">Advertisement Media</h2>
+			</div>
+<!-- desktop -->
+      <div class="col-sm-8">
+				<h4>Desktop Preview</h4>
+				<div class="desktop-frame1">
+					<div class="desktop-frame2">
+						<img :src="ad.media[0]" alt v-if="ad.media_type =='image'" />
+            <!-- <video autoplay controls >
+  <source :src="ad.media[0]" type="video/mp4">
+</video> -->
+
+
+
+<video :src="ad.media[0]" type="video/mp4" frameborder="0" allowfullscreen autoplay loop muted controls v-else></video>
+
+
+					</div>
+				</div>
+			</div>
+			<!-- mobile -->
+			<div class="col-sm-4">
+				<h4>Mobile Preview</h4>
+				<div class="mobile-frame1">
+					<div class="mobile-frame2">
+						<img :src="ad.media[0]" alt v-if="ad.media_type =='image'" />
+						<!-- <video :src="ad.media[0]" autoplay="autoplay"></video> -->
+            
+<video :src="ad.media[0]" type="video/mp4" frameborder="0" allowfullscreen autoplay loop muted controls v-else></video>
+
+					</div>
+					<div class="dot"></div>
+				</div>
+			</div>
+			
+			
+		</div>
+
+  </div>
 </div>
 
 </template>

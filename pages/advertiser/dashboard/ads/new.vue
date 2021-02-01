@@ -105,7 +105,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6">
+      <!-- <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>Duration *</label>
           <client-only>
@@ -118,6 +118,30 @@
               lang="eng"
               :class="{ 'is-invalid': errors.start_date || errors.end_date }"
             />
+            <p class="text-danger p-2" v-for="error in errors.end_date">
+              {{ error }}
+            </p>
+            <p class="text-danger p-2" v-for="error in errors.start_date">
+              {{ error }}
+            </p>
+          </client-only>
+        </div>
+      </div> -->
+
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group dash-group">
+          <label>Start Date *</label>
+          <client-only>
+          <input type="datetime-local" step="2"  class="form-control dash-input date" v-model="form.start_date"/>
+            <!-- <date-picker
+              v-model="date"
+              class="form-control dash-input date"
+              range
+              :shortcuts="shortcuts"
+              :placeholder="placeholder"
+              lang="eng"
+              :class="{ 'is-invalid': errors.start_date || errors.end_date }"
+            /> -->
             <p class="text-danger p-2" v-for="error in errors.end_date">
               {{ error }}
             </p>
@@ -171,10 +195,12 @@
             v-model="form.budget"
             :class="{ 'is-invalid': errors.budget }"
           />
+         
           <p class="text-danger p-2" v-for="error in errors.budget">
             {{ error }}
           </p>
         </div>
+        <span style="position: absolute;right: 31px;top: 53px;font-weight: bold;">SAR</span>
       </div>
       <!--         <div class="col-sm-12 col-md-6">
           <div class="form-group dash-group">
@@ -421,6 +447,7 @@ export default {
       shortcuts: [],
       date: "",
       format: "Y-m-d",
+      // start_date:"",
       // budget_after_tax: '',
       settings: "",
       countries: [],
@@ -434,7 +461,7 @@ export default {
         city: [],
         language: [],
         start_date: "",
-        end_date: "",
+        // end_date: "",
         // media: "aaa",
         media_type: "",
         budget: "",
@@ -534,6 +561,8 @@ export default {
           },
         })
         .then((res) => {
+
+          console.log(res)
           this.successMessage = res.message;
           setTimeout(() => {
             this.$store.commit(
@@ -545,13 +574,13 @@ export default {
               res.ad_id
             );
 
-          
             this.$store.commit(
               "localStorage/SET_PAYMENT_CHECKOUT_ID",
               res.checkout
             );
             this.$router.push({
               path: `/advertiser/dashboard/payment`,
+              query: { advertisementId: res.ad_id }
             });
           }, 1000);
         });

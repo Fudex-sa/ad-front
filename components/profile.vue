@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-4 pull-left">
-      <img class="img-thumbnail pic" :src=" '/_nuxt/assets/' + user.picture " alt="profile_picture" />
+      <img class="img-thumbnail pic" :src=" user.picture" alt="profile_picture" />
     </div>
     <div class="col-md-8">
       <div class="col-md-6 col-sm-6 mt-20">

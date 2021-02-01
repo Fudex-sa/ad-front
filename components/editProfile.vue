@@ -4,6 +4,11 @@
       <img class="img-thumbnail pic" :src=" '/_nuxt/assets/' + user.picture " alt="profile_picture" />
     </div>
     <div class="col-md-8">
+    <div class="alert alert-success" v-if=" successMessage !== '' ">
+    {{ successMessage }}
+    </div>
+    
+
       <div class="row">
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
@@ -107,7 +112,8 @@
 export default {
   data() {
     return {
-      form: {}
+      form: {},
+      successMessage:""
     };
   },
   mounted() {
@@ -133,6 +139,7 @@ export default {
         this.formData.append(key, this.form[key]);
       });
 
+console.log(this.formData);
       this.$axios
         .$post("auth/profile/update", this.formData, {
           header: {
@@ -140,10 +147,14 @@ export default {
           }
         })
         .then(res => {
-          this.successMessage = res.message;
-          setTimeout(() => {
-            this.$router.back();
-          }, 1000);
+          console.log(res);
+          this.successMessage = "Profile has been updated.";
+          // setTimeout(() => {
+          //   this.$router.back();
+          // }, 1000);
+          this.$router.push({
+                    path: "/" + this.$auth.state.user.role + "/profile"
+          });
         });
     }
   }

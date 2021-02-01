@@ -31,7 +31,8 @@
               <th scope="col" class="col-xs-1 col-sm-2">Title</th>
               <th scope="col" class="col-xs-2 col-md-5">Type</th>
               <th scope="col" class="col-xs-2 col-md-5">Clicks</th>
-              <th scope="col" class="col-xs-2 col-md-5">Monhly Clicks</th>
+              <th scope="col" class="col-xs-2 col-md-5">Budget</th>
+              <th scope="col" class="col-xs-2 col-md-5">Ads Count</th>
               <th scope="col" class="hidden-sm" v-if="user.role == 'advertiser' ">Action</th>
             </tr>
           </thead>
@@ -51,11 +52,20 @@
               <td class="col-sm-3">
 
 
-                {{ campaign.clicks }}
+                <span class="label label-success">
+                {{ campaign.clicks }} click
+                </span> 
     
               </td>
               <td class="col-sm-3">
-                {{ campaign.monthly_clicks }}
+                <span class="label label-primary">
+                {{ campaign.totalBudget }} SAR
+                </span>
+              </td>
+              <td class="col-sm-3">
+              <span class="label label-info">
+                {{ campaign.adsCount }}  Ad
+                </span>
               </td>
               <td class="hidden-sm col-md-2" v-if="user.role == 'advertiser' ">
                 <!-- Action Buttons -->

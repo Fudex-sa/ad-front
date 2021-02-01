@@ -14,17 +14,30 @@
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th width="10%">Title</th>
-								<th width="10%">Budget</th>
-								<th width="10%">Remaining Budget</th>
-								<th width="10%">Status</th>
+								<th>Ad Title</th>
+								<th>Payment Method</th>
+								<th>Paid Amount</th>
+								<th>Payment Time</th>
+								<th>Card No.</th>
+								<th>Card Holder</th>
+								<th>Payment Status</th>
+								<th>Budget</th>
+								<!-- <th>Remaining Budget</th> -->
+								<th>Ad Status</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr v-for="ad in ads" :key="ad.id">
+					
 								<td>{{ ad.title }}</td>
+								<td>{{ ad.paymentInfo.paymentBrand }}</td>
+								<td>{{ ad.paymentInfo.amount }} {{ ad.paymentInfo.currency }}</td>
+								<td>{{ ad.paymentInfo.timestamp }}</td>
+								<td>{{ ad.paymentInfo.card.bin}}*****{{ ad.paymentInfo.card.last4Digits }}</td>
+								<td>{{ ad.paymentInfo.card.holder}}</td>
+								<td>{{ ad.paymentInfo.resultDetails['response.acquirerMessage']}}</td>
 								<td>{{ ad.budget }}</td>
-								<td>{{ ad.remaining_budget }}</td>
+								<!-- <td>{{ ad.remaining_budget }}</td> -->
 								<td>{{ ad.status }}</td>
 							</tr>
 						</tbody>
@@ -48,6 +61,7 @@
 		data: () => ({
 			totalBalance: 0,
 			ads: [],
+			// paidAds: []
 		}),
 
 		beforeMount() {
@@ -60,13 +74,15 @@
 
 		methods: {
 			getAdsData() {
-				let requests = [this.$axios.$get('me/balance'), this.$axios.$get('ads')]
+				let requests = [this.$axios.$get('me/balance'), this.$axios.$get('ads'), this.$axios.$get('billing')]
 				let promises = Promise.all(requests)
 
 				promises
 					.then((res) => {
+						console.log(res[2]);
 						this.totalBalance = res[0].data.balance
-						this.ads = res[1].data.data
+						this.ads = res[2].data
+						// this.paidAds = res[2].data
 					})
 					.catch((err) => console.log(err))
 			},

@@ -30,10 +30,10 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'advertiser-dashboard-wallet' }">
+            <nuxt-link :to="{ name: 'advertiser-dashboard-billing' }">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Wallet</span>
+              <span>Billing</span>
             </nuxt-link>
           </li>
           <!-- <li>

@@ -16,10 +16,10 @@
                 data-toggle="pill"
                 @click.prevent="changeForm('advertiser')"
                 href="#"
-              >Sign Up as Company</a>
+              >Advertiser sign up</a>
             </li>
             <li :class="{ active: formType == 'soldier' }">
-              <a data-toggle="pill" href="#" @click.prevent="changeForm('soldier')">Sign Up as User</a>
+              <a data-toggle="pill" href="#" @click.prevent="changeForm('soldier')">Soldier sign up</a>
             </li>
           </ul>
           <!-- end tabs -->

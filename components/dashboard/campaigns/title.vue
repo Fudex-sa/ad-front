@@ -1,10 +1,11 @@
 <template>
     <div>
         <div class="row">
-            <h1 class="pl-4 bold ">{{campaign.title}}</h1>
+        {{ campaign[0] }}
+            <h1 class="pl-4 bold ">{{campaign[0].title}}</h1>
             <div class="col-sm-12 mb-30">
                 <h4>Description</h4>
-                <p>{{campaign.description}}</p>
+                <p>{{campaign[0].description}}</p>
             </div>
             <div class="col-sm-12">
                 <div class="white-box">
@@ -29,7 +30,7 @@
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <div class="white-box com-box">
-                        <h3 class="box-title">{{campaign.type}}</h3>
+                        <h3 class="box-title">{{campaign[0].type}}</h3>
                         <h5>Type</h5>
                     </div>
                 </div>
