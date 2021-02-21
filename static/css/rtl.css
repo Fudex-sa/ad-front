@@ -1,0 +1,71 @@
+/* start font */
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/DroidKufi-Regular.eot');
+  src: url('../fonts/DroidKufi-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/DroidKufi-Regular.woff2') format('woff2'),
+       url('../fonts/DroidKufi-Regular.woff') format('woff'),
+       url('../fonts/DroidKufi-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/DroidKufi-Bold.eot');
+  src: url('../fonts/DroidKufi-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/DroidKufi-Bold.woff2') format('woff2'),
+       url('../fonts/DroidKufi-Bold.woff') format('woff'),
+       /* url('../fonts/DroidKufi-Bold.ttf') format('truetype'); */
+}
+*{
+    font-family:  'Droid Arabic Kufi', sans-serif
+}
+/* end font */
+.text-right{text-align: left;}
+.text-left{text-align: right;}
+.navbar-right2{text-align: left;}
+.navbar-nav.navbar-right2 > li{float: left;}
+.navbar-collapse > div{text-align: left;}
+.service-details{float: right;}
+.service-img{float: right;}
+.social li{margin-left: 15px;margin-right: auto;}
+.service-details h4{margin-right: -12px;margin-left: auto;}
+.navbar-collapse > ul.navbar-right {float: left !important}
+.navbar-inverse .navbar-nav.navbar-right2 > li:last-of-type{border-left: 1px solid #000;border-right: 0}
+.text3 img{margin-right: auto;margin-left: 10px}
+/* start responsive */
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+  .service-details{margin-right: 7%;margin-left: auto;}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) { 
+  .navbar-right2{width: 100%;text-align: center;}
+  .navbar-collapse > div{text-align: center;}
+  .navbar-nav.navbar-right2 > li{float: none;display: inline-block;}
+  .navbar-inverse .navbar-nav.navbar-right2 > li:last-of-type {
+    border-left: 0;border-right: 1px solid #000
+  }
+  .navbar-collapse > ul.navbar-right {
+    float: right !important;
+  }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+}
+
+@media only screen and (max-width : 250px){
+}
+/* end responsive */

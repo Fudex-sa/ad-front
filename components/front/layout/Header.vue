@@ -27,28 +27,37 @@
           <div v-if="!authenticated">
             <ul class="nav navbar-nav navbar-right navbar-right2">
               <li>
-                <nuxt-link
+                <!-- <nuxt-link
                   :to="{
-                    name: 'auth-register',
+                    name: localePath('auth-register'),
                     params: { page: 'advertiser' },
                   }"
-                  >{{$t('signup')}}</nuxt-link
-                >
+                  >{{ $t("signup") }}
+                </nuxt-link> -->
+
+                <nuxt-link
+                  :to="localePath('auth-register')"
+                  >{{ $t("signup") }}
+                </nuxt-link>
+
+
               </li>
               <li>
-                <nuxt-link :to="{ name: 'auth-login' }">{{
-                  $t("login")
-                }}</nuxt-link>
+                <nuxt-link :to="localePath('auth-login')"
+                  >{{ $t("login") }}
+                </nuxt-link>
               </li>
-                <li>
-              
-            <nuxt-link v-if="$i18n.locale !== 'en'" :to="switchLocalePath('en')"
-              >English</nuxt-link
-            >
-            <nuxt-link v-if="$i18n.locale !== 'ar'" :to="switchLocalePath('ar')"
-              >اللغة العربية</nuxt-link
-            >
-        
+              <li>
+                <a
+                  @click.prevent="switchMyLang('ar')"
+                  v-if="$i18n.locale !== 'ar'"
+                  >اللغة العربية</a
+                >
+                <a
+                  @click.prevent="switchMyLang('en')"
+                  v-if="$i18n.locale !== 'en'"
+                  >English</a
+                >
               </li>
             </ul>
           </div>
@@ -56,18 +65,20 @@
           <div v-if="authenticated">
             <ul class="nav navbar-nav navbar-right navbar-right2">
               <li>
-                <a @click.prevent="logout">{{ $t('logout') }}</a>
+                <a @click.prevent="logout">{{ $t("logout") }}</a>
               </li>
 
               <li>
-              
-            <nuxt-link v-if="$i18n.locale !== 'en'" :to="switchLocalePath('en')"
-              >English</nuxt-link
-            >
-            <nuxt-link v-if="$i18n.locale !== 'ar'" :to="switchLocalePath('ar')"
-              >Azeri</nuxt-link
-            >
-        
+                <a
+                  @click.prevent="switchMyLang('ar')"
+                  v-if="$i18n.locale !== 'ar'"
+                  >اللغة العربية</a
+                >
+                <a
+                  @click.prevent="switchMyLang('en')"
+                  v-if="$i18n.locale !== 'en'"
+                  >English</a
+                >
               </li>
               <li>
                 <nuxt-link
@@ -89,34 +100,39 @@
             </ul>
           </div>
 
-         
-
-          <!-- <button @click.prevent="switchMyLang('ar')">AR LANG</button>
-          <button @click.prevent="switchMyLang('en')">EN LANG</button> -->
-
           <ul class="nav navbar-nav navbar-right navigation">
             <li>
-              <nuxt-link :to="localePath('index')">{{ $t("home").toUpperCase() }}</nuxt-link>
+              <nuxt-link :to="localePath('index')">{{
+                $t("home").toUpperCase()
+              }}</nuxt-link>
             </li>
             <li>
-              <a href="#">{{ $t('advertiser').toUpperCase() }}</a>
+              <a href="#">{{ $t("advertiser").toUpperCase() }}</a>
             </li>
             <!-- <li><a href="#">PUBLISHERS</a></li> -->
             <li>
-              <a href="#">{{ $t('benefits').toUpperCase() }}</a>
+              <a href="#">{{ $t("benefits").toUpperCase() }}</a>
             </li>
             <li>
-              <nuxt-link :to="localePath('about')">{{ $t('about').toUpperCase() | uppercase }}</nuxt-link>
+              <nuxt-link :to="localePath('about')">{{
+                $t("about").toUpperCase()
+              }}</nuxt-link>
             </li>
-            
+
             <li>
-              <nuxt-link :to="localePath('terms')">{{ $t('terms_conditions').toUpperCase() }}</nuxt-link>
+              <nuxt-link :to="localePath('terms')">{{
+                $t("terms_conditions").toUpperCase()
+              }}</nuxt-link>
             </li>
             <li>
-              <nuxt-link :to="localePath('privacy')">{{ $t('privacy_policy').toUpperCase() }}</nuxt-link>
+              <nuxt-link :to="localePath('privacy')">{{
+                $t("privacy_policy").toUpperCase()
+              }}</nuxt-link>
             </li>
             <li>
-              <nuxt-link :to="localePath('contact')">{{ $t('contactus').toUpperCase() }}</nuxt-link>
+              <nuxt-link :to="localePath('contact')">{{
+                $t("contactus").toUpperCase()
+              }}</nuxt-link>
             </li>
           </ul>
         </div>
@@ -142,6 +158,11 @@ export default {
         this.$i18n.setLocaleMessage(locale, module.default);
         // update url to point to new path, without reloading the page
         window.history.replaceState("", "", this.switchLocalePath(locale));
+
+        this.$nuxt.$router.go({
+          path: this.$route.fullPath,
+          force: true,
+        });
       });
     },
     logout() {

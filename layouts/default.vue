@@ -1,6 +1,6 @@
 <template>
   <div>
-  {{ hassan }}
+    {{ hassan }}
     <Header />
     <nuxt />
     <Footer />
@@ -11,17 +11,28 @@
 import Header from "@/components/front/layout/Header";
 import Footer from "@/components/front/layout/Footer";
 export default {
-
-
- 
   head() {
     return {
-      htmlAttrs:{
-        dir: this.$i18n.locale=="ar"?"rtl"  : "ltr"
+      htmlAttrs: {
+        dir: this.$i18n.locale == "ar" ? "rtl" : "ltr",
       },
-    
-     
+      link: this.loadStyles(),
     };
+  },
+  methods: {
+    loadStyles() {
+      if (this.$i18n.locale == "ar") {
+      
+        return [
+          {
+            rel: "stylesheet",
+            href: "/css/bootstrap-rtl.min.css",
+            body: true
+          },
+          { rel: "stylesheet", href: "/css/rtl.css" , body: true},
+        ];
+      }
+    },
   },
   // data(){
   //   return {
@@ -41,11 +52,7 @@ export default {
     Footer,
   },
   mounted() {
-    
     // this.dir=  this.$i18n.locale
-   
   },
-  
 };
 </script>
- 
