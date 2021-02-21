@@ -10,6 +10,7 @@ const messages = {
   about: "من نحن",
   terms_conditions: "الشروط & الاحكام",
   privacy_policy: "سياسة الخصوصية",
-  contactus: "اتصل بنا"
+  contactus: "اتصل بنا",
+  change_lang: "جاري تغيير اللغة"
 };
 export default messages;

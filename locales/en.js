@@ -7,7 +7,8 @@ const messages = {
   about: "About us",
   terms_conditions: "Terms & Conditions",
   privacy_policy: "Privacy Policy",
-  contactus: "Contact Us"
+  contactus: "Contact Us",
+  change_lang: "Change Language..."
 
 };
 export default messages;
