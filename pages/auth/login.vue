@@ -71,8 +71,11 @@ export default {
          this.$auth.loginWith("local", {
           data: this.form,
         }).then(()=>{
+
+    
+
            this.$router.push({
-             path: "/" + this.$auth.state.user.role + "/dashboard",
+             path: `/${this.$i18n.locale}/` + this.$auth.state.user.role + "/dashboard",
            });
         }).catch(err => console.log(err));
 

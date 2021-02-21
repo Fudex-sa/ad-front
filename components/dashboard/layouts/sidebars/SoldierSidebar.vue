@@ -9,14 +9,14 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'soldier-dashboard' }">
+            <nuxt-link :to="localePath('soldier-dashboard')">
               <img src="@/assets/img/img1-a.png" class="icon-a" />
               <img src="@/assets/img/img1-b.png" class="icon-b" />
               <span>Dashboard</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'soldier-dashboard-tasks' }">
+            <nuxt-link :to="localePath('soldier-dashboard-tasks')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>Tasks</span>
@@ -24,7 +24,7 @@
           </li>
           <li>
             <nuxt-link
-              :to="{ name: 'soldier-dashboard-categories' }"
+              :to="localePath('soldier-dashboard-categories')"
               v-if="user.tasks_lvl >= 2"
             >
               <img src="@/assets/img/img2-a.png" class="icon-a" />
@@ -33,7 +33,7 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'soldier-dashboard-ads' }">
+            <nuxt-link :to="localePath('soldier-dashboard-ads')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>Ads</span>
@@ -47,7 +47,7 @@
             </nuxt-link>
           </li> -->
           <li>
-            <nuxt-link :to="{ name: 'soldier-dashboard-wallet' }">
+            <nuxt-link :to="localePath('soldier-dashboard-wallet')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>Wallet</span>

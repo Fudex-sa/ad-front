@@ -5,7 +5,7 @@
         {{ successMessage }}
     </div>
     <!-- user image & name -->
-    <nuxt-link :to="{ path: '/' + role + '/profile' }" class="user color1">
+    <nuxt-link :to="{ path: `/${this.$i18n.locale}/` + role + '/profile' }" class="user color1">
         <div>
             <img :src="'/_nuxt/assets/' + user.picture" alt="profile_pic" />
         </div>
