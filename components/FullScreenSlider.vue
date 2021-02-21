@@ -48,19 +48,22 @@
 
 <script>
 export default {
-  props: ["gallery"],
+  props: ["gallery", "type"],
   mounted() {
-console.log("Form Full Slider")
-    console.log(this.$route.params)
-    
     this.storeAnalytics();
   },
   methods: {
     storeAnalytics() {
+        
+      if(this.type =="ad"){
+
+      
       this.$axios
         .$get("analytics", {
           user_utm: `${this.$route.params.utm}`,
           ad_id: `${this.$route.params.id}`
+        }).then(res => {
+          // console.log(res);
         })
         .catch(err => {
           console.log(err.response);
@@ -76,6 +79,32 @@ console.log("Form Full Slider")
         .catch(err => {
           console.log(err.response);
         });
+
+      }
+
+       this.$axios
+        .$post(
+          "share/item/history",
+          {
+            itemId: `${this.$route.params.id}`,
+            user_utm: `${this.$route.params.utm}`,
+            type:`${this.type}`,
+          },
+          {
+            header: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .then((res) => {
+          console.log(res);
+          // this.successMessage = res.data.message
+          // setTimeout(() => {this.$router.back()}, 1500)
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    
     }
   }
 };

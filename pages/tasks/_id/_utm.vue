@@ -1,7 +1,7 @@
 <template>
     <div class="col-sm-12">
         <!-- screen slider -->
-        <full-screen-slider :gallery="task" />
+        <full-screen-slider :gallery="task" type="lib" />
     </div>
 </template>
 

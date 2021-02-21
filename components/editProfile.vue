@@ -1,13 +1,16 @@
 <template>
   <div class="row">
     <div class="col-md-4 pull-left">
-      <img class="img-thumbnail pic" :src=" '/_nuxt/assets/' + user.picture " alt="profile_picture" />
+      <img
+        class="img-thumbnail pic"
+        :src="'/_nuxt/assets/' + user.picture"
+        alt="profile_picture"
+      />
     </div>
     <div class="col-md-8">
-    <div class="alert alert-success" v-if=" successMessage !== '' ">
-    {{ successMessage }}
-    </div>
-    
+      <div class="alert alert-success" v-if="successMessage !== ''">
+        {{ successMessage }}
+      </div>
 
       <div class="row">
         <div class="col-md-6 col-sm-6 mt-20">
@@ -18,9 +21,11 @@
               placeholder="Example Ad"
               type="text"
               v-model="form.username"
-              :class="{ 'is-invalid' : errors.username}"
+              :class="{ 'is-invalid': errors.username }"
             />
-            <p class="text-danger p-2" v-for="error in errors.username">{{error}}</p>
+            <p class="text-danger p-2" v-for="error in errors.username">
+              {{ error }}
+            </p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 mt-20">
@@ -31,10 +36,36 @@
               placeholder="Example Ad"
               type="text"
               v-model="form.address"
-              :class="{ 'is-invalid' : errors.address}"
+              :class="{ 'is-invalid': errors.address }"
             />
-            <p class="text-danger p-2" v-for="error in errors.address">{{error}}</p>
+            <p class="text-danger p-2" v-for="error in errors.address">
+              {{ error }}
+            </p>
           </div>
+        </div>
+      <div v-if="from && from === 'soldier'">
+        <div class="col-md-6 col-sm-6 mt-20">
+          <div class="form-group dash-group">
+            <label class="pl-2">Paypal No.</label>
+            <input
+              class="form-control dash-input"
+              placeholder="Paypal No..."
+              type="text"
+              v-model="form.paypalno"
+            />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 mt-20">
+          <div class="form-group dash-group">
+            <label class="pl-2">STC Pay No.</label>
+            <input
+              class="form-control dash-input"
+              placeholder="STC Pay No..."
+              type="text"
+              v-model="form.stcpayno"
+            />
+          </div>
+        </div>
         </div>
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
@@ -44,9 +75,11 @@
               placeholder="Example Ad"
               type="text"
               v-model="form.mobile"
-              :class="{ 'is-invalid' : errors.mobile}"
+              :class="{ 'is-invalid': errors.mobile }"
             />
-            <p class="text-danger p-2" v-for="error in errors.mobile">{{error}}</p>
+            <p class="text-danger p-2" v-for="error in errors.mobile">
+              {{ error }}
+            </p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 mt-20">
@@ -57,9 +90,11 @@
               class="form-control dash-input"
               placeholder="Enter Password"
               v-model="form.current_password"
-              :class="{ 'is-invalid' : errors.current_password}"
+              :class="{ 'is-invalid': errors.current_password }"
             />
-            <p class="text-danger p-2" v-for="error in errors.current_password">{{error}}</p>
+            <p class="text-danger p-2" v-for="error in errors.current_password">
+              {{ error }}
+            </p>
           </div>
         </div>
       </div>
@@ -72,9 +107,11 @@
               class="form-control dash-input"
               placeholder="Enter Password"
               v-model="form.password"
-              :class="{ 'is-invalid' : errors.password}"
+              :class="{ 'is-invalid': errors.password }"
             />
-            <p class="text-danger p-2" v-for="error in errors.password">{{error}}</p>
+            <p class="text-danger p-2" v-for="error in errors.password">
+              {{ error }}
+            </p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 mt-20">
@@ -95,14 +132,21 @@
             <label class="pl-2">Edit Profile Picture *</label>
             <input type="file" @change.prevent="handleFileUpload" multiple />
           </div>
-          <p
-            class="col-xs-6 mt-10 hint col-sm-6"
-          >Image Ideal Dimension is more than 200 x 200 with extensions(jpg,jpeg,png)</p>
+          <p class="col-xs-6 mt-10 hint col-sm-6">
+            Image Ideal Dimension is more than 200 x 200 with
+            extensions(jpg,jpeg,png)
+          </p>
         </div>
       </div>
+
+   
       <div class="col-sm-12 text-right mt-40">
-        <button class="the-btn2 hvr-radial-out" @click="$router.back()">Cancel</button>
-        <button class="the-btn hvr-radial-out" @click="handleSubmition">Update</button>
+        <button class="the-btn2 hvr-radial-out" @click="$router.back()">
+          Cancel
+        </button>
+        <button class="the-btn hvr-radial-out" @click="handleSubmition">
+          Update
+        </button>
       </div>
     </div>
   </div>
@@ -110,10 +154,16 @@
 
 <script>
 export default {
+
+  props: {
+    from: {
+      type: String
+    }
+  },
   data() {
     return {
       form: {},
-      successMessage:""
+      successMessage: "",
     };
   },
   mounted() {
@@ -127,36 +177,27 @@ export default {
       this.form.key = event.target;
     },
     handleFileUpload() {
-      Object.keys(event.target.files).map(key => {
+      Object.keys(event.target.files).map((key) => {
         return this.formData.append("picture", event.target.files[key]);
       });
     },
     handleSubmition() {
-      // let a = this.$route.path;
-      // console.log(a.substring(0, a.lastIndexOf("/")));
-
-      Object.keys(this.form).map(key => {
+      Object.keys(this.form).map((key) => {
         this.formData.append(key, this.form[key]);
       });
-
-console.log(this.formData);
       this.$axios
         .$post("auth/profile/update", this.formData, {
           header: {
-            "Content-Type": "multipart/form-data"
-          }
+            "Content-Type": "multipart/form-data",
+          },
         })
-        .then(res => {
-          console.log(res);
+        .then((res) => {
           this.successMessage = "Profile has been updated.";
-          // setTimeout(() => {
-          //   this.$router.back();
-          // }, 1000);
           this.$router.push({
-                    path: "/" + this.$auth.state.user.role + "/profile"
+            path: "/" + this.$auth.state.user.role + "/profile",
           });
         });
-    }
-  }
+    },
+  },
 };
 </script>

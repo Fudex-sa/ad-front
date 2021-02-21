@@ -1,13 +1,21 @@
 <template>
   <div class="row">
     <div class="col-sm-12">
+
       <!-- if user level 3 show ads -->
-      <ads-index :initialAds="ads" v-if="user.tasks_lvl == 3" />
+      <ads-index :initialAds="ads" v-if="user.tasks_lvl == 3 && user.lastShared != 'ad'" />
       <!-- else show message -->
       <p
         class="white-box lead bold"
         v-if="user.tasks_lvl < 3"
       >You Have To Complete The Tasks To Be Able To Proceed!</p>
+
+
+ <p
+        class="white-box lead bold"
+        v-if="user.lastShared == 'ad'"
+      >You Have To Share a library To Be Able To Share Ads again!</p>
+      
     </div>
   </div>
 </template>

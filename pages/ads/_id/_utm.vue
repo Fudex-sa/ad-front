@@ -7,7 +7,7 @@
       >{{ ad.call_of_action_txt }}</a
     >
     <!-- screen slider -->
-    <full-screen-slider :gallery="ad" />
+    <full-screen-slider :gallery="ad" type="ad" />
   </div>
 </template>
 
@@ -19,13 +19,14 @@ export default {
     return {
       ad: [],
       showUTM: false,
+      item: "",
     };
   },
   components: {
     FullScreenSlider,
   },
   mounted() {
-    
+    // this.shareHistory();
   },
   async asyncData({ app, params, error }) {
     try {
@@ -38,6 +39,9 @@ export default {
     }
   },
   layout: "task",
+  methods: {
+    
+  },
 };
 </script>
 

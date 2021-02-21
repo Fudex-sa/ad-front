@@ -7,7 +7,7 @@
         </div>
       </div>
       <profile v-if="!edit" />
-      <edit-profile v-if="edit" />
+      <edit-profile v-if="edit" from="soldier" />
     </div>
   </div>
 </template>

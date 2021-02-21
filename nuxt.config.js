@@ -26,6 +26,7 @@ export default {
             { src: "https://js.stripe.com/v3/" },
             { src: "https://code.jquery.com/jquery-3.4.1.slim.min.js" },
         ],
+        
     },
     __dangerouslyDisableSanitizers: ["script"],
     /*
@@ -70,6 +71,33 @@ export default {
         "@nuxtjs/font-awesome",
         "nuxt-vue-multiselect",
         "nuxt-vuex-localstorage",
+        ['nuxt-i18n', {
+            lazy: true,
+            loadLanguagesAsync: true,
+            locales: [
+              {
+                name: 'English',
+                code: 'en',
+                iso: 'en-US',
+                file: 'en.js'
+              },
+              {
+                name: 'Arabic',
+                code: 'ar',
+                iso: 'ar-AR',
+                file: 'ar.js'
+              },
+            ],
+            langDir: 'locales/',
+            defaultLocale: 'en',
+            fallbackLocale: 'en',
+            strategy: 'prefix',
+            detectBrowserLanguage: {
+              useCookie: true,
+              cookieKey: 'i18n_redirected',
+            },
+            rootRedirect: 'en'
+          }]
     ],
     /**
      * Axios Configuration
