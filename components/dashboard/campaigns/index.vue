@@ -6,10 +6,10 @@
       <!-- Create New Ad Component -->
       <div class="div-top">
         <nuxt-link
-          :to="{ name: 'advertiser-dashboard-campaigns-new' }"
+          :to="localePath('advertiser-dashboard-campaigns-new')"
           class="the-btn hvr-radial-out"
           v-if="role == 'advertiser' "
-        >Create New</nuxt-link>
+        >{{ $t('create_new') }}</nuxt-link>
         <div class="the-search">
           <form>
             <div class="input-group">
@@ -28,12 +28,12 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col" class="col-xs-1 col-sm-2">Title</th>
-              <th scope="col" class="col-xs-2 col-md-5">Type</th>
-              <th scope="col" class="col-xs-2 col-md-5">Clicks</th>
-              <th scope="col" class="col-xs-2 col-md-5">Budget</th>
-              <th scope="col" class="col-xs-2 col-md-5">Ads Count</th>
-              <th scope="col" class="hidden-sm" v-if="user.role == 'advertiser' ">Action</th>
+              <th scope="col" class="col-xs-1 col-sm-2">{{ $t('ads.title')  }}</th>
+              <th scope="col" class="col-xs-2 col-md-5">{{ $t('type') }}</th>
+              <th scope="col" class="col-xs-2 col-md-5">{{ $t('clicks') }}</th>
+              <th scope="col" class="col-xs-2 col-md-5">{{ $t('budget')}}</th>
+              <th scope="col" class="col-xs-2 col-md-5">{{ $t('ads_count') }}</th>
+              <th scope="col" class="hidden-sm" v-if="user.role == 'advertiser' ">{{ $t('ads.actions') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -53,18 +53,18 @@
 
 
                 <span class="label label-success">
-                {{ campaign.clicks }} click
+                {{ campaign.clicks }} {{ $t('click') }}
                 </span> 
     
               </td>
               <td class="col-sm-3">
                 <span class="label label-primary">
-                {{ campaign.totalBudget }} SAR
+                {{ campaign.totalBudget }} {{ $t('sar')}}
                 </span>
               </td>
               <td class="col-sm-3">
               <span class="label label-info">
-                {{ campaign.adsCount }}  Ad
+                {{ campaign.adsCount }}  {{ $t('ad') }}
                 </span>
               </td>
               <td class="hidden-sm col-md-2" v-if="user.role == 'advertiser' ">
@@ -78,7 +78,7 @@
                   <!-- Edit -->
                   <nuxt-link
                     class="btn btn-info action-btn"
-                    :to="{ name: 'advertiser-dashboard-campaigns-id-edit', params: { id:campaign.id } }"
+                    :to="localePath({name: 'advertiser-dashboard-campaigns-id-edit', params: {id: campaign.id} })"
                   >Edit</nuxt-link>
                   <!-- Statistics -->
                   <!-- <nuxt-link

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row">
-        {{ campaign[0] }}
+    
             <h1 class="pl-4 bold ">{{campaign[0].title}}</h1>
             <div class="col-sm-12 mb-30">
                 <h4>Description</h4>

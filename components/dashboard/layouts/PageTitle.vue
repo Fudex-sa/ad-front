@@ -2,9 +2,9 @@
   <div class="admin-page-title">
     <ul :class="breadcrumbClass">
       <li><a href="#">Home</a></li>
-      <li class="active">Page Name</li>
+      <li class="active">{{ pageName }}</li>
     </ul>
-    <h2>{{ pageName }}</h2>
+    <!-- <h2>{{ pageName }}</h2> -->
   </div>
 </template>
 

@@ -15,10 +15,10 @@
       <div class="row">
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
-            <label class="pl-2">Username *</label>
+            <label class="pl-2">{{ $t('username') }} *</label>
             <input
               class="form-control dash-input"
-              placeholder="Example Ad"
+              :placeholder="$t('username')"
               type="text"
               v-model="form.username"
               :class="{ 'is-invalid': errors.username }"
@@ -30,10 +30,10 @@
         </div>
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
-            <label class="pl-2">Address *</label>
+            <label class="pl-2">{{ $t('Address profile') }} *</label>
             <input
               class="form-control dash-input"
-              placeholder="Example Ad"
+              :placeholder="$t('Address profile')"
               type="text"
               v-model="form.address"
               :class="{ 'is-invalid': errors.address }"
@@ -46,10 +46,10 @@
       <div v-if="from && from === 'soldier'">
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
-            <label class="pl-2">Paypal No.</label>
+            <label class="pl-2">{{ $t('Paypal No') }}.</label>
             <input
               class="form-control dash-input"
-              placeholder="Paypal No..."
+              :placeholder="$t('Paypal No')+'...'"
               type="text"
               v-model="form.paypalno"
             />
@@ -69,10 +69,10 @@
         </div>
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
-            <label class="pl-2">Phone no. *</label>
+            <label class="pl-2">{{ $t('Phone') }}*</label>
             <input
               class="form-control dash-input"
-              placeholder="Example Ad"
+              :placeholder="$t('Phone')"
               type="text"
               v-model="form.mobile"
               :class="{ 'is-invalid': errors.mobile }"
@@ -84,11 +84,11 @@
         </div>
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
-            <label class="pl-2">Current Password. *</label>
+            <label class="pl-2">{{ $t('Current Password') }} *</label>
             <input
               type="Password"
               class="form-control dash-input"
-              placeholder="Enter Password"
+              :placeholder="$t('Current Password')"
               v-model="form.current_password"
               :class="{ 'is-invalid': errors.current_password }"
             />
@@ -101,11 +101,11 @@
       <div class="row">
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
-            <label class="pl-2">Password *</label>
+            <label class="pl-2">{{ $t('Password') }} *</label>
             <input
               type="Password"
               class="form-control dash-input"
-              placeholder="Enter Password"
+              :placeholder="$t('Password')"
               v-model="form.password"
               :class="{ 'is-invalid': errors.password }"
             />
@@ -116,11 +116,11 @@
         </div>
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
-            <label class="pl-2">Password Confirmation *</label>
+            <label class="pl-2">{{ $t('Password Confirmation') }} *</label>
             <input
               type="Password"
               class="form-control dash-input"
-              placeholder="Enter Password"
+              :placeholder="$t('Password Confirmation')"
               v-model="form.password_confirmation"
             />
           </div>
@@ -129,12 +129,11 @@
       <div class="row mt-20">
         <div class="form-group dash-group">
           <div class="col-sm-6">
-            <label class="pl-2">Edit Profile Picture *</label>
+            <label class="pl-2">{{ $t('Edit Profile Picture') }} *</label>
             <input type="file" @change.prevent="handleFileUpload" multiple />
           </div>
           <p class="col-xs-6 mt-10 hint col-sm-6">
-            Image Ideal Dimension is more than 200 x 200 with
-            extensions(jpg,jpeg,png)
+            {{$t('Image Ideal Dimension')}}
           </p>
         </div>
       </div>
@@ -142,10 +141,10 @@
    
       <div class="col-sm-12 text-right mt-40">
         <button class="the-btn2 hvr-radial-out" @click="$router.back()">
-          Cancel
+          {{ $t('cancel') }}
         </button>
         <button class="the-btn hvr-radial-out" @click="handleSubmition">
-          Update
+          {{ $t('Update')}}
         </button>
       </div>
     </div>

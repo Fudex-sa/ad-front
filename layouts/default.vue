@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ hassan }}
     <Header />
     <nuxt />
     <Footer />

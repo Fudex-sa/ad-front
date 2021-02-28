@@ -7,7 +7,7 @@
       <div class="col-md-6 col-sm-6 mt-20">
         <div class="white-box">
           <div class="box-right">
-            <div>Email</div>
+            <div>{{ $t('Email') }}</div>
             <p>{{user.email}}</p>
           </div>
         </div>
@@ -15,7 +15,7 @@
       <div class="col-md-6 col-sm-6 mt-20">
         <div class="white-box">
           <div class="box-right">
-            <div>Username</div>
+            <div>{{ $t('Username') }}</div>
             <p>{{user.username}}</p>
           </div>
         </div>
@@ -23,7 +23,7 @@
       <div class="col-md-6 col-sm-6 mt-20">
         <div class="white-box">
           <div class="box-right">
-            <div>Address</div>
+            <div>{{ $t('Address profile') }}</div>
             <p>{{user.address}}</p>
           </div>
         </div>
@@ -31,7 +31,7 @@
       <div class="col-md-6 col-sm-6 mt-20">
         <div class="white-box">
           <div class="box-right">
-            <div>Phone no.</div>
+            <div>{{ $t('Phone')}}</div>
             <p>{{user.mobile}}</p>
           </div>
         </div>
@@ -39,7 +39,7 @@
       <div class="col-md-6 col-sm-6 mt-20">
         <div class="white-box">
           <div class="box-right">
-            <div>Tasks Level</div>
+            <div>{{ $t('Tasks Level')  }}</div>
             <p>{{user.tasks_lvl}}</p>
           </div>
         </div>

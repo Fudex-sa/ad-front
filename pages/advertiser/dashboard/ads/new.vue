@@ -4,9 +4,9 @@
       <div class="fixed alert alert-danger" v-if="successMessage">
         {{ successMessage }}
       </div>
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12">
         <div class="form-group dash-group">
-          <label>Campaign *</label>
+          <label>{{ $t('ads.campaign')}} *</label>
           <multiselect
             v-model="form.campaign_id"
             deselect-label="Can't remove this value"
@@ -22,9 +22,9 @@
           </p>
         </div>
       </div>
-      <div class="col-sm-12">
+      <div class="col-sm-6">
         <div class="form-group dash-group">
-          <label>Title *</label>
+          <label>{{ $t('ads.title') }} *</label>
           <input
             class="form-control dash-input"
             placeholder="Example Ad"
@@ -37,9 +37,26 @@
           </p>
         </div>
       </div>
-      <div class="col-sm-12">
+
+      <div class="col-sm-6">
         <div class="form-group dash-group">
-          <label>Broadcast Content *</label>
+          <label>{{ $t('ads.title_en') }}*</label>
+          <input
+            class="form-control dash-input"
+            placeholder="Example Ad"
+            type="text"
+            v-model="form.title_en"
+            :class="{ 'is-invalid': errors.title_en }"
+          />
+          <p class="text-danger p-2" v-for="error in errors.title_en">
+            {{ error }}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group dash-group">
+          <label>{{ $t('ad_content')}} *</label>
           <!-- Descrition text area -->
           <textarea
             class="form-control dash-input"
@@ -105,6 +122,26 @@
           </div>
         </div>
       </div>
+
+
+      <div class="col-sm-6">
+        <div class="form-group dash-group">
+          <label>{{ $t('ad_content_en')}}*</label>
+          <!-- Descrition text area -->
+          <textarea
+            class="form-control dash-input"
+            placeholder="Please Enter Ad's Content"
+            type="text"
+            v-model="form.content_en"
+            :class="{ 'is-invalid': errors.content_en }"
+          ></textarea>
+          <p class="text-danger p-2" v-for="error in errors.content_en">
+            {{ error }}
+          </p>
+          <!-- emotions -->
+          
+        </div>
+      </div>
       <!-- <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>Duration *</label>
@@ -132,7 +169,12 @@
         <div class="form-group dash-group">
           <label>Start Date *</label>
           <client-only>
-          <input type="datetime-local" step="2"  class="form-control dash-input date" v-model="form.start_date"/>
+            <input
+              type="datetime-local"
+              step="2"
+              class="form-control dash-input date"
+              v-model="form.start_date"
+            />
             <!-- <date-picker
               v-model="date"
               class="form-control dash-input date"
@@ -195,12 +237,15 @@
             v-model="form.budget"
             :class="{ 'is-invalid': errors.budget }"
           />
-         
+
           <p class="text-danger p-2" v-for="error in errors.budget">
             {{ error }}
           </p>
         </div>
-        <span style="position: absolute;right: 31px;top: 53px;font-weight: bold;">SAR</span>
+        <span
+          style="position: absolute;right: 31px;top: 53px;font-weight: bold;"
+          >SAR</span
+        >
       </div>
       <!--         <div class="col-sm-12 col-md-6">
           <div class="form-group dash-group">
@@ -388,12 +433,36 @@
             v-model="form.call_of_action_txt"
             :class="{ 'is-invalid': errors.call_of_action_txt }"
           />
-          <p class="text-danger p-2" v-for="(error, index) in errors.call_of_action_txt" :key="index">
+          <p
+            class="text-danger p-2"
+            v-for="(error, index) in errors.call_of_action_txt"
+            :key="index"
+          >
             {{ error }}
           </p>
         </div>
       </div>
-      <div class="col-sm-6">
+
+       <div class="col-sm-6">
+        <div class="form-group dash-group">
+          <label class="col-sm-12 p-0">Button Text EN *</label>
+          <input
+            class="form-control dash-input"
+            placeholder="Please Enter The Link"
+            type="text"
+            v-model="form.call_of_action_txt_en"
+            :class="{ 'is-invalid': errors.call_of_action_txt_en }"
+          />
+          <p
+            class="text-danger p-2"
+            v-for="(error, index) in errors.call_of_action_txt_en"
+            :key="index"
+          >
+            {{ error }}
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-12">
         <div class="form-group dash-group">
           <label class="col-sm-12 p-0">Link*</label>
           <input
@@ -403,7 +472,11 @@
             v-model="form.call_of_action_url"
             :class="{ 'is-invalid': errors.call_of_action_url }"
           />
-          <p class="text-danger p-2" v-for="(error, index) in errors.call_of_action_url" :key="index">
+          <p
+            class="text-danger p-2"
+            v-for="(error, index) in errors.call_of_action_url"
+            :key="index"
+          >
             {{ error }}
           </p>
         </div>
@@ -456,13 +529,13 @@ export default {
       form: {
         owner_id: "",
         title: "",
+        title_en: "",
         content: "",
+        content_en: "",
         country: [],
         city: [],
         language: [],
         start_date: "",
-        // end_date: "",
-        // media: "aaa",
         media_type: "",
         budget: "",
         campaign_id: "",
@@ -470,12 +543,13 @@ export default {
         age: [],
         targeted_audience: [],
         call_of_action_txt: "",
+        call_of_action_txt_en: "",
         call_of_action_url: "",
       },
     };
   },
   watch: {
-    date: function () {
+    date: function() {
       this.form.start_date = this.formatingDate(this.date[0]);
       this.form.end_date = this.formatingDate(this.date[1]);
     },
@@ -526,7 +600,7 @@ export default {
       }
       /* Extract the value from the object */
       let selectedObject = [...this.form[key]]; // clone the value from the form into array
-      Object.keys(selectedObject).map(function (key) {
+      Object.keys(selectedObject).map(function(key) {
         selectedObject[key] = selectedObject[key].value;
       });
       // format the value to send it to the endpoint
@@ -561,8 +635,7 @@ export default {
           },
         })
         .then((res) => {
-
-          console.log(res)
+          console.log(res);
           this.successMessage = res.message;
           setTimeout(() => {
             this.$store.commit(
@@ -579,8 +652,8 @@ export default {
               res.checkout
             );
             this.$router.push({
-              path: `/advertiser/dashboard/payment`,
-              query: { advertisementId: res.ad_id }
+              path: `/${this.$i18n.locale}/advertiser/dashboard/payment`,
+              query: { advertisementId: res.ad_id },
             });
           }, 1000);
         });
@@ -602,7 +675,7 @@ export default {
     fetchCities() {
       let selectedCountries = [];
       // itterate through selected countries to send reuest with their ids
-      this.form.country.forEach(function (country, index) {
+      this.form.country.forEach(function(country, index) {
         selectedCountries.push(country.id);
       });
       // join the countries ids to form string to send in the url of request

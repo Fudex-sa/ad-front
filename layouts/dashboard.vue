@@ -52,6 +52,16 @@ const Components = {
 }
 
 export default {
+
+     head() {
+    return {
+      htmlAttrs: {
+        dir: this.$i18n.locale == "ar" ? "rtl" : "ltr",
+      },
+      link: this.loadStyles(),
+    };
+  },
+  
     components: Components,
 
     beforeMount() {
@@ -65,6 +75,20 @@ export default {
     },
 
     methods: {
+
+        loadStyles() {
+      if (this.$i18n.locale == "ar") {
+      
+        return [
+          {
+            rel: "stylesheet",
+            href: "/css/bootstrap-rtl.min.css",
+            body: true
+          },
+          { rel: "stylesheet", href: "/css/rtl.css" , body: true},
+        ];
+      }
+    },
         setNotifications() {
             this.$axios
                 .$get('notifications')

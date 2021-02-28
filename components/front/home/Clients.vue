@@ -5,8 +5,8 @@
                 <div class="row ten-columns">
                     <div class="col-sm-12">
                         <div class="title">
-                            <h2>Our Happy Clients</h2>
-                            <p>We are proud of our partner</p>
+                            <h2>{{ $t('our_happy_clients') }}</h2>
+                            <p>{{ $t('we_are_proud_of_our_partner') }}</p>
                         </div>
                     </div>
                     <div class="col-sm-2"><div class="client"><img src="@/assets/img/client1.png"></div></div>

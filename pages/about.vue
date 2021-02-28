@@ -7,20 +7,27 @@
           <div class="col-md-12 col-sm-12">
             <div class="title title2">
               <h2>{{ $t("about") }}</h2>
-              <p>More details about our company</p>
+              <p>{{ $t('about_description') }}</p>
             </div>
           </div>
           <div class="col-md-6 col-sm-12">
-            <h4 class="text3 color1 mb-20">Overview About Us</h4>
-            <p class="text2 mb-20">{{ about.about_us }}</p>
+            <h4 class="text3 color1 mb-20">{{ $t('overview_about_us') }}</h4>
+            <p class="text2 mb-20">
+            {{ this.$i18n.locale == "en" ? about.about_us: about.about_us_ar }}
+            </p>
             <h4 class="text1 text3">
-              <img src="@/assets/img/vision.png" />Vision
+              <img src="@/assets/img/vision.png" />{{ $t('vision') }}
             </h4>
-            <p class="text2 mb-20">{{ about.vision }}</p>
+            <p class="text2 mb-20">
+             {{ this.$i18n.locale == "en" ? about.vision: about.vision_ar }}
+            </p>
             <h4 class="text1 text3">
-              <img src="@/assets/img/mission.png" />Mission
+              <img src="@/assets/img/mission.png" />{{ $t('mission') }}
             </h4>
-            <p class="text2 mb-20">{{ about.mission }}</p>
+            <p class="text2 mb-20">
+             {{ this.$i18n.locale == "en" ? about.mission: about.mission_ar }}
+        
+            </p>
           </div>
           <div class="col-md-6 col-sm-12 p-0">
             <div class="col-sm-12">
@@ -45,7 +52,8 @@
               <div class="row">
                 <div class="col-sm-12">
                   <video-card
-                    thumbnail="_nuxt/assets/img/video3.png"
+                  :thumbnail="require(`~/assets/img/video3.png`)"
+                
                     :videoUrl="'https://www.youtube.com/embed/yRAzlw4JM8o'"
                   ></video-card>
                 </div>

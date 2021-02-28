@@ -8,7 +8,7 @@
         {{ successMessage }}
       </div>
    
-      <div class="col-sm-12">
+      <div class="col-sm-6">
         <div class="form-group dash-group">
           <label>Title *</label>
           <input
@@ -16,9 +16,26 @@
             placeholder="Example Ad"
             type="text"
        v-model.trim="form.name"
-            :class="{ 'is-invalid': errors.title }"
+            :class="{ 'is-invalid': errors.name }"
           />
-          <p class="text-danger p-2" v-for="error in errors.title" :key="error">
+          <p class="text-danger p-2" v-for="error in errors.name" :key="error">
+            {{ error }}
+          </p>
+        </div>
+      </div>
+
+
+ <div class="col-sm-6">
+        <div class="form-group dash-group">
+          <label>Title En*</label>
+          <input
+            class="form-control dash-input"
+            placeholder="Example Ad"
+            type="text"
+       v-model.trim="form.name_en"
+            :class="{ 'is-invalid': errors.name_en }"
+          />
+          <p class="text-danger p-2" v-for="error in errors.name_en" :key="error">
             {{ error }}
           </p>
         </div>
@@ -46,8 +63,8 @@
   
 
   <div class="col-sm-12 text-right">
-        <button class="the-btn2 hvr-radial-out" @click.prevent="$router.back()">Cancel</button>
-        <button class="the-btn hvr-radial-out" @click.prevent="handleSubmition">Create Category</button>
+        <button class="the-btn2 hvr-radial-out" @click.prevent="$router.back()">{{ $t('cancel')}}</button>
+        <button class="the-btn hvr-radial-out" @click.prevent="handleSubmition">{{  $t('create_category') }}</button>
     </div>
 
     
@@ -61,13 +78,17 @@
 export default {
      data() {
         return {
+          defaultLanguage:"",
             form: {
                 name: '',
+                name_en: '',
             },
             successMessage: ''
         }
     },
       mounted() {
+         this.defaultLanguage =this.$i18n.locale;
+    
     this.formData = new FormData();
   },
     methods: {
@@ -77,14 +98,18 @@ export default {
     },
     
         handleSubmition() {
+
             this.formData.append('name', this.form.name);
+            this.formData.append('name_en', this.form.name_en);
+
             this.$axios.$post('libraries/categories', this.formData)
                 .then(res => {
                     this.successMessage = res.data.message;
-                    
-                    setTimeout(function() {
+                  
+                    setTimeout( () =>  {
+                       
                            this.$nuxt.$router.push({
-                                path: '/admin/dashboard/categories',
+                                path: `/${this.defaultLanguage}/admin/dashboard/categories`,
                                 force: true
                               });
                     }, 1000);

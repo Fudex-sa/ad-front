@@ -2,10 +2,10 @@
     <div>
         <div class="div-top">
       <nuxt-link
-        :to="{ name: 'admin-dashboard-categories-new' }"
+        :to="localePath('admin-dashboard-categories-new')"
         class="the-btn hvr-radial-out"
         v-if="role == 'admin'"
-        >Create New</nuxt-link
+        >{{ $t('create_new') }}</nuxt-link
       >
       <!-- <div class="the-search">
         <form>
@@ -38,7 +38,7 @@
     <i class="fa fa-trash-o"></i>
 </button>
 
-<nuxt-link class="btn btn-xs btn-default" :to="{ name: 'admin-dashboard-categories-categoryId-edit', params: { categoryId: category.id }}">  <i class="fa fa-edit"></i></nuxt-link>
+<nuxt-link class="btn btn-xs btn-default" :to="localePath({ name: 'admin-dashboard-categories-categoryId-edit', params: { categoryId: category.id }})">  <i class="fa fa-edit"></i></nuxt-link>
                  
                  
                    </div>

@@ -3,97 +3,94 @@
 
 
   <div class="col-md-6">
-      <h1>Advertisement Details</h1>
+      <h1>{{ $t('Advertisement Details') }}</h1>
     <p>
-      <strong>Ad Title</strong>
+      <strong>{{ $t('ad_title') }}</strong>
       : {{ ad.title }}
     </p>
 
     <p>
-      <strong>Ad Content</strong>
+      <strong>{{ $t('ad_content') }}</strong>
       : {{ ad.content }}
     </p>
     <p>
-      <strong>Ad Created At</strong>
+      <strong>{{ $t('ad_created_at') }}</strong>
       : {{ ad.created_at }} 
     </p>
     <p>
-      <strong>Start Date</strong>
+      <strong>{{ $t('start_date') }}</strong>
       : {{ ad.start_date }}
-    </p>
-    <p>
-      <strong>End Date</strong>
-      : {{ ad.end_date }}
-    </p>
-    <p>
-      <strong>Budget</strong>
-      : {{ ad.budget }} SAR  &nbsp;
-
-        &nbsp;	&nbsp;	&nbsp;	&nbsp;	  <strong>Remaining Budget</strong> : {{ ad.remaining_budget }} &nbsp;
     </p>
     
     <p>
-      <strong>Gender</strong>
+      <strong>{{ $t('budget') }}</strong>
+      : {{ ad.budget }} {{ $t('sar')  }}  &nbsp;
+
+        &nbsp;	&nbsp;	&nbsp;	&nbsp;	  <strong>{{ $t('remaining_budget') }}</strong> : {{ ad.remaining_budget }} &nbsp;
+    </p>
+    
+    <p>
+      <strong>{{ $t('gender') }}</strong>
       : {{ ad.gender }}
     </p>
     <p>
-      <strong>Clicks</strong>
+      <strong>{{ $t('clicks') }}</strong>
       : {{ ad.clicks }}
     </p>
     <p>
-      <strong>Status</strong>
+      <strong>{{ $t('status') }}</strong>
       : {{ ad.status }}
     </p>
     <p>
-      <strong>campaign</strong>
+      <strong>{{ $t('campaign') }}</strong>
       : {{ ad.campaign.title }}
     </p>
     <p>
-      <strong>Call Of Action Text</strong>
+      <strong>{{ $t('call_of_action_txt') }}</strong>
       : {{ ad.call_of_action_txt !== "" ? ad.call_of_action_txt :"--" }}
     </p>
     <p>
-      <strong>Call Of Action Text</strong>
+      <strong>{{ $t('call_of_action_link') }}</strong>
       : {{ ad.call_of_action_url!= "" ? ad.call_of_action_url :"--" }}
     </p>
 
 
     <p>
-      <strong>Ages</strong>
+      <strong>{{ $t('ages') }}</strong>
       <ul>
           <li v-for="ag in ad.age" :key="ag">{{ ag }}</li>
       </ul>
     </p>
 
      <p>
-      <strong>Targeted Audience</strong>
+      <strong>{{ $t('targeted_audience')  }}</strong>
       <ul>
           <li v-for="targete_audience in ad.targeted_audience" :key="targete_audience">{{ targete_audience }}</li>
       </ul>
     </p>
 
      <p>
-      <strong>Countries</strong>
+      <strong>{{ $t('countries') }}</strong>
       <ul>
           <li v-for="cnty in ad.country" :key="cnty">{{ cnty }}</li>
       </ul>
     </p>
 
      <p>
-      <strong>Cities</strong>
+      <strong>{{ $t('cities') }}</strong>
       <ul>
           <li v-for="cty in ad.targeted_audience" :key="cty">{{ cty }}</li>
       </ul>
     </p>
      <p>
-      <strong>Language</strong>
+      <strong>{{ $t('language') }}</strong>
       <ul>
           <li v-for="lng in ad.targeted_audience" :key="lng">{{ lng }}</li>
       </ul>
     </p>
 
     <p>
-        <strong>Media Type</strong>: {{ ad.media_type}}
+        <strong>{{ $t('media_type') }}</strong>: {{ ad.media_type}}
     </p>
 
 
@@ -104,33 +101,33 @@
   </div>
 
   <div class="col-md-6">
-      <h1>Advertisement Payment Info</h1>
+      <h1>{{ $t('ad_payment_info') }}</h1>
 
       <!-- {{ ad.paymentInfo}} -->
 <div v-if="ad.paymentInfo !== null">
 
 
 <p>
-    Payment ID:  <strong> {{ ad.paymentInfo.id}}</strong>
+    {{ $t('payment_id') }}:  <strong> {{ ad.paymentInfo.id}}</strong>
 </p>
 <p>
-    Payment Method:  <strong> {{ ad.paymentInfo.paymentBrand}}</strong>
+   {{ $t('payment_method') }}:  <strong> {{ ad.paymentInfo.paymentBrand}}</strong>
 </p>
 
 <p>
-    Amount Paid:  <strong> {{ ad.paymentInfo.amount}} {{ ad.paymentInfo.currency }}</strong>
+    {{ $t('amount_paid') }}:  <strong> {{ ad.paymentInfo.amount}} {{ ad.paymentInfo.currency }}</strong>
 </p>
 <p>
-    Payment Date:  <strong> {{ ad.paymentInfo.timestamp}} </strong>
+    {{ $t('payment_date') }}:  <strong> {{ ad.paymentInfo.timestamp}} </strong>
 </p>
 <p>
-    Card:  <strong> {{ ad.paymentInfo.card.bin}}*****{{ ad.paymentInfo.card.last4Digits }}</strong>
+    {{ $t('card') }}:  <strong> {{ ad.paymentInfo.card.bin}}*****{{ ad.paymentInfo.card.last4Digits }}</strong>
 </p>
 <p>
-    Card Holder:  <strong> {{ ad.paymentInfo.card.holder}}</strong>
+    {{ $t('card_holder') }}:  <strong> {{ ad.paymentInfo.card.holder}}</strong>
 </p>
 <p>
-    Payment Status:  <strong> {{ ad.paymentInfo.resultDetails['response.acquirerMessage']}}</strong>
+    {{ $t('Payment Status')}}:  <strong> {{ ad.paymentInfo.resultDetails['response.acquirerMessage']}}</strong>
 </p>
 
 </div>
@@ -146,7 +143,7 @@ Payment Not Completed
     </div>
     
 </div>
-<h2 style="margin-top:2em;">Advertisement Media</h2>
+<span style="display: block;margin-top:2em;"></span> 
 
 <div  v-if="(ad.media && ad.media_type == 'image' || ad.media && ad.media_type == 'slider')">
 

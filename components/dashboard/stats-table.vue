@@ -5,7 +5,7 @@
         <table class="table">
             <tr>
                 <th>{{firstCoulmn}}</th>
-                <th>Visitors number</th>
+                <th>{{$t('Visitors number') }}</th>
             </tr>
             <tr v-for="stat in stats" :key="stat.value">
                 <td>{{stat.value}}</td>

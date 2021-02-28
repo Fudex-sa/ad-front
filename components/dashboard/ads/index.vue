@@ -5,10 +5,10 @@
     <!-- Create New Ad Component -->
     <div class="div-top">
       <nuxt-link
-        :to="{ name: 'advertiser-dashboard-ads-new' }"
+        :to="localePath('advertiser-dashboard-ads-new')"
         class="the-btn hvr-radial-out"
         v-if="role == 'advertiser'"
-      >Create New</nuxt-link>
+      >{{ $t('create_new') }}</nuxt-link>
       <div class="the-search">
         <form>
           <div class="input-group">
@@ -27,16 +27,16 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col" class="col-xs-1 col-sm-2">Title {{ ads.data.length }}</th>
-            <th scope="col" class="col-xs-2 col-md-5">Description</th>
-            <th scope="col" class="col-sm-2">Campaign</th>
-            <th scope="col" class="col-sm-1">Clicks</th>
-            <th scope="col" class="col-sm-1">Status</th>
-            <th scope="col" class="col-sm-1">Budget</th>
-            <th scope="col" class="col-sm-1">Start AT</th>
-            <th scope="col" class="col-sm-1">Finished At</th>
-            <th scope="col" class="col-sm-1">Created</th>
-            <th scope="col" class="hidden-sm">Action</th>
+            <th scope="col" class="col-xs-1 col-sm-2">{{ $t('ads.title') }} </th>
+            <th scope="col" class="col-xs-2 col-md-5">{{ $t('ads.description') }}</th>
+            <th scope="col" class="col-sm-2">{{ $t('ads.campaign') }}</th>
+            <th scope="col" class="col-sm-1">{{ $t('ads.clicks') }}</th>
+            <th scope="col" class="col-sm-1">{{ $t('ads.status')}}</th>
+            <th scope="col" class="col-sm-1">{{ $t('ads.budget') }}</th>
+            <th scope="col" class="col-sm-1">{{ $t('ads.start_at') }}</th>
+            
+            <th scope="col" class="col-sm-1">{{ $t('ads.created') }}</th>
+            <th scope="col" class="hidden-sm">{{ $t('ads.actions') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -59,7 +59,7 @@
             <td v-else>{{ ad.status }}</td>
             <td>{{ ad.budget }} SAR</td>
             <td>{{ ad.start_date }}</td>
-            <td>{{ ad.end_date }}</td>
+   
             <td>
               {{ ad.created_at }}
               <!-- {{ ad}} -->
@@ -71,18 +71,15 @@
                 <template v-if="user.role == 'advertiser'">
                   <!-- Edit -->
                   <nuxt-link
+                    :to="localePath({name: 'advertiser-dashboard-ads-id-edit', params: { id: ad.id }})"
                     class="btn btn-info action-btn"
-                    :to="{
-                      name: 'advertiser-dashboard-ads-id-edit',
-                      params: { id: ad.id },
-                    }"
-                  >Edit</nuxt-link>
+                  >{{ $t('ads.action.edit') }}</nuxt-link>
                 </template>
                 <!-- Preview as visitor -->
                 <nuxt-link
                   class="btn btn-info action-btn"
-                  :to="{ path: `/${user.role}/dashboard/ads/${ad.id}` }"
-                >View</nuxt-link>
+                  :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"
+                >{{ $t('ads.action.view') }}</nuxt-link>
                 <!-- Reviewing -->
                 <button
                   class="btn btn-success action-btn"
@@ -92,13 +89,11 @@
                 <!-- Statistics -->
                 <nuxt-link
                   class="btn action-btn btn-primary"
-                  :to="{
-                    name: 'advertiser-dashboard-ads-id-statistics',
 
-                    params: { id: ad.id },
-                  }"
+                   :to="localePath({name: 'advertiser-dashboard-ads-id-statistics', params: { id: ad.id }})"
+                  
                   v-if="ad.status == 'active'"
-                >Statistics</nuxt-link>
+                >{{ $t('ads.action.statistics') }}</nuxt-link>
                 <button
                   class="fa fa-trash-o fa-lg btn btn-danger action-btn"
                   @click="deleteAd(ad.id, index)"

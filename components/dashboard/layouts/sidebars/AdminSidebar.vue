@@ -4,23 +4,23 @@
       <section style="width: 100%;">
         <ul class="sidebar-menu">
           <li class="sidebar-header">
-            <nuxt-link :to="{ name: 'index' }">
+            <nuxt-link :to="localePath('index')">
               <img src="@/assets/img/logo.png" />
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'admin-dashboard' }">
+            <nuxt-link :to="localePath('admin-dashboard')">
               <img src="@/assets/img/img1-a.png" class="icon-a" />
               <img src="@/assets/img/img1-b.png" class="icon-b" />
-              <span>Dashboard</span>
+              <span>{{ $t('home') }}</span>
             </nuxt-link>
           </li>
 
           <li>
-            <nuxt-link :to="{ name: 'admin-dashboard-ads-review' }">
+            <nuxt-link :to="localePath('admin-dashboard-ads-review')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Review Ads</span>
+              <span>{{ $t('review_ads') }}</span>
             </nuxt-link>
           </li>
           
@@ -48,52 +48,52 @@
             </ul>
           </li> -->
           <li>
-            <nuxt-link :to="{ name: 'admin-dashboard-campaigns' }">
+            <nuxt-link :to="localePath('admin-dashboard-campaigns')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Campaigns</span>
+              <span>{{ $t('campaigns') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'admin-dashboard-users' }">
+            <nuxt-link :to="localePath('admin-dashboard-users')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Users</span>
+              <span>{{ $t('users') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'admin-dashboard-categories' }">
+            <nuxt-link :to="localePath('admin-dashboard-categories')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Library</span>
+              <span>{{ $t('library') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'admin-dashboard-tasks' }">
+            <nuxt-link :to="localePath('admin-dashboard-tasks')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Tasks</span>
+              <span>{{ $t('tasks') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'admin-dashboard-settings' }">
+            <nuxt-link :to="localePath('admin-dashboard-settings')">
               <img src="@/assets/img/img-a.png" class="icon-a" />
               <img src="@/assets/img/img-b.png" class="icon-b" />
-              <span>Settings</span>
+              <span>{{ $t('settings') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'admin-dashboard-wallet-soldier' }">
+            <nuxt-link :to="localePath('admin-dashboard-wallet-soldier')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Wallet</span>
+              <span>{{ $t('wallet') }}</span>
             </nuxt-link>
           </li>
           <li>
             <a @click.prevent="$auth.logout()">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Logout</span>
+              <span>{{ $t('logout') }}</span>
             </a>
           </li>
         </ul>

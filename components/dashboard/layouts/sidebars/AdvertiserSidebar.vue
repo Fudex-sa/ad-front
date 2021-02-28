@@ -9,31 +9,31 @@
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'advertiser-dashboard' }">
+            <nuxt-link :to="localePath('advertiser-dashboard')">
               <img src="@/assets/img/img1-a.png" class="icon-a" />
               <img src="@/assets/img/img1-b.png" class="icon-b" />
-              <span>Dashboard</span>
+              <span>{{ $t('Dashboard') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'advertiser-dashboard-campaigns' }">
+            <nuxt-link :to="localePath('advertiser-dashboard-campaigns')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Campaigns</span>
+              <span>{{ $t('Campaigns') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'advertiser-dashboard-ads' }">
+            <nuxt-link :to="localePath('advertiser-dashboard-ads')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Ads</span>
+              <span>{{ $t('Ads') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link :to="{ name: 'advertiser-dashboard-billing' }">
+            <nuxt-link :to="localePath('advertiser-dashboard-billing')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Billing</span>
+              <span>{{ $t('Billing') }}</span>
             </nuxt-link>
           </li>
           <!-- <li>
@@ -45,17 +45,17 @@
           </li> -->
 
            <li>
-            <nuxt-link :to="{ name: 'advertiser-profile', query: {edit: true} }">
+            <nuxt-link :to="localePath({name: 'advertiser-profile', query: {edit: true} })">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Profile</span>
+              <span>{{ $t('Profile') }}</span>
             </nuxt-link>
           </li>
           <li>
             <a @click.prevent="$auth.logout()">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Logout</span>
+              <span>{{ $t('Logout') }}</span>
             </a>
           </li>
         </ul>

@@ -18,7 +18,13 @@
             Settings
         },
         async asyncData({app}){
-            let response = await app.$axios.$get('/settings/list')
+
+        
+            let response = await app.$axios.$get('/settings/list', {
+                headers: {
+                    'Accept-Language': app.i18n.locale
+                }
+            })
             return {
                 settings: response.data
             }

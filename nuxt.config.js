@@ -57,6 +57,8 @@ export default {
         { src: "~/plugins/vue-tables-2.js", ssr: false },
         { src: "~/plugins/emoji-picker.js", ssr: false },
         { src: "~/plugins/vue-apexcharts.js", ssr: false },
+        {src: '~/plugins/validation.js', ssr: false},
+        {src: '~/plugins/i18n.js'}
     ],
     /*
      ** Nuxt.js dev-modules
