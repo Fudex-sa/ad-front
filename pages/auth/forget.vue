@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="title title2">
-                        <h2>Reset Password</h2>
-                        <p>Enter Your Data to Continue</p>
+                        <h2>{{ $t('Reset Password') }}</h2>
+                        <p>{{$t('Enter Your Data to Continue') }}</p>
                     </div>
                 </div>
                 <div class="col-sm-12">
@@ -13,13 +13,13 @@
                             <p class="lead text-danger">{{successMessage}}</p>
                             <form>
                                 <div class="form-group">
-                                    <input v-model="form.email" type="text" :class="{ 'is-invalid' : errors.email }"class="form-control the-input" placeholder="Enter Your Email">
+                                    <input v-model="form.email" type="text" :class="{ 'is-invalid' : errors.email }"class="form-control the-input" :placeholder="$t('Enter Your Email')">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn the-btn btn-block hvr-radial-out" @click.prevent="forget">Send Password Reset Link</button>
+                                    <button type="submit" class="btn the-btn btn-block hvr-radial-out" @click.prevent="forget">{{ $t('Send Password Reset Link') }}</button>
                                 </div>
                                 <div class="form-group text-center">
-                                    <p class="color2">Don’t have an account ? <nuxt-link :to="{name: 'auth-register'}" class="color1">Sign up</nuxt-link></p>
+                                    <p class="color2">{{ $t('Dont have an account') }} ? <nuxt-link :to="localePath('auth-register')" class="color1">{{ $t('Sign up') }}</nuxt-link></p>
                                 </div>
                             </form>
                         </div>

@@ -156,7 +156,27 @@ const messages = {
   'Country': "الدولة",
   'Visitors number': 'عدد الزوار',
   'Total Clicks': 'إجمالي عدد الضغطات',
-  'Clicks For This Month': "عدد الضغطاط الشهرية"
+  'Clicks For This Month': "عدد الضغطاط الشهرية",
+  'Tasks' : "المهام",
+  'Wallet' : "المحفظة الإلكترونية",
+  'Library' : "المكتبة",
+  'Enter Your Data to Continue' : "أدخل بياناتك للمتابعة",
+  'Login': "تسجيل الدخول",
+  'Enter Your Email': "ادخل بريدك الالكتروني",
+  "Enter password": "ادخل كلمة المرور",
+  'Remember me': "تذكرني",
+  'Forgot Password' :"نسيت كلمة المرور!",
+  'Sign up': "تسجيل جديد",
+  'Dont have an account' : "ليس لديك حساب",
+  'Send Password Reset Link': "إستعادة كلمة المرور",
+  'Reset Password' : "إستعادة كملة المرور",
+  'Confirm Password' : "تأكيد كملة المرور",
+  "Register" : "تسجيل",
+  'Already have an account': "لديك حساب بالفعل",
+  'Advertiser sign up': "تسجيل كمعلن",
+  'Soldier sign up': "تسجيل كمستخدم"
+
+
 
 
 };

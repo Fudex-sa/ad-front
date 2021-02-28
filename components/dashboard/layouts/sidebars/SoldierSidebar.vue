@@ -12,14 +12,14 @@
             <nuxt-link :to="localePath('soldier-dashboard')">
               <img src="@/assets/img/img1-a.png" class="icon-a" />
               <img src="@/assets/img/img1-b.png" class="icon-b" />
-              <span>Dashboard</span>
+              <span>{{ $t('Dashboard') }}</span>
             </nuxt-link>
           </li>
           <li>
             <nuxt-link :to="localePath('soldier-dashboard-tasks')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Tasks</span>
+              <span>{{ $t('Tasks') }}</span>
             </nuxt-link>
           </li>
           <li>
@@ -29,14 +29,14 @@
             >
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Library</span>
+              <span>{{ $t('Library') }}</span>
             </nuxt-link>
           </li>
           <li>
             <nuxt-link :to="localePath('soldier-dashboard-ads')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Ads</span>
+              <span>{{ $t('Ads') }}</span>
             </nuxt-link>
           </li>
           <!-- <li>
@@ -50,14 +50,14 @@
             <nuxt-link :to="localePath('soldier-dashboard-wallet')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Wallet</span>
+              <span>{{ $t('Wallet') }}</span>
             </nuxt-link>
           </li>
           <li>
             <a @click.prevent="$auth.logout()">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
-              <span>Logout</span>
+              <span>{{  $t('Logout') }}</span>
             </a>
           </li>
         </ul>

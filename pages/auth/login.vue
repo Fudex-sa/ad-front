@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="title title2">
-            <h2>Login</h2>
-            <p>Enter Your Data to Continue</p>
+            <h2>{{ $t('Login') }}</h2>
+            <p>{{ $t('Enter Your Data to Continue') }}</p>
           </div>
         </div>
         <div class="col-sm-12">
@@ -16,7 +16,7 @@
                   :class="{ 'is-invalid' : errors.email }"
                   type="text"
                   class="form-control the-input"
-                  placeholder="Enter Your Email"
+                  :placeholder="$t('Enter Your Email')"
                   v-model="form.email"
                 />
                 <p class="text-danger pl-4" v-for="error in errors.email" :key="error">{{error}}</p>
@@ -27,24 +27,24 @@
                   :class=" { 'is-invalid' : errors.password} "
                   type="password"
                   class="form-control the-input"
-                  placeholder="Enter password"
+                  :placeholder="$t('Enter password')"
                   v-model="form.password"
                 />
                 <p class="text-danger pl-4" v-for="error in errors.password" :key="error">{{error}}</p>
               </div>
               <div class="checkbox form-group2">
                 <label>
-                  <input type="checkbox" /> Remember me
+                  <input type="checkbox" /> {{ $t('Remember me') }}
                 </label>
-                <nuxt-link :to="{ name: 'auth-forget'}" class="forgot">Forgot Password !</nuxt-link>
+                <nuxt-link :to="localePath('auth-forget')" class="forgot">{{ $t('Forgot Password') }} !</nuxt-link>
               </div>
               <div class="form-group">
-                <input type="submit" class="btn the-btn btn-block hvr-radial-out" value="Login" />
+                <input type="submit" class="btn the-btn btn-block hvr-radial-out" :value="$t('Login')" />
               </div>
               <div class="form-group text-center">
                 <p class="color2">
-                  Don’t have an account ?
-                  <nuxt-link :to="{name: 'auth-register'}" class="color1">Sign up</nuxt-link>
+                  {{ $t('Dont have an account') }} ?
+                  <nuxt-link :to="localePath('auth-register')" class="color1">{{ $t('Sign up') }}</nuxt-link>
                 </p>
               </div>
             </form>

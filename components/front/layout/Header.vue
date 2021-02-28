@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
           </button>
           <nuxt-link
-            :to="{ name: 'index' }"
+            :to="localePath('/')"
             class="navbar-brand"
             title="Soldiers logo"
           >

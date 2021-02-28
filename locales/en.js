@@ -132,7 +132,8 @@ const messages = {
   'campaign_title_ar': "Campaign title AR",
   'campaign_title_en': "Campaign title EN",
   'Search' : "Search",
-  'Image Ideal Dimension': "Image Ideal Dimension is more than 200 x 200 with extensions(jpg,jpeg,png)"
+  'Image Ideal Dimension': "Image Ideal Dimension is more than 200 x 200 with extensions(jpg,jpeg,png)",
+  'Dont have an account' : "Don't have an account"
   
 
 

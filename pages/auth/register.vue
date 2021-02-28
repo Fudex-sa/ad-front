@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="title title2">
-            <h2>signup</h2>
-            <p>Enter Your Data to Continue</p>
+            <h2>{{  $t('Sign up') }}</h2>
+            <p>{{ $t('Enter Your Data to Continue') }} </p>
           </div>
         </div>
         <div class="col-sm-12">
@@ -16,10 +16,10 @@
                 data-toggle="pill"
                 @click.prevent="changeForm('advertiser')"
                 href="#"
-              >Advertiser sign up</a>
+              >{{ $t('Advertiser sign up') }}</a>
             </li>
             <li :class="{ active: formType == 'soldier' }">
-              <a data-toggle="pill" href="#" @click.prevent="changeForm('soldier')">Soldier sign up</a>
+              <a data-toggle="pill" href="#" @click.prevent="changeForm('soldier')">{{  $t('Soldier sign up') }}</a>
             </li>
           </ul>
           <!-- end tabs -->
@@ -41,7 +41,7 @@
                     <input
                       type="text"
                       class="form-control the-input"
-                      placeholder="Enter Email Address"
+                      :placeholder="$t('Enter Your Email')"
                       v-model="form.email"
                       :class="{ 'is-invalid': errors.email }"
                     />
@@ -55,7 +55,7 @@
                     <input
                       type="text"
                       class="form-control the-input"
-                      placeholder="Enter Username"
+                      :placeholder="$t('Username')"
                       v-model="form.username"
                       :class="{ 'is-invalid': errors.username }"
                     />
@@ -69,7 +69,7 @@
                     <input
                       type="Password"
                       class="form-control the-input"
-                      placeholder="Enter Password"
+                      :placeholder="$t('Password')"
                       v-model="form.password"
                       :class="{ 'is-invalid': errors.password }"
                     />
@@ -83,7 +83,7 @@
                     <input
                       type="Password"
                       class="form-control the-input"
-                      placeholder="Confirm Password"
+                      :placeholder="$t('Confirm Password')"
                       v-model="form.password_confirmation"
                     />
                     <p
@@ -97,12 +97,12 @@
                       type="submit"
                       class="btn the-btn btn-block hvr-radial-out"
                       @click.prevent="signup"
-                    >Register</button>
+                    >{{ $t('Register') }}</button>
                   </div>
                   <div class="form-group text-center">
                     <p class="color2">
-                      Already have an account ?
-                      <nuxt-link :to="{ name: 'auth-login' }" class="color1">Login</nuxt-link>
+                      {{ $t('Already have an account') }} ?
+                      <nuxt-link :to="localePath('auth-login')" class="color1">{{ $t('Login') }}</nuxt-link>
                     </p>
                   </div>
                 </form>
