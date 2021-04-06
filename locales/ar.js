@@ -54,9 +54,11 @@ const messages = {
   review_ads: "مراجعة الإعلانات",
   campaigns: "الحملات",
   users: "المستخدمين",
+  Users: "المستخدمين",
   library: "المكتبة",
   tasks: "المهام",
   settings: "الإعدادات",
+  Settings: "الإعدادات",
   wallet: "المحفظة",
   logout: "تسجيل الخروج",
   admin_dashboard: "لوحة التحكم",
@@ -98,6 +100,7 @@ const messages = {
   amount_paid: "التكلفة",
   payment_date: "تاريخ الدفع",
   card: "البطاقة",
+  Categories: "المكتبة",
   card_holder: "حامل البطاقة",
   payment_method: "طريقة الدفع",
   'Payment Status': 'حالة الدفع',
@@ -126,7 +129,7 @@ const messages = {
   'Campaign Min Duration' : "اقل وقت للحملة",
   'Campaign MinBudget' : "اقل ميزانية للحملة",
   'Ad Min Budget': "اقل ميزانية للإعلانات",
-  'Task Min Click Price' : "اقل سعر للضغطة",
+  'Task Min Click Price' : " سعر الضغطة",
   'Update Settings' : "حفظ الإعدادات ",
   'Create User' : "مستخدم جديد",
   'Create Campaign': "إنشاء حملة",
@@ -174,7 +177,9 @@ const messages = {
   "Register" : "تسجيل",
   'Already have an account': "لديك حساب بالفعل",
   'Advertiser sign up': "تسجيل كمعلن",
-  'Soldier sign up': "تسجيل كمستخدم"
+  'Soldier sign up': "تسجيل كمستخدم",
+  min_ad_view_duration: 'أقل مدة للإعلان',
+  solider_ad_max_profit: 'أقصى قيمة للإعلان'
 
 
 

@@ -362,7 +362,7 @@
           </p>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6">
+      <!-- <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>{{ $t("Campaign MinBudget") }}</label>
           <input
@@ -380,7 +380,7 @@
             {{ error }}
           </p>
         </div>
-      </div>
+      </div> -->
       <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>{{ $t("Ad Min Budget") }}</label>
@@ -420,6 +420,47 @@
         </div>
       </div>
     </div>
+
+    <div class="col-sm-12 col-md-6">
+      <div class="form-group dash-group">
+        <label>{{ $t("min_ad_view_duration") }}</label>
+        <input
+          class="form-control dash-input"
+          :placeholder="$t('min_ad_view_duration')"
+          type="number"
+          v-model="initialSettings.min_ad_view_duration"
+          :class="{ 'is-invalid': errors.min_ad_view_duration }"
+        />
+        <p
+          class="text-danger p-2"
+          v-for="error in errors.min_ad_view_duration"
+          :key="error"
+        >
+          {{ error }}
+        </p>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+      <div class="form-group dash-group">
+        <label>{{ $t("solider_ad_max_profit") }}</label>
+        <input
+          class="form-control dash-input"
+          :placeholder="$t('solider_ad_max_profit')"
+          type="text"
+          v-model="initialSettings.solider_ad_max_profit"
+          :class="{ 'is-invalid': errors.solider_ad_max_profit }"
+        />
+        <p
+          class="text-danger p-2"
+          v-for="error in errors.solider_ad_max_profit"
+          :key="error"
+        >
+          {{ error }}
+        </p>
+      </div>
+    </div>
+
     <div class="col-sm-12 text-right">
       <button class="the-btn2 hvr-radial-out" @click="$router.back()">
         Cancel

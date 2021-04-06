@@ -1,8 +1,8 @@
 <template>
   <div class="admin-page-title">
     <ul :class="breadcrumbClass">
-      <li><a href="#">Home</a></li>
-      <li class="active">{{ pageName }}</li>
+      <li><a href="#">{{$t('home')}}</a></li>
+      <li class="active">{{ $t(pageName) }}</li>
     </ul>
     <!-- <h2>{{ pageName }}</h2> -->
   </div>

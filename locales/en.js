@@ -98,6 +98,7 @@ const messages = {
   amount_paid: "Amount Paid",
   payment_date: "Payment Date",
   card: "Card",
+  Categories: "Library",
   card_holder: "Card Holder",
   payment_method: "Payment Method",
   'Payment Status': "Payment Status",
@@ -124,7 +125,7 @@ const messages = {
   'Campaign Min Duration' : "Campaign Min Duration",
   'Campaign MinBudget' : "Campaign MinBudget",
   'Ad Min Budget': "Ad Min Budget",
-  'Task Min Click Price' : "Task Min Click Price",
+  'Task Min Click Price' : "Click Price",
   'Update Settings' : "Update Settings",
 
 
@@ -133,7 +134,9 @@ const messages = {
   'campaign_title_en': "Campaign title EN",
   'Search' : "Search",
   'Image Ideal Dimension': "Image Ideal Dimension is more than 200 x 200 with extensions(jpg,jpeg,png)",
-  'Dont have an account' : "Don't have an account"
+  'Dont have an account' : "Don't have an account",
+  min_ad_view_duration: 'Minimum duration for ad',
+  solider_ad_max_profit: 'Maximum value for ad'
   
 
 

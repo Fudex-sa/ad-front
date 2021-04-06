@@ -63,10 +63,16 @@ export default {
   },
   
     components: Components,
+    data() {
+        return {
+            role: this.$auth.state.user.role
+        }
+    },
 
     beforeMount() {
         // this.page = this.page.substring(this.page.lastIndexOf('/')+1)
         // console.log(this.role)
+        
         this.setNotifications()
     },
 
