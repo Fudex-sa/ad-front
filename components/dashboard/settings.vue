@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div :class="`alert ${successMessage_bg}`" v-if="successMessage">
+			{{ successMessage }}
+		</div>
     <div class="row">
       <!-- <h2 class="pl-4">About us</h2> -->
       <div class="col-sm-12 col-md-6">
@@ -480,6 +483,7 @@ export default {
       aboutImg: false,
       missionImg: false,
       visionImg: false,
+      successMessage: ''
     };
   },
   mounted() {
@@ -512,10 +516,16 @@ export default {
           },
         })
         .then((res) => {
-          this.successMessage = res.data.message;
+          //this.successMessage = res.data.message;
+          this.successMessage = res.data.data.message
+					  this.successMessage_bg = 'alert-success'
+            window.scrollTo(0,0);
+
           setTimeout(() => {
-            this.$router.back();
-          }, 1500);
+            this.successMessage = ''
+					  this.successMessage_bg = ''
+            //this.$router.back();
+          }, 5000);
         });
     },
   },
