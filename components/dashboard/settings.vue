@@ -410,12 +410,12 @@
             class="form-control dash-input"
             placeholder="Example Task"
             type="text"
-            v-model="initialSettings.task_min_click_price"
-            :class="{ 'is-invalid': errors.task_min_click_price }"
+            v-model="initialSettings.ad_click_price"
+            :class="{ 'is-invalid': errors.ad_click_price }"
           />
           <p
             class="text-danger p-2"
-            v-for="error in errors.task_min_click_price"
+            v-for="error in errors.ad_click_price"
             :key="error"
           >
             {{ error }}
@@ -517,7 +517,7 @@ export default {
         })
         .then((res) => {
           //this.successMessage = res.data.message;
-          this.successMessage = res.data.data.message
+            this.successMessage = res.data.data.message
 					  this.successMessage_bg = 'alert-success'
             window.scrollTo(0,0);
 

@@ -179,7 +179,9 @@ const messages = {
   'Advertiser sign up': "تسجيل كمعلن",
   'Soldier sign up': "تسجيل كمستخدم",
   min_ad_view_duration: 'أقل مدة للإعلان',
-  solider_ad_max_profit: 'أقصى قيمة للإعلان'
+  solider_ad_max_profit: 'أقصى قيمة للإعلان',
+  Soldier: "المحفظة",
+  Review: "مراجعة الإعلانات"
 
 
 

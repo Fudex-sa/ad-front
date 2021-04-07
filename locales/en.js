@@ -136,7 +136,9 @@ const messages = {
   'Image Ideal Dimension': "Image Ideal Dimension is more than 200 x 200 with extensions(jpg,jpeg,png)",
   'Dont have an account' : "Don't have an account",
   min_ad_view_duration: 'Minimum duration for ad',
-  solider_ad_max_profit: 'Maximum value for ad'
+  solider_ad_max_profit: 'Solider ad maximum profit',
+  Soldier: "Wallet",
+  Review: "Review Ads"
   
 
 
