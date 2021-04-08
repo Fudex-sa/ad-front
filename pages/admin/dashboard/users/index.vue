@@ -7,7 +7,12 @@
       >{{ $t('Create User') }}</nuxt-link>
     </div>
     <client-only placeholder="Loading...">
-      <v-client-table :data="tableData" :columns="columns" :options="options"></v-client-table>
+      <v-client-table :data="tableData" :columns="columns" :options="options">
+        <!-- <a v-slot:actions="props" class="fa fa-trash" :href="edit(props.row.id)"></a> -->
+        <template span slot="actions" slot-scope="props">
+          <span class="fa fa-trash-o fa-lg btn btn-danger action-btn" @click="deleteUser(props.row.id)"></span>
+        </template>
+      </v-client-table>
     </client-only>
   </div>
 </template>
@@ -16,7 +21,7 @@
 export default {
   data() {
     return {
-      columns: ["username", "email", "role"],
+      columns: ["username", "email", "role", "actions"],
       tableData: [],
       options: {
         templates: {
@@ -27,7 +32,15 @@ export default {
         //     return `<button @click="deleteUser">Delete</button>`;
         //   }
           
-        }
+        },
+        headings: {
+          username: 'Username',
+          email: 'Email',
+          role: 'Role',
+          actions: 'Actions'
+        },
+        sortable: ["username", "email", "role"],
+        filterable: ["username", "email", "role"]
       }
     };
   },
@@ -38,9 +51,29 @@ export default {
     };
   },
   methods:{
-      deleteUser(){
-          console.log("Delete...");
-      }
+      // deleteUser(){
+      //     console.log("Delete...");
+      // },
+      deleteUser(id) {
+      this.$axios
+        .$delete(`users/${id}`)
+        .then(res => {
+          // print success message
+          this.successMessage = res.data.message;
+          this.successMessage_bg = "alert-danger";
+          this.tableData = this.tableData.filter((obj) => {
+            return obj.id !== id
+          })
+          // hide success message after timer
+          setTimeout(() => {
+            this.successMessage = "";
+          }, 1200);
+        })
+        .catch(err => {
+          console.log('err:', err);
+          this.successMessage = err.message;
+        });
+    },
   },
   layout: "dashboard",
   middleware: ["auth", "admin"]
