@@ -7,9 +7,9 @@
     <!-- user image & name -->
     <nuxt-link :to="{ path: `/${this.$i18n.locale}/` + role + '/profile' }" class="user color1">
         <div>
-            <img :src="'/_nuxt/assets/' + user.picture" alt="profile_pic" />
+            <img v-if="user" :src="'/_nuxt/assets/' + user.picture" alt="profile_pic" />
         </div>
-        <p class="pull-right p-2 m-0 bold">{{ user.username }}</p>
+        <p v-if="user" class="pull-right p-2 m-0 bold">{{ user.username }}</p>
     </nuxt-link>
     <!-- notifications -->
     <div class="notifications">

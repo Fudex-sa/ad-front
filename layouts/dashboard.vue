@@ -7,7 +7,7 @@
             <!-- start responsive  -->
             <Responsive />
             <!-- start left-content -->
-            <div class="left-content col-xs-3 col-md-2 p-0">
+            <div v-if="role" class="left-content col-xs-3 col-md-2 p-0">
                 <AdminSidebar v-if="role == 'admin'" />
                 <AdvertiserSidebar v-if="role == 'advertiser'" />
                 <SoldierSidebar v-if="role == 'soldier'" />
@@ -65,14 +65,19 @@ export default {
     components: Components,
     data() {
         return {
-            role: this.$auth.state.user.role
+           // role: null
         }
     },
 
     beforeMount() {
         // this.page = this.page.substring(this.page.lastIndexOf('/')+1)
         // console.log(this.role)
-        
+        //this.role = this.$auth.state.user.role
+        console.log('rrr:', this.role)
+        if(this.role == null)
+            this.$router.push({
+             path: `/${this.$i18n.locale}/auth/login`,
+           });
         this.setNotifications()
     },
 

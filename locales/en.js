@@ -127,8 +127,6 @@ const messages = {
   'Ad Min Budget': "Ad Min Budget",
   'Task Min Click Price' : "Click Price",
   'Update Settings' : "Update Settings",
-
-
   'Create Campaign': "Create Campaign",
   'campaign_title_ar': "Campaign title AR",
   'campaign_title_en': "Campaign title EN",

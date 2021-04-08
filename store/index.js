@@ -26,7 +26,7 @@ export const getters = {
     return state.auth.loggedIn;
   },
   role(state) {
-    return state.auth.user.role;
+    return state.auth.user ? state.auth.user.role : null;
   },
   user(state) {
     return state.auth.user;

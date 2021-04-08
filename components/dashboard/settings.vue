@@ -513,6 +513,7 @@ export default {
         .post("settings", this.formData, {
           header: {
             "Content-Type": "multipart/form-data",
+            "Accept-Language": this.$i18n.locale
           },
         })
         .then((res) => {
