@@ -145,7 +145,8 @@ const messages = {
   compain_name: "Compain Name",
   compain_type: "Compain Type",
   unpaid_ads: "Un Paid Ads",
-  active_ads: "Active Ads"
+  active_ads: "Active Ads",
+  transactions: "Payments"
   
 
 

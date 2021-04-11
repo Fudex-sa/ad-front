@@ -190,7 +190,8 @@ const messages = {
   compain_name: "اسم الحملة",
   compain_type: "نوع الحملة",
   unpaid_ads: "الإعلانات الغير مدفوعة",
-  active_ads: "الإعلانات النشطة"
+  active_ads: "الإعلانات النشطة",
+  transactions: "المدفوعات"
 
 
 
