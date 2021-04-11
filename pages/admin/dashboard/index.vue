@@ -41,6 +41,7 @@
             }
         },
         mounted (){
+            console.log('dash locale:', this.$i18n.locale)
             //statuses: active, unpaid, reviewing
             this.$axios.$get(`ads/status/reviewing/count`).then(res => {
                 this.reviewing_ads_count = res.count;

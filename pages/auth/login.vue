@@ -65,17 +65,20 @@ export default {
       },
     };
   },
+  mounted (){
+    console.log('localeefore:', this.$i18n.locale)
+  },
   methods: {
     login() {
+      let currentLocale = this.$i18n.locale;
+      console.log('localee:', this.$i18n.locale)
       try {
          this.$auth.loginWith("local", {
           data: this.form,
         }).then(()=>{
-
-    
-
+          this.switchLang(currentLocale)
            this.$router.push({
-             path: `/${this.$i18n.locale}/` + this.$auth.state.user.role + "/dashboard",
+             path: `/${currentLocale}/` + this.$auth.state.user.role + "/dashboard",
            });
         }).catch(err => console.log(err));
 
@@ -92,6 +95,22 @@ export default {
             });
           }
       }
+    },
+    switchLang(locale) {
+      if (locale === this.$store.state.i18n.locale) {
+        return;
+      }
+
+      //this.isLoading = true;
+      // update store info
+      //this.$store.commit("i18n/i18nSetLocale", locale);
+      // fetch new locale file
+      import(`~/locales/${locale}`).then((module) => {
+        // update i18n's locale instance
+        this.$i18n.locale = locale;
+        // set new messages from new locale file
+        this.$i18n.setLocaleMessage(locale, module.default);
+      });
     },
   },
 };
