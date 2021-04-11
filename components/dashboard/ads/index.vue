@@ -9,6 +9,7 @@
         class="the-btn hvr-radial-out"
         v-if="role == 'advertiser'"
       >{{ $t('create_new') }}</nuxt-link>
+      <br><br><br>
       <div class="the-search">
         <form>
           <div class="input-group">

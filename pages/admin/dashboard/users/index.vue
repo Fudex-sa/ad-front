@@ -10,7 +10,8 @@
       <v-client-table :data="tableData" :columns="columns" :options="options">
         <!-- <a v-slot:actions="props" class="fa fa-trash" :href="edit(props.row.id)"></a> -->
         <template span slot="actions" slot-scope="props">
-          <span class="fa fa-trash-o fa-lg btn btn-danger action-btn" @click="deleteUser(props.row.id)"></span>
+          <span class="fa fa-trash-o fa-sm btn btn-danger action-btn" @click="deleteUser(props.row.id)"></span>
+          <router-link v-show="props.row.role == 'advertiser' || props.row.role == 'soldier'" class="fa fa-sm btn btn-info action-btn" :to="{ path: `/${$i18n.locale}/admin/dashboard/users/${props.row.id}/transactions/${props.row.role}`}">{{$t('transactions')}}</router-link>
         </template>
       </v-client-table>
     </client-only>
@@ -26,7 +27,7 @@ export default {
       options: {
         templates: {
           username: function(h, row, index) {
-            return <a href={"users/" + row.id}>{row.username}</a>;
+            return <a href={"users/" + row.id+ "/show"}>{row.username}</a>;
           },
         //   options: function(h, row, index) {
         //     return `<button @click="deleteUser">Delete</button>`;

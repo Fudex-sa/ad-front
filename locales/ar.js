@@ -181,7 +181,16 @@ const messages = {
   min_ad_view_duration: 'أقل مدة للإعلان',
   solider_ad_max_profit: 'أقصى قيمة للإعلان',
   Soldier: "المحفظة",
-  Review: "مراجعة الإعلانات"
+  Review: "مراجعة الإعلانات",
+  amount: "المبلغ",
+  created_at: "تاريخ الإنشاء",
+  status: "حالة الدفع",
+  transNumber: "رقم التحويل",
+  balance: "الرصيد",
+  compain_name: "اسم الحملة",
+  compain_type: "نوع الحملة",
+  unpaid_ads: "الإعلانات الغير مدفوعة",
+  active_ads: "الإعلانات النشطة"
 
 
 

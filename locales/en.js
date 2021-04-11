@@ -136,7 +136,16 @@ const messages = {
   min_ad_view_duration: 'Minimum duration for ad',
   solider_ad_max_profit: 'Solider ad maximum profit',
   Soldier: "Wallet",
-  Review: "Review Ads"
+  Review: "Review Ads",
+  amount: "Amount",
+  created_at: "Created At",
+  status: "Status",
+  transNumber: "transfer Number",
+  balance: "Balance",
+  compain_name: "Compain Name",
+  compain_type: "Compain Type",
+  unpaid_ads: "Un Paid Ads",
+  active_ads: "Active Ads"
   
 
 
