@@ -197,7 +197,7 @@ Payment Not Completed
 
 
 
-<video :src="ad.media[0]" type="video/mp4" frameborder="0" allowfullscreen autoplay loop muted controls v-else></video>
+<video :src="ad.media[0]" type="video/mp4" frameborder="0" allowfullscreen autoplay loop  controls v-else></video>
 
 
 					</div>

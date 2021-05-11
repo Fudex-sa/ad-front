@@ -15,6 +15,7 @@ export default {
   },
   async asyncData({ app, store, params }) {
     let response = await app.$axios.$get(`/statistics/ads/${params.id}`);
+    console.log(response);
     return {
       stats: response.data
     };

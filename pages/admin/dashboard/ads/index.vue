@@ -19,7 +19,7 @@
 		layout: 'dashboard',
 		middleware: ['auth', 'admin'],
 		async asyncData({ app }) {
-			let response = await app.$axios.$get('ads')
+			let response = await app.$axios.$get('ads/status/reviewing')
 			return {
 				ads: response.data,
 			}

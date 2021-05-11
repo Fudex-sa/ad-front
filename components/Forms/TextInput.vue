@@ -118,7 +118,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .TextInput {
   padding-bottom: 18px;
   input {

@@ -46,6 +46,19 @@
       <div v-if="from && from === 'soldier'">
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
+            <label class="pl-2">{{ $t('paymentMethods') }} *</label>
+
+            <select   class="form-control "
+              :placeholder="$t('paymentMethods')"
+              v-model="form.fav_payment_method"
+              :class="{ 'is-invalid': errors.fav_payment_method }"
+              >
+                <option v-for="method in payments" :key="method">{{method}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 mt-20">
+          <div class="form-group dash-group">
             <label class="pl-2">{{ $t('Paypal No') }}.</label>
             <input
               class="form-control dash-input"
@@ -66,7 +79,7 @@
             />
           </div>
         </div>
-        </div>
+      </div>
         <div class="col-md-6 col-sm-6 mt-20">
           <div class="form-group dash-group">
             <label class="pl-2">{{ $t('Phone') }}*</label>
@@ -163,6 +176,7 @@ export default {
     return {
       form: {},
       successMessage: "",
+      payments:['stc','paypal']
     };
   },
   mounted() {
@@ -193,7 +207,7 @@ export default {
         .then((res) => {
           this.successMessage = "Profile has been updated.";
           this.$router.push({
-            path: "/" + this.$auth.state.user.role + "/profile",
+            path: "/" +  this.$i18n.locale + "/" + this.$auth.state.user.role + "/profile",
           });
         });
     },

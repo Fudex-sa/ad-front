@@ -77,5 +77,13 @@
         //         console.log(this.campaign)
         //     }
         // }
+      
+    methods: {
+      refresh() {
+      }
+    },
+    mounted(){
+    }
+    
     }
 </script>

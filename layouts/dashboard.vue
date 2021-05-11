@@ -7,7 +7,7 @@
             <!-- start responsive  -->
             <Responsive />
             <!-- start left-content -->
-            <div v-if="role" class="left-content col-xs-3 col-md-2 p-0">
+            <div v-if="role" class="left-content col-xs-3 col-md-2 p-0" style="height:782px">
                 <AdminSidebar v-if="role == 'admin'" />
                 <AdvertiserSidebar v-if="role == 'advertiser'" />
                 <SoldierSidebar v-if="role == 'soldier'" />

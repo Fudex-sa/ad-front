@@ -346,25 +346,25 @@
     </div>
     <div class="row">
       <h2 class="pl-4">{{  $t('Campaigns & Ads Constrains') }}</h2>
-      <div class="col-sm-12 col-md-6">
-        <div class="form-group dash-group">
-          <label>{{ $t("Campaign Min Duration") }}</label>
-          <input
-            class="form-control dash-input"
-            placeholder="Example Task"
-            type="text"
-            v-model="initialSettings.campaign_min_Duration"
-            :class="{ 'is-invalid': errors.campaign_min_Duration }"
-          />
-          <p
-            class="text-danger p-2"
-            v-for="error in errors.campaign_min_Duration"
-            :key="error"
-          >
-            {{ error }}
-          </p>
-        </div>
-      </div>
+      <!--<div class="col-sm-12 col-md-6">-->
+      <!--  <div class="form-group dash-group">-->
+      <!--    <label>{{ $t("Campaign Min Duration") }}</label>-->
+      <!--    <input-->
+      <!--      class="form-control dash-input"-->
+      <!--      placeholder="Example Task"-->
+      <!--      type="text"-->
+      <!--      v-model="initialSettings.campaign_min_Duration"-->
+      <!--      :class="{ 'is-invalid': errors.campaign_min_Duration }"-->
+      <!--    />-->
+      <!--    <p-->
+      <!--      class="text-danger p-2"-->
+      <!--      v-for="error in errors.campaign_min_Duration"-->
+      <!--      :key="error"-->
+      <!--    >-->
+      <!--      {{ error }}-->
+      <!--    </p>-->
+      <!--  </div>-->
+      <!--</div>-->
       <!-- <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>{{ $t("Campaign MinBudget") }}</label>
@@ -403,13 +403,13 @@
           </p>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-3">
         <div class="form-group dash-group">
           <label>{{ $t("Task Min Click Price") }} </label>
           <input
             class="form-control dash-input"
             placeholder="Example Task"
-            type="text"
+            type="number"
             v-model="initialSettings.ad_click_price"
             :class="{ 'is-invalid': errors.ad_click_price }"
           />
@@ -422,6 +422,26 @@
           </p>
         </div>
       </div>
+      <div class="col-sm-12 col-md-3">
+        <div class="form-group dash-group">
+          <label>{{ $t("Task Click Price Currency") }} </label>
+          <select   class="form-control "
+              :placeholder="$t('Task Click Price Currency')"
+              v-model="initialSettings.ad_click_price_currency"
+              :class="{ 'is-invalid': errors.ad_click_price_currency }"
+              >
+                <option v-for="method in payments" :key="method">{{method}}</option>
+            </select>
+          <p
+            class="text-danger p-2"
+            v-for="error in errors.ad_click_price_currency"
+            :key="error"
+          >
+            {{ error }}
+          </p>
+        </div>
+      </div>
+
     </div>
 
     <div class="col-sm-12 col-md-6">
@@ -444,7 +464,7 @@
       </div>
     </div>
 
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-3">
       <div class="form-group dash-group">
         <label>{{ $t("solider_ad_max_profit") }}</label>
         <input
@@ -463,6 +483,26 @@
         </p>
       </div>
     </div>
+    
+      <div class="col-sm-12 col-md-3">
+        <div class="form-group dash-group">
+          <label>{{ $t("solider_ad_max_currency") }} </label>
+          <select   class="form-control "
+              :placeholder="$t('solider_ad_max_currency')"
+              v-model="initialSettings.solider_ad_max_profit_currency"
+              :class="{ 'is-invalid': errors.solider_ad_max_profit_currency }"
+              >
+                <option v-for="method in payments" :key="method">{{method}}</option>
+            </select>
+          <p
+            class="text-danger p-2"
+            v-for="error in errors.solider_ad_max_profit_currency"
+            :key="error"
+          >
+            {{ error }}
+          </p>
+        </div>
+      </div>
 
     <div class="col-sm-12 text-right">
       <button class="the-btn2 hvr-radial-out" @click="$router.back()">
@@ -483,7 +523,9 @@ export default {
       aboutImg: false,
       missionImg: false,
       visionImg: false,
-      successMessage: ''
+      successMessage: '',
+      payments:['usd','sar']
+
     };
   },
   mounted() {

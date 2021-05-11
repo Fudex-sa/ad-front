@@ -59,7 +59,7 @@
 				<div class="mobile-frame1">
 					<div class="mobile-frame2">
 						<img :src="form.mediaPreview" alt />
-						<video :src="form.mediaPreview" autoplay="autoplay"></video>
+						<video :src="form.mediaPreview" autoplay="false"></video>
 					</div>
 					<div class="dot"></div>
 				</div>

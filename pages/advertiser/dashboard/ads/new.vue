@@ -172,6 +172,9 @@
             <input
               type="datetime-local"
               step="2"
+              header="true"
+              show-second=false
+              show-time-header=true
               class="form-control dash-input date"
               v-model="form.start_date"
             />

@@ -33,7 +33,7 @@ const messages = {
 
   ads: {
     campaign: "حملة",
-    clicks: "عدد الضغطاط",
+    clicks: "عدد الضغطات",
     status: "الحالة",
     budget: "الميزانية",
     start_at: "تاريخ البداية",
@@ -64,7 +64,7 @@ const messages = {
   admin_dashboard: "لوحة التحكم",
   ads_count: "عدد الإعلانات",
   budget: "الميزانية",
-  clicks: "عدد الضغطاط",
+  clicks: "عدد الضغطات",
   type: "نوع الحملة",
   click: "ضغطة",
   sar: "ريال",
@@ -130,6 +130,7 @@ const messages = {
   'Campaign MinBudget' : "اقل ميزانية للحملة",
   'Ad Min Budget': "اقل ميزانية للإعلانات",
   'Task Min Click Price' : " سعر الضغطة",
+  "Task Click Price Currency":"عملة سعر الغضطه",
   'Update Settings' : "حفظ الإعدادات ",
   'Create User' : "مستخدم جديد",
   'Create Campaign': "إنشاء حملة",
@@ -159,7 +160,7 @@ const messages = {
   'Country': "الدولة",
   'Visitors number': 'عدد الزوار',
   'Total Clicks': 'إجمالي عدد الضغطات',
-  'Clicks For This Month': "عدد الضغطاط الشهرية",
+  'Clicks For This Month': "عدد الضغطات لشهرية",
   'Tasks' : "المهام",
   'Wallet' : "المحفظة الإلكترونية",
   'Library' : "المكتبة",
@@ -180,6 +181,7 @@ const messages = {
   'Soldier sign up': "تسجيل كمستخدم",
   min_ad_view_duration: 'أقل مدة للإعلان',
   solider_ad_max_profit: 'أقصى قيمة للإعلان',
+  "solider_ad_max_currency":" عملة أقصي قيمة للإعلان",
   Soldier: "المحفظة",
   Review: "مراجعة الإعلانات",
   amount: "المبلغ",
@@ -192,8 +194,9 @@ const messages = {
   unpaid_ads: "الإعلانات الغير مدفوعة",
   pending_ads: "الإعلانات المراد مراجعتها",
   active_ads: "الإعلانات النشطة",
-  transactions: "المدفوعات"
-
+  transactions: "المدفوعات",
+  editProfile:"تعديل الحساب",
+  paymentMethods:"طريقة الدفع"
 
 
 

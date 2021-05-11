@@ -43,14 +43,7 @@
         <tbody>
           <tr v-for="(ad, index) in ads.data" :key="ad.id">
             <td class="col-xs-1 col-sm-2">
-              <nuxt-link
-                class="link2"
-                :to="{
-                  name: 'soldier-dashboard-ads-id',
-
-                  params: { id: ad.id },
-                }"
-              >{{ ad.title }}</nuxt-link>
+            {{ ad.title }}
             </td>
             <td class="col-xs-2 col-md-5 text-break">{{ ad.content }}</td>
             <td class="col-sm-2">{{ ad.campaign != null ? ad.campaign.title : "--" }}</td>
@@ -69,7 +62,7 @@
             <td class="hidden-sm">
               <!-- Action Buttons -->
               <div class="text-center">
-                <template v-if="user.role == 'advertiser'">
+                <template v-if="user.role == 'advertiser' && ad.status !='unpaid' " >
                   <!-- Edit -->
                   <nuxt-link
                     :to="localePath({name: 'advertiser-dashboard-ads-id-edit', params: { id: ad.id }})"
@@ -77,10 +70,18 @@
                   >{{ $t('ads.action.edit') }}</nuxt-link>
                 </template>
                 <!-- Preview as visitor -->
+                <template v-if="user.role == 'advertiser' && ad.status !='unpaid' " >
                 <nuxt-link
                   class="btn btn-info action-btn"
                   :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"
                 >{{ $t('ads.action.view') }}</nuxt-link>
+                </template>
+                <template v-if="user.role != 'advertiser'" >
+                <nuxt-link
+                  class="btn btn-info action-btn"
+                  :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"
+                >{{ $t('ads.action.view') }}</nuxt-link>
+                </template>
                 <!-- Reviewing -->
                 <button
                   class="btn btn-success action-btn"

@@ -1,6 +1,7 @@
 <template>
 <div>
     <!-- gender block -->
+    <!--{{stats}}-->
     <div class="genders-block row mb-20" v-if="stats.genders.length != 0">
         <stats-chart class="col-lg-7" :statistics="stats.genders" />
         <div class="col-lg-5 mb-30">
@@ -25,10 +26,14 @@
                 <h2 class="bold col-sm-9">{{ $t('Total Clicks') }}</h2>
                 <h2 class="col-sm-3 text-center">{{ stats.clicks }}</h2>
             </div>
-            <!-- <div class="row" v-if="stats.monthly_clicks">
-                <h2 class="bold col-sm-9">Clicks For This Month</h2>
+            <div class="row" v-if="stats.monthly_clicks">
+                <h2 class="bold col-sm-9">{{ $t('Monthly Clicks') }}</h2>
                 <h2 class="col-sm-3 text-center">{{ stats.monthly_clicks }}</h2>
-            </div> -->
+            </div>
+             <div class="row" v-if="stats.tasks">
+                <h2 class="bold col-sm-9">Total Tasks</h2>
+                <h2 class="col-sm-3 text-center">{{ stats.tasks }}</h2>
+            </div> 
         </div>
     </div>
     <!-- country -->

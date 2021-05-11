@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row" v-if="!edit">
         <div class="col-md-offset-9 col-md-3">
-          <div class="btn the-btn mr-10 pull-right hvr-radial-out" @click="edit = true">Edit Profile</div>
+          <div class="btn the-btn mr-10 pull-right hvr-radial-out" @click="edit = true">{{ $t('editProfile') }}</div>
         </div>
       </div>
       <profile v-if="!edit" />

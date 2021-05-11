@@ -126,6 +126,7 @@ const messages = {
   'Campaign MinBudget' : "Campaign MinBudget",
   'Ad Min Budget': "Ad Min Budget",
   'Task Min Click Price' : "Click Price",
+  "Task Click Price Currency":" Click Price Currency ",
   'Update Settings' : "Update Settings",
   'Create Campaign': "Create Campaign",
   'campaign_title_ar': "Campaign title AR",
@@ -133,7 +134,8 @@ const messages = {
   'Search' : "Search",
   'Image Ideal Dimension': "Image Ideal Dimension is more than 200 x 200 with extensions(jpg,jpeg,png)",
   'Dont have an account' : "Don't have an account",
-  min_ad_view_duration: 'Minimum duration for ad',
+  min_ad_view_duration: 'minimum duration for visit',
+  "solider_ad_max_currency":" Solider Ad Maximum Profit Currency ",
   solider_ad_max_profit: 'Solider ad maximum profit',
   Soldier: "Wallet",
   Review: "Review Ads",
@@ -147,8 +149,9 @@ const messages = {
   pending_ads: "Pending Ads",
   unpaid_ads: "Un Paid Ads",
   active_ads: "Active Ads",
-  transactions: "Payments"
-  
+  transactions: "Payments",
+  editProfile:"Edit Profile",
+  paymentMethods:"Payment Method"
 
 
 
