@@ -170,7 +170,7 @@ Payment Not Completed
 			<h2 style="margin-top:2em;">Advertisement Media</h2>
 		</div>
         <!-- desktop -->
-        <div class="col-sm-8">
+        <div class="col-sm-12">
 			<h4>Desktop Preview</h4>
 			<div class="desktop-frame1">
 				<div class="desktop-frame2">
@@ -228,4 +228,13 @@ export default {
     }
   }
 };
+
 </script>
+<style>
+.mobile-preview .desktop-frame1, .mobile-preview .mobile-frame1{
+    max-width: 190px;
+}
+.mobile-preview .desktop-frame1 {
+    max-width: 350px;
+}
+</style>

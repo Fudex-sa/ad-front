@@ -116,3 +116,11 @@ export default {
     },
 }
 </script>
+<style scoped>
+.mobile-preview .desktop-frame1, .mobile-preview .mobile-frame1{
+    max-width: 190px;
+}
+.mobile-preview .desktop-frame1 {
+    max-width: 350px;
+}
+</style>

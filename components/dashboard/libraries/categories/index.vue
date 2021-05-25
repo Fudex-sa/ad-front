@@ -1,12 +1,16 @@
 <template>
     <div>
         <div class="div-top">
+            				<!--:to="{path: `/${$i18n.locale}/admin/dashboard/categories/${this.$route.params.name}/libraries/new`}"-->
+				
+
       <nuxt-link
         :to="localePath('admin-dashboard-categories-new')"
         class="the-btn hvr-radial-out"
         v-if="role == 'admin'"
-        >{{ $t('create_new') }}</nuxt-link
-      >
+        >{{ $t('create_new') }}</nuxt-link>
+      
+
       <!-- <div class="the-search">
         <form>
           <div class="input-group">

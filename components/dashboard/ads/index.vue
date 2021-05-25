@@ -62,7 +62,7 @@
             <td class="hidden-sm">
               <!-- Action Buttons -->
               <div class="text-center">
-                <template v-if="user.role == 'advertiser' && ad.status !='unpaid' " >
+                <template v-if="user.role == 'advertiser' && ad.status !='finished' " >
                   <!-- Edit -->
                   <nuxt-link
                     :to="localePath({name: 'advertiser-dashboard-ads-id-edit', params: { id: ad.id }})"

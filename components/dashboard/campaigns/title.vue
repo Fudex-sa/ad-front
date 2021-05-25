@@ -16,48 +16,48 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <div class="col-sm-6 col-md-3">
-                    <div class="white-box com-box">
-                        <h3 class="box-title">{{campaign.industry}}</h3>
-                        <h5>Industry</h5>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="white-box com-box">
-                        <h3 class="box-title">{{campaign.location}}</h3>
-                        <h5>Location</h5>
-                    </div>
-                </div>
+                <!--<div class="col-sm-6 col-md-3">-->
+                <!--    <div class="white-box com-box">-->
+                <!--        <h3 class="box-title">{{campaign.industry}}</h3>-->
+                <!--        <h5>Industry</h5>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6 col-md-3">-->
+                <!--    <div class="white-box com-box">-->
+                <!--        <h3 class="box-title">{{campaign.location}}</h3>-->
+                <!--        <h5>Location</h5>-->
+                <!--    </div>-->
+                <!--</div>-->
                 <div class="col-sm-6 col-md-3">
                     <div class="white-box com-box">
                         <h3 class="box-title">{{campaign[0].type}}</h3>
                         <h5>Type</h5>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="white-box com-box">
-                        <h3 class="box-title">{{campaign.budget}}</h3>
-                        <h5>Budget</h5>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="white-box com-box">
-                        <h3 class="box-title">{{campaign.remaining_budget}}</h3>
-                        <h5>Remaining Budget</h5>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="white-box com-box">
-                        <h3 class="box-title">{{campaign.start_date}}</h3>
-                        <h5>Start Date</h5>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
-                    <div class="white-box com-box">
-                        <h3 class="box-title">{{campaign.end_date}}</h3>
-                        <h5>End Date</h5>
-                    </div>
-                </div>
+                <!--<div class="col-sm-6 col-md-3">-->
+                <!--    <div class="white-box com-box">-->
+                <!--        <h3 class="box-title">{{campaign.budget}}</h3>-->
+                <!--        <h5>Budget</h5>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6 col-md-3">-->
+                <!--    <div class="white-box com-box">-->
+                <!--        <h3 class="box-title">{{campaign.remaining_budget}}</h3>-->
+                <!--        <h5>Remaining Budget</h5>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6 col-md-3">-->
+                <!--    <div class="white-box com-box">-->
+                <!--        <h3 class="box-title">{{campaign.start_date}}</h3>-->
+                <!--        <h5>Start Date</h5>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6 col-md-3">-->
+                <!--    <div class="white-box com-box">-->
+                <!--        <h3 class="box-title">{{campaign.end_date}}</h3>-->
+                <!--        <h5>End Date</h5>-->
+                <!--    </div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>

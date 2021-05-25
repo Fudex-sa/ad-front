@@ -186,9 +186,9 @@ Payment Not Completed
 				<h2 style="margin-top:2em;">Advertisement Media</h2>
 			</div>
 <!-- desktop -->
-      <div class="col-sm-8">
+      <div class="col-sm-12">
 				<h4>Desktop Preview</h4>
-				<div class="desktop-frame1">
+				<div class="desktop-frame1 col-sm-6">
 					<div class="desktop-frame2">
 						<img :src="ad.media[0]" alt v-if="ad.media_type =='image'" />
             <!-- <video autoplay controls >
@@ -206,7 +206,7 @@ Payment Not Completed
 			<!-- mobile -->
 			<div class="col-sm-4">
 				<h4>Mobile Preview</h4>
-				<div class="mobile-frame1">
+				<div class="mobile-frame1 col-sm-6">
 					<div class="mobile-frame2">
 						<img :src="ad.media[0]" alt v-if="ad.media_type =='image'" />
 						<!-- <video :src="ad.media[0]" autoplay="autoplay"></video> -->
@@ -252,3 +252,11 @@ Payment Not Completed
         }
     }
 </script>
+<style scoped>
+.mobile-preview .desktop-frame1, .mobile-preview .mobile-frame1{
+    max-width: 190px;
+}
+.mobile-preview .desktop-frame1 {
+    max-width: 350px;
+}
+</style>

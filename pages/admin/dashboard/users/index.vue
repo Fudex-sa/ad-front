@@ -2,7 +2,7 @@
   <div>
     <div class="pull-right">
       <nuxt-link
-        :to="{ name: 'admin-dashboard-users-create' }"
+        :to="{path: `/${$i18n.locale}/admin/dashboard/users/create`}"
         class="the-btn hvr-radial-out"
       >{{ $t('Create User') }}</nuxt-link>
     </div>
