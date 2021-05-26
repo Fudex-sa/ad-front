@@ -5,21 +5,21 @@
             <div class="col-md-12">
                 <div class="no-mar">
                     <div class="col-sm-6 col-md-3 no-padd ad-wrap">
-                        <nuxt-link :to="localePath('admin-dashboard-ads')">
+                        <nuxt-link :to="localePath({name:'admin-dashboard-ads-status',params:{'status':'reviewing'}})">
                             <h3>{{$t('pending_ads')}}</h3>
                             <h2>{{reviewing_ads_count}}</h2>
                         </nuxt-link>
                     </div>
 
                     <div class="col-sm-6 col-md-3 no-padd ad-wrap">
-                        <nuxt-link :to="localePath('admin-dashboard-ads')">
+                        <nuxt-link :to="localePath({name:'admin-dashboard-ads-status',params:{'status':'active'}})">
                             <h3>{{$t('active_ads')}}</h3>
                             <h2>{{active_ads_count}}</h2>
                         </nuxt-link>
                     </div>
 
                     <div class="col-sm-6 col-md-3 no-padd ad-wrap">
-                        <nuxt-link :to="localePath('admin-dashboard-ads')">
+                        <nuxt-link :to="localePath({name:'admin-dashboard-ads-status',params:{'status':'unpaid'}})">
                             <h3>{{$t('unpaid_ads')}}</h3>
                             <h2>{{unpaid_ads_count}}</h2>
                         </nuxt-link>

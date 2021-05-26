@@ -2,8 +2,14 @@
 <div>
 
  <div class="div-top">
+      <!--<nuxt-link-->
+      <!--  :to="{ name: 'admin-dashboard-categories-categoryId-libraries-new' }"-->
+      <!--  :to="localePath({name:'admin-dashboard-ads-status',params:{'status':'reviewing'}})"-->
+      <!--  class="the-btn hvr-radial-out"-->
+      <!--  v-if="role == 'admin'"-->
+      <!--  >Create New</nuxt-link-->
  <nuxt-link
-        :to="{ name: 'admin-dashboard-categories-categoryId-libraries-new' }"
+        :to="localePath({name:'admin-dashboard-categories-categoryId-libraries-new',params:{'categoryId':this.$route.params.categoryId}})"
         class="the-btn hvr-radial-out"
         v-if="role == 'admin'"
         >Create New</nuxt-link
@@ -47,6 +53,7 @@
         ],
         mounted() {
             this.libraryLink()
+            console.log(this.$route.params.categoryId);
         },
          methods: {
             libraryLink(id) {
@@ -68,6 +75,16 @@
                 };
                 
             },
+            libraryLinkNew(id) {
+                return {
+                    path: `libraries/${id}/new`, 
+                    params: { 
+                        id: id
+                    } 
+                };
+                
+            },
+
 
 DeleteLibrary(id, index) {
 

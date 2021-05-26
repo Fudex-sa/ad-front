@@ -11,8 +11,8 @@
 						<th width="10%">No.</th>
 						<th width="10%">Date</th>
 						<th width="10%">Soldier</th>
-						<th width="10%">Avatar</th>
 						<th width="10%">Status</th>
+						<th width="10%">Payment Method</th>
 						<th width="15%">Amount</th>
 						<th width="15%">Balance</th>
 						<th width="15%">Actions</th>
@@ -22,14 +22,8 @@
 					<tr v-for="transaction in transactions.data" :key="transaction.id">
 						<td>{{ transaction.transNumber || 'Not Available' }}</td>
 						<td>{{ transaction.updated_at || 'Not Available' }}</td>
-						<td>{{ transaction.soldier.username }}</td>
-						<td>
-							<img
-								width="50"
-								height="50"
-								:src="require(`@/assets/${transaction.soldier.picture}`)"
-							/>
-						</td>
+						<td > <span v-if="transaction.soldier"> {{ transaction.soldier.username }} </span> </td>
+
 						<td>
 							<span
 								class="label"
@@ -41,6 +35,8 @@
 								>{{ transaction.status }}</span
 							>
 						</td>
+						<td > <span v-if="transaction.soldier"> {{ transaction.soldier.fav_payment_method }} </span> </td>
+
 						<td>
 							<strong>{{ transaction.amount }}</strong>
 						</td>
@@ -81,7 +77,13 @@
 			successMessage: '',
 			successMessageClass: '',
 		}),
-
+		async asyncData({ app }) {
+			let response = await app.$axios.$get('soldier/transactions')
+			console.log(response.data);
+			return {
+				transactions: response.data,
+			}
+		},
 		watch: {
 			successMessage(val) {
 				setTimeout(() => {
@@ -90,9 +92,10 @@
 			},
 		},
 
-		beforeMount() {
-			this.getTrans()
-		},
+// 		mounted() {
+// 			this.getTrans()
+// 			console.log(this.transactions);
+// 		},
 
 		components: {
 			Pagination,
@@ -103,7 +106,8 @@
 				this.$axios
 					.$get('soldier/transactions')
 					.then((res) => {
-						this.transactions = res.data
+						console.log(res.data.data);
+						this.transactions = res.data.data
 						this.transactions.done = this.filterTransactions(res, 'done')
 						this.transactions.pending = this.filterTransactions(res, 'pending')
 						this.transactions.canceled = this.filterTransactions(
@@ -154,9 +158,9 @@
 						console.log(err)
 					})
 			},
-			fetchData(value) {
-				this.transactions = value
-			},
+// 			fetchData(value) {
+// 				this.transactions = value
+// 			},
 		},
 	}
 </script>
