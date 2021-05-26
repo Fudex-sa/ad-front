@@ -412,7 +412,14 @@
 			this.intialDate()
 			this.formData = new FormData()
 			this.dropdownInitialSetters()
-
+		},
+		created() {
+			if (['finished', 'active'].includes(this.initialForm.status)) {
+				// not allowed
+				if (process.client) 
+					alert('Not Allowed to Edit')
+				this.$router.push(this.localePath(`/${this.user.role}/dashboard/ads`))
+			}
 		},
 		methods: {
 			insert(emoji) {
@@ -518,7 +525,7 @@
 					this.initialForm.start_date + ' ~ ' + this.initialForm.end_date
 			},
 		},
-		async asyncData({ app, params }) {
+		async asyncData({ app, params, redirect }) {
 			let request = [
 				app.$axios.$get(`ads/${params.id}`),
 				app.$axios.$get('campaigns'),
@@ -528,7 +535,6 @@
 			]
 
 			let response = await Promise.all(request)
-
 			return {
 				initialForm: response[0].data,
 				campaigns: response[1].data.data,
@@ -536,6 +542,6 @@
 				countries: response[3].data,
 				languages: response[4].data,
 			}
-		},
+		}, 
 	}
 </script>

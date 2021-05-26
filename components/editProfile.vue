@@ -3,7 +3,7 @@
     <div class="col-md-4 pull-left">
       <img
         class="img-thumbnail pic"
-        :src="'/_nuxt/assets/' + user.picture"
+        :src="user.picture"
         alt="profile_picture"
       />
     </div>
@@ -184,6 +184,8 @@ export default {
     this.form = { ...this.user };
     delete this.form.picture;
     this.formData = new FormData();
+    debugger
+
   },
   methods: {
     inputing(key) {
@@ -206,8 +208,16 @@ export default {
         })
         .then((res) => {
           this.successMessage = "Profile has been updated.";
+          //** update data in store */
+          this.user.address = res.data.address
+          this.user.email = res.data.email
+          this.user.picture = res.data.picture
+          this.user.mobile = res.data.mobile
+          this.user.username = res.data.username
+
+          debugger
           this.$router.push({
-            path: "/" +  this.$i18n.locale + "/" + this.$auth.state.user.role + "/profile",
+            path: "/" +  this.$i18n.locale + "/" + this.$auth.state.user.role + "/dashboard/profile",
           });
         });
     },

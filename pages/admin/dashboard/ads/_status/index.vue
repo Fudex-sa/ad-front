@@ -27,6 +27,9 @@ export default {
             } catch(e) {
                 error({statusCode:e.status, message:e.message})
             }
-    }
+    },
+      created() {
+        console.log('single status');
+      }
 };
 </script>

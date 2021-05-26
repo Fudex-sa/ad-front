@@ -34,7 +34,17 @@
             name="Campaign Title"
             
           />
-          <div class="col-sm-12 text-right">
+          <select class="form-control mb-2"
+            placeholder="Type"
+            v-model="campaign.type"
+            name="type"
+            >
+              <option v-for="(type, key) in types" :key="key"
+              :selected="`${type == campaign.type ? 'selected' : ''}`"
+              >{{type}}</option>
+          </select>
+          <br>
+          <div class="col-sm-12 text-right mt-4">
             <button class="the-btn">Save Changes</button>
           </div>
         </form>
@@ -73,6 +83,9 @@ export default {
       campaign: "",
       successMessage: "",
       defaultLanguage: "",
+      types: [
+        'awareness','traffic','app-installs','video-views','lead-generation','messages'
+      ]
       
     };
   },
@@ -100,12 +113,13 @@ export default {
     },
 
     handleSubmition() {
-
-console.log(this.campaign)
+      debugger
+      console.log(this.campaign)
       this.$axios
         .$post(`campaigns/${this.$route.params.id}`, {
           title: this.campaign.title,
           title_en: this.campaign.title_en,
+          type: this.campaign.type
         })
         .then(res => {
           

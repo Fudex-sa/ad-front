@@ -45,7 +45,7 @@
           </li> -->
 
            <li>
-            <nuxt-link :to="localePath({name: 'advertiser-profile', query: {edit: true} })">
+            <nuxt-link :to="localePath({name: 'advertiser-dashboard-profile', query: {edit: true} })">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>{{ $t('Profile') }}</span>

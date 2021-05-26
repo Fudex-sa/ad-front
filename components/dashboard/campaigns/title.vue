@@ -3,16 +3,16 @@
         <div class="row">
     
             <h1 class="pl-4 bold ">{{campaign[0].title}}</h1>
-            <div class="col-sm-12 mb-30">
+            <!-- <div class="col-sm-12 mb-30">
                 <h4>Description</h4>
                 <p>{{campaign[0].description}}</p>
-            </div>
-            <div class="col-sm-12">
+            </div> -->
+            <!-- <div class="col-sm-12">
                 <div class="white-box">
                     <h3>Content</h3>
                     <p class="lead">{{campaign.content}}</p>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="row">
             <div class="col-sm-12">

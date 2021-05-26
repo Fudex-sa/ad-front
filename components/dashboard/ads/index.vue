@@ -62,7 +62,7 @@
             <td class="hidden-sm">
               <!-- Action Buttons -->
               <div class="text-center">
-                <template v-if="user.role == 'advertiser' && ad.status !='finished' " >
+                <template v-if="user.role == 'advertiser' && ! ['finished', 'active'].includes(ad.status) " >
                   <!-- Edit -->
                   <nuxt-link
                     :to="localePath({name: 'advertiser-dashboard-ads-id-edit', params: { id: ad.id }})"
@@ -78,8 +78,8 @@
                 </template>
                 <template v-if="user.role != 'advertiser'" >
                 <nuxt-link
-                  class="btn btn-info action-btn"
-                  :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"
+                  class="btn btn-info action-btn" target="_blank"
+                  :to="localePath(`/${user.role}/dashboard/ads/single/${ad.id}`)"
                 >{{ $t('ads.action.view') }}</nuxt-link>
                 </template>
                 <!-- Reviewing -->
@@ -94,7 +94,7 @@
 
                    :to="localePath({name: 'advertiser-dashboard-ads-id-statistics', params: { id: ad.id }})"
                   
-                  v-if="ad.status == 'active'"
+                  v-if="['finished', 'active'].includes(ad.status)"
                 >{{ $t('ads.action.statistics') }}</nuxt-link>
                 <button
                   class="fa fa-trash-o fa-lg btn btn-danger action-btn"

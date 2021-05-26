@@ -24,5 +24,8 @@
 				ads: response.data,
 			}
 		},
+        created() {
+          console.log('index');
+        }
 	}
 </script>
