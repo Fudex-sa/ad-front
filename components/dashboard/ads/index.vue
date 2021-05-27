@@ -83,6 +83,7 @@
                   :to="localePath(`/${user.role}/dashboard/ads/single/${ad.id}`)"
                 >{{ $t('ads.action.view') }}</nuxt-link>
                 <nuxt-link
+                  v-else
                   class="btn btn-info action-btn" target="_blank"
                   :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"
                 >{{ $t('ads.action.view') }}</nuxt-link>
