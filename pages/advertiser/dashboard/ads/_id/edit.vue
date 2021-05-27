@@ -426,7 +426,8 @@
 				this.form.content += emoji
 			},
 			initialFormDropdown(needles, haystack) {
-				return haystack.filter(({ value }) => needles.includes(value))
+				debugger
+				return needles ? haystack.filter(({ value }) => needles.includes(value)) : false
 			},
 			fetchCities() {
 				let selectedCountries = []

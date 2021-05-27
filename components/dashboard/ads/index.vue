@@ -78,8 +78,13 @@
                 </template>
                 <template v-if="user.role != 'advertiser'" >
                 <nuxt-link
+                  v-if="user.role == 'admin'"
                   class="btn btn-info action-btn" target="_blank"
                   :to="localePath(`/${user.role}/dashboard/ads/single/${ad.id}`)"
+                >{{ $t('ads.action.view') }}</nuxt-link>
+                <nuxt-link
+                  class="btn btn-info action-btn" target="_blank"
+                  :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"
                 >{{ $t('ads.action.view') }}</nuxt-link>
                 </template>
                 <!-- Reviewing -->
