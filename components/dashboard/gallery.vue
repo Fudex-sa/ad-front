@@ -20,13 +20,13 @@
 
         
         <div class="col-xs-6 col-md-3 text-center" v-for="(gallery, index) in galleries" :key="gallery">
-            <div class="controls-btns">
-<button class="btn btn-xs btn-danger" @click.prevent="DeleteLibrary(gallery.id, index)">
-    <i class="fa fa-trash-o"></i>
-</button>
+            <div class="controls-btns"  v-if="user.role == 'admin'">
+                <button class="btn btn-xs btn-danger" @click.prevent="DeleteLibrary(gallery.id, index)">
+                    <i class="fa fa-trash-o"></i>
+                </button>
 
-<nuxt-link  class="btn btn-xs btn-default" :to="libraryLinkEdit(gallery.id)">   <i class="fa fa-edit"></i></nuxt-link>
-                   </div>
+                <nuxt-link  class="btn btn-xs btn-default" :to="libraryLinkEdit(gallery.id)">   <i class="fa fa-edit"></i></nuxt-link>
+            </div>
           <nuxt-link :to="libraryLink(gallery.id)" class="text-center">
                <!-- if media is images -->
          

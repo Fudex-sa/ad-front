@@ -2,6 +2,42 @@
 	<div class="row">
 		<div class="row">
 			<div class="col-sm-12">
+
+				<div class="white-box com-box">
+
+					<div class="row" v-if="successMessage !== ''">
+						<div class="alert alert-success">
+							{{ successMessage }}
+						</div>
+					</div>
+					<div class="form-group dash-group">
+					<div class="row">
+						<label class="col-sm-3 pl-2">{{ $t('paymentMethods') }} *</label>
+						<div class="col-sm-8">
+							<select class="form-control"
+							:placeholder="$t('paymentMethods')"
+							v-model="fav_payment_method"
+							:class="{ 'is-invalid': errors.fav_payment_method }"
+							>
+								<option v-for="method in payments" :key="method"
+								:selected="`${method == fav_payment_method ? 'selected' : ''}`"
+								>
+									{{method}}
+								</option>
+							</select>
+						</div>
+					</div>
+					</div>
+					<div class="col-sm-12 text-right mt-40">
+						<button class="the-btn hvr-radial-out" @click="handleSubmition">
+						{{ $t('Update')}}
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
 				<div class="col-sm-6 col-md-3">
 					<div class="white-box com-box">
 						<h3 class="box-title">{{ totalBalance }}</h3>
@@ -81,6 +117,9 @@
 				pending: 0,
 				canceled: 0,
 			},
+			fav_payment_method: '',
+			successMessage: '',
+			payments:['stc','paypal']
 		}),
 
 		layout: 'dashboard',
@@ -89,6 +128,7 @@
 
 		mounted() {
 			this.getTransactions()
+			this.fav_payment_method = this.user.fav_payment_method
 		},
 
 		methods: {
@@ -119,6 +159,15 @@
 				)
 
 				return transactionsSum
+			},
+			handleSubmition() {
+				this.$axios.$post("auth/profile/update", {fav_payment_method: this.fav_payment_method}, {})
+					.then((res) => {
+						this.successMessage = "Payment Method has been updated.";
+						//** update data in store */
+						this.user.fav_payment_method = this.fav_payment_method
+						debugger
+					});
 			},
 		},
 	}

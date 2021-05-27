@@ -124,6 +124,7 @@ export default {
             login: "/auth/login",
             callback: "/auth/login",
             home: false,
+            logout: false,
         },
         strategies: {
             local: {

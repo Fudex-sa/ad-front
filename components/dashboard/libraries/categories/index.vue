@@ -37,14 +37,12 @@
                     >
 
 
-                   <div class="controls-btns">
-<button class="btn btn-xs btn-danger" @click.prevent="DeleteUser(category.id, index)">
-    <i class="fa fa-trash-o"></i>
-</button>
+                   <div class="controls-btns" v-if="user.role == 'admin'">
+                        <button class="btn btn-xs btn-danger" @click.prevent="DeleteUser(category.id, index)">
+                            <i class="fa fa-trash-o"></i>
+                        </button>
 
-<nuxt-link class="btn btn-xs btn-default" :to="localePath({ name: 'admin-dashboard-categories-categoryId-edit', params: { categoryId: category.id }})">  <i class="fa fa-edit"></i></nuxt-link>
-                 
-                 
+                        <nuxt-link class="btn btn-xs btn-default" :to="localePath({ name: 'admin-dashboard-categories-categoryId-edit', params: { categoryId: category.id }})">  <i class="fa fa-edit"></i></nuxt-link>
                    </div>
                         <nuxt-link :to="categoryLink(category.id)">
 

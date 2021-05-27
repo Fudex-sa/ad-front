@@ -17,7 +17,7 @@
     <!-- utm button -->
     <button class="the-btn hvr-radial-out mb-20" @click.prevent="showUTM = !showUTM">Get The Referral Link</button>
     <!-- What's app button -->
-    <a :href="'https://api.whatsapp.com/send?text=' + referralLink" class="the-btn hvr-radial-out mb-20" target="_blank">Share on WhatsApp</a>
+    <a :href="'https://api.whatsapp.com/send?text=' + referral_link" class="the-btn hvr-radial-out mb-20" target="_blank">Share on WhatsApp</a>
     <!-- utm Token-->
     <div class="row">
         <div class="col-sm-11">

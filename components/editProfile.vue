@@ -215,6 +215,9 @@ export default {
           this.user.mobile = res.data.mobile
           this.user.username = res.data.username
 
+          this.user.paypalno = res.data.paypalno
+          this.user.stcpayno = res.data.stcpayno
+
           debugger
           this.$router.push({
             path: "/" +  this.$i18n.locale + "/" + this.$auth.state.user.role + "/dashboard/profile",

@@ -31,9 +31,9 @@
             <th scope="col" class="col-xs-1 col-sm-2">{{ $t('ads.title') }} </th>
             <th scope="col" class="col-xs-2 col-md-5">{{ $t('ads.description') }}</th>
             <th scope="col" class="col-sm-2">{{ $t('ads.campaign') }}</th>
-            <th scope="col" class="col-sm-1">{{ $t('ads.clicks') }}</th>
-            <th scope="col" class="col-sm-1">{{ $t('ads.status')}}</th>
-            <th scope="col" class="col-sm-1">{{ $t('ads.budget') }}</th>
+            <th scope="col" class="col-sm-1" v-if="user.role != 'soldier'">{{ $t('ads.clicks') }}</th>
+            <th scope="col" class="col-sm-1" v-if="user.role != 'soldier'">{{ $t('ads.status')}}</th>
+            <th scope="col" class="col-sm-1" v-if="user.role != 'soldier'">{{ $t('ads.budget') }}</th>
             <th scope="col" class="col-sm-1">{{ $t('ads.start_at') }}</th>
             
             <th scope="col" class="col-sm-1">{{ $t('ads.created') }}</th>
@@ -47,11 +47,11 @@
             </td>
             <td class="col-xs-2 col-md-5 text-break">{{ ad.content }}</td>
             <td class="col-sm-2">{{ ad.campaign != null ? ad.campaign.title : "--" }}</td>
-            <td class="col-sm-2">{{ ad.clicks || 0 }}</td>
+            <td class="col-sm-2" v-if="user.role != 'soldier'">{{ ad.clicks || 0 }}</td>
 
-            <td class="col-sm-1" v-if="ad.status == 'active'">{{ status(ad.end_date) }}</td>
-            <td v-else>{{ ad.status }}</td>
-            <td>{{ ad.budget }} SAR</td>
+            <td class="col-sm-1" v-if="user.role != 'soldier' && ad.status == 'active'">{{ status(ad.end_date) }}</td>
+            <td v-else-if="user.role != 'soldier'">{{ ad.status }}</td>
+            <td v-if="user.role != 'soldier'">{{ ad.budget }} SAR</td>
             <td>{{ ad.start_date }}</td>
    
             <td>
@@ -94,9 +94,10 @@
 
                    :to="localePath({name: 'advertiser-dashboard-ads-id-statistics', params: { id: ad.id }})"
                   
-                  v-if="['finished', 'active'].includes(ad.status)"
+                  v-if="user.role != 'soldier' && ['finished', 'active'].includes(ad.status)"
                 >{{ $t('ads.action.statistics') }}</nuxt-link>
                 <button
+                  v-if="user.role != 'soldier'"
                   class="fa fa-trash-o fa-lg btn btn-danger action-btn"
                   @click="deleteAd(ad.id, index)"
                 ></button>

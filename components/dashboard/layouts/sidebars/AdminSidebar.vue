@@ -90,7 +90,7 @@
             </nuxt-link>
           </li>
           <li>
-            <a @click.prevent="$auth.logout()">
+            <a @click="logout()">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>{{ $t('logout') }}</span>
@@ -116,6 +116,10 @@ export default {
         ? (this.adSubTabs = true)
         : (this.adSubTabs = false);
     },
+    logout() {
+      this.$auth.logout()
+      this.$router.replace(this.localePath('index'))
+    }
   },
   mounted() {
     this.checkForAdSubTab();

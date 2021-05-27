@@ -45,14 +45,15 @@
           </li> -->
 
            <li>
-            <nuxt-link :to="localePath({name: 'advertiser-dashboard-profile', query: {edit: true} })">
+            <!-- <nuxt-link :to="localePath({name: 'advertiser-dashboard-profile', query: {edit: true} })"> -->
+            <nuxt-link :to="localePath({name: 'advertiser-dashboard-profile' })">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>{{ $t('Profile') }}</span>
             </nuxt-link>
           </li>
           <li>
-            <a @click.prevent="$auth.logout()">
+            <a @click="logout()">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>{{ $t('Logout') }}</span>
@@ -90,6 +91,10 @@ export default {
     //   this.path = this.$route.name;
     //   return this.path.includes($route)
     // }
+    logout() {
+      this.$auth.logout()
+      this.$router.replace(this.localePath('index'))
+    }
   },
   mounted() {
     // this.activeTab()
