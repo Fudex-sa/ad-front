@@ -413,6 +413,15 @@
 			this.formData = new FormData()
 			this.dropdownInitialSetters()
 		},
+		beforeRouteLeave(to, from, next) {
+          debugger
+          // check back button 
+          this.$store.commit(
+            "localStorage/SET_BACK_BUTTON",
+            true
+          );
+          return next();
+        },
 		created() {
 			if (['finished', 'active'].includes(this.initialForm.status)) {
 				// not allowed

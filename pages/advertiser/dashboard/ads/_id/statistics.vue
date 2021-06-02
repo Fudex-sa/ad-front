@@ -24,6 +24,15 @@ export default {
     Statistics
   },
   middleware: "auth",
-  layout: "dashboard"
+  layout: "dashboard",
+  beforeRouteLeave(to, from, next) {
+    debugger
+    // check back button 
+    this.$store.commit(
+      "localStorage/SET_BACK_BUTTON",
+      true
+    );
+    return next();
+  }
 };
 </script>

@@ -71,7 +71,7 @@
                 </template>
                 <!-- Preview as visitor -->
                 <template v-if="user.role == 'advertiser' && ad.status !='unpaid' " >
-                <nuxt-link
+                <nuxt-link 
                   class="btn btn-info action-btn"
                   :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"
                 >{{ $t('ads.action.view') }}</nuxt-link>
@@ -79,12 +79,12 @@
                 <template v-if="user.role != 'advertiser'" >
                 <nuxt-link
                   v-if="user.role == 'admin'"
-                  class="btn btn-info action-btn" target="_blank"
+                  class="btn btn-info action-btn"
                   :to="localePath(`/${user.role}/dashboard/ads/single/${ad.id}`)"
                 >{{ $t('ads.action.view') }}</nuxt-link>
                 <nuxt-link
                   v-else
-                  class="btn btn-info action-btn" target="_blank"
+                  class="btn btn-info action-btn"
                   :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"
                 >{{ $t('ads.action.view') }}</nuxt-link>
                 </template>
@@ -237,6 +237,12 @@ export default {
             (this.ads = res.data),
               (this.next_link = this.ads.links.next_page_url);
             this.prev_link = this.ads.links.prev_page_url;
+
+            this.$store.commit(
+              "localStorage/SET_CURRENT_PAGE_PAGINATION",
+              res.data.links.current_page
+            );
+            debugger
           })
           .catch(err => {
             $nuxt.error({
@@ -254,6 +260,11 @@ export default {
             (this.ads = res.data),
               (this.next_link = this.ads.links.next_page_url);
             this.prev_link = this.ads.links.prev_page_url;
+            this.$store.commit(
+              "localStorage/SET_CURRENT_PAGE_PAGINATION",
+              res.data.links.current_page
+            );
+            debugger
           })
           .catch(err => {
             $nuxt.error({

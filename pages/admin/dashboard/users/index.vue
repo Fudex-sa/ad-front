@@ -8,7 +8,14 @@
     </div>
     <client-only placeholder="Loading...">
       <v-client-table :data="tableData" :columns="columns" :options="options">
+        
         <!-- <a v-slot:actions="props" class="fa fa-trash" :href="edit(props.row.id)"></a> -->
+        <template span slot="paymentType" slot-scope="props">
+          <span>{{props.row.fav_payment_method ? props.row.fav_payment_method : '--'}}</span>
+        </template>
+        <template span slot="paymentNumber" slot-scope="props">
+          <span>{{props.row.fav_payment_method ? (props.row.fav_payment_method == 'stc' ? props.row.stcpayno : props.row.paypalno) : '--'}}</span>
+        </template>
         <template span slot="actions" slot-scope="props">
           <span class="fa fa-trash-o fa-sm btn btn-danger action-btn" @click="deleteUser(props.row.id)"></span>
           <router-link v-show="props.row.role == 'advertiser' || props.row.role == 'soldier'" class="fa fa-sm btn btn-info action-btn" :to="{ path: `/${$i18n.locale}/admin/dashboard/users/${props.row.id}/transactions/${props.row.role}`}">{{$t('transactions')}}</router-link>
@@ -22,7 +29,7 @@
 export default {
   data() {
     return {
-      columns: ["username", "email", "role", "actions"],
+      columns: ["username", "email", "role", "paymentType", "paymentNumber", "actions"],
       tableData: [],
       options: {
         templates: {
@@ -38,6 +45,8 @@ export default {
           username: 'Username',
           email: 'Email',
           role: 'Role',
+          paymentType: 'paymentType',
+          paymentNumber: 'paymentNumber',
           actions: 'Actions'
         },
         sortable: ["username", "email", "role"],

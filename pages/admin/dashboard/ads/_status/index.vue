@@ -18,9 +18,13 @@ export default {
   },
   layout: "dashboard",
   middleware: "auth",
-    async asyncData({app, params, error}) {
+    async asyncData({app, params, error, store}) {
         try {
-            let response = await app.$axios.$get(`ads/status/${params.status}`);
+            let current_page = store.getters["localStorage/currentPagePagination"]
+            if (!store.getters["localStorage/backButton"]) {
+              current_page = 1
+            } 
+            let response = await app.$axios.$get(`ads/status/${params.status}?page=${current_page}`);
             return {
                 ads: response.data
             }
@@ -28,8 +32,13 @@ export default {
                 error({statusCode:e.status, message:e.message})
             }
     },
-      created() {
-        console.log('single status');
-      }
+    created() {
+      console.log('single status');
+      // reset back button 
+        this.$store.commit(
+          "localStorage/SET_BACK_BUTTON",
+          false
+        );
+    }
 };
 </script>

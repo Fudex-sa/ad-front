@@ -26,12 +26,16 @@
 		},
 		layout: 'dashboard',
 		middleware: ['auth', 'admin'],
-		async asyncData({ app, params, error }) {
+		async asyncData({ app, params, error, store }) {
+			let current_page = store.getters["localStorage/currentPagePagination"]
+            if (!store.getters["localStorage/backButton"]) {
+              current_page = 1
+            }
 			try {
 				let [compaign_response, ads_response] = await Promise.all([
 
 					app.$axios.$get(`campaigns/${params.title}`),
-					app.$axios.$get(`/ads/campaign/${params.title}`)
+					app.$axios.$get(`/ads/campaign/${params.title}?page=${current_page}`)
 				])
 				// let response = await app.$axios.$get(`campaigns/${params.title}`)
 				// console.log('comp:', response.data)
@@ -43,5 +47,12 @@
 				error({ statusCode: e.status, message: e.message })
 			}
 		},
+		created() {
+			// reset back button 
+          this.$store.commit(
+            "localStorage/SET_BACK_BUTTON",
+            false
+          );
+		}
 	}
 </script>

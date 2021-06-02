@@ -80,6 +80,9 @@ export default {
            this.$router.push({
              path: `/${currentLocale}/` + this.$auth.state.user.role + "/dashboard",
            });
+           // reset store props
+           this.$store.commit("localStorage/SET_CURRENT_PAGE_PAGINATION", 1);
+           this.$store.commit("localStorage/SET_BACK_BUTTON", false);
         }).catch(err => console.log(err));
 
         // setTimeout(() => {

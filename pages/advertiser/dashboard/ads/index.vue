@@ -18,11 +18,22 @@ export default {
   },
   layout: "dashboard",
   middleware: "auth",
-  async asyncData({ app }) {
-    let ads = await app.$axios.$get("ads");
+  async asyncData({ app, store }) {
+    let current_page = store.getters["localStorage/currentPagePagination"]
+    if (!store.getters["localStorage/backButton"]) {
+      current_page = 1
+    } 
+    let ads = await app.$axios.$get(`ads?page=${current_page}`);
     return {
       ads: ads.data
     };
+  },
+  created() {
+    // reset back button 
+        this.$store.commit(
+          "localStorage/SET_BACK_BUTTON",
+          false
+        );
   }
 };
 </script>

@@ -1,7 +1,9 @@
 export const state = () => ({
     amount: "",
     orderNumber: "",
-    checkout: {}
+    checkout: {},
+    current_page_pagination: 1,
+    back_button: false
 });
 
 export const getters = {
@@ -13,6 +15,12 @@ export const getters = {
     },
     checkout(state) {
         return state.checkout;
+    },
+    currentPagePagination(state) {
+        return state.current_page_pagination;
+    },
+    backButton(state) {
+        return state.back_button
     }
 };
 
@@ -25,5 +33,12 @@ export const mutations = {
     },
     SET_PAYMENT_CHECKOUT_ID(state, checkout) {
         state.checkout = checkout;
+    },
+    SET_CURRENT_PAGE_PAGINATION(state, payload) {
+        state.current_page_pagination = payload
+    },
+    SET_BACK_BUTTON(state, payload) {
+        debugger
+        state.back_button = payload
     }
 };

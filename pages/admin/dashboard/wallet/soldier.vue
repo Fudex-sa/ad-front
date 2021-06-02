@@ -53,8 +53,9 @@
 							<button
 								title="done transactions"
 								class="fa fa-check fa-lg btn btn-success action-btn"
-								@click="transDone(transaction)"
+								@click="showModal(transaction)"
 								v-if="transaction.status != 'done'"
+								
 							></button>
 						</td>
 					</tr>
@@ -63,6 +64,43 @@
 		</div>
 		<!-- pagination -->
 		<pagination :links="transactions.links" @changePage="fetchData" />
+
+		<!-- Modal to change status -->
+		<div class="modal" tabindex="-1" v-if="currentTransaction" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="openTransactionModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Transaction</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="row">
+				<br>
+				<div class="col-sm-12 mt-4">
+					<div class="form-group">
+						<label class="col-sm-4">current balance: </label>
+						<div class="col-sm-8">
+							<span>{{currentTransaction.soldier.balance}} Riyal</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label class="col-sm-4">transaction number: </label>
+						<div class="col-sm-8">
+							<input type="number" class="form-control" v-model="transNumber" required />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+				<button type="button" class="btn btn-success" @click="transDone()">save transaction</button>
+			</div>
+			</div>
+		</div>
+		</div>
 	</div>
 </template>
 
@@ -76,6 +114,8 @@
 			transactions: [],
 			successMessage: '',
 			successMessageClass: '',
+			currentTransaction: null,
+			transNumber: null
 		}),
 		async asyncData({ app }) {
 			let response = await app.$axios.$get('soldier/transactions')
@@ -92,10 +132,11 @@
 			},
 		},
 
-// 		mounted() {
-// 			this.getTrans()
-// 			console.log(this.transactions);
-// 		},
+		mounted() {
+			// this.getTrans()
+			// console.log(this.transactions);
+			$('#openTransactionModal').modal('hide');
+		},
 
 		components: {
 			Pagination,
@@ -115,7 +156,9 @@
 							'canceled'
 						)
 					})
-					.catch((err) => console.log(err))
+					.catch((err) => {
+						console.log(err)
+					})
 			},
 			filterTransactions(response, status) {
 				let transactions = response.data.data.filter(
@@ -128,20 +171,29 @@
 
 				return transactionsSum
 			},
-			transDone(trans) {
+			showModal (transaction) {
+				this.transNumber = null
+				this.currentTransaction = transaction
+				$('#openTransactionModal').modal('show');
+			},
+			transDone() {
 				this.$axios
-					.$post(`soldier/transactions/${trans.id}/done`, {
-						transNumber: trans.transNumber,
+					.$post(`soldier/transactions/${this.currentTransaction.id}/done`, {
+						transNumber: this.transNumber,
 					})
 					.then((res) => {
 						this.successMessage = res.data.message
-						if (res.data.transactions) {
-							this.transactions = res.data.transactions.data
-							this.successMessageClass = 'alert-success'
-						}
+						let indexItem = this.transactions.data.findIndex((item) => item.id == res.data.data.id)
+						this.transactions.data.splice(indexItem, 1, res.data.data)
+						debugger
+						$('#openTransactionModal').modal('hide');
 					})
 					.catch((err) => {
-						console.log(err)
+						if (err.errors)
+							alert(err.errors.transNumber[0])
+						else if(err.data) {
+							alert(err.data.message)
+						}
 					})
 			},
 			cancelTrans(trans) {
@@ -149,18 +201,18 @@
 					.$post(`soldier/transactions/${trans.id}/cancel`)
 					.then((res) => {
 						this.successMessage = res.data.message
-						if (res.data.transactions) {
-							this.transactions = res.data.transactions.data
-							this.successMessageClass = 'alert-danger'
-						}
+						let indexItem = this.transactions.data.findIndex((item) => item.id == res.data.data.id)
+						this.transactions.data.splice(indexItem, 1, res.data.data)
+						debugger
 					})
 					.catch((err) => {
 						console.log(err)
 					})
 			},
-// 			fetchData(value) {
-// 				this.transactions = value
-// 			},
+			fetchData(value) {
+				debugger
+				this.transactions = value
+			},
 		},
 	}
 </script>

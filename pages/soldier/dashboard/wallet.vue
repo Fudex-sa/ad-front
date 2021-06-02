@@ -16,15 +16,21 @@
 						<div class="col-sm-8">
 							<select class="form-control"
 							:placeholder="$t('paymentMethods')"
-							v-model="fav_payment_method"
+							v-model="form.fav_payment_method"
 							:class="{ 'is-invalid': errors.fav_payment_method }"
 							>
 								<option v-for="method in payments" :key="method"
-								:selected="`${method == fav_payment_method ? 'selected' : ''}`"
+								:selected="`${method == form.fav_payment_method ? 'selected' : ''}`"
 								>
 									{{method}}
 								</option>
 							</select>
+						</div>
+					</div>
+					<div class="row">
+						<label class="col-sm-3 pl-2">Payment Number *</label>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" v-model="form.paymentNumber" required />
 						</div>
 					</div>
 					</div>
@@ -117,7 +123,10 @@
 				pending: 0,
 				canceled: 0,
 			},
-			fav_payment_method: '',
+			form: {
+				fav_payment_method: '',
+				paymentNumber: ''
+			},
 			successMessage: '',
 			payments:['stc','paypal']
 		}),
@@ -128,7 +137,10 @@
 
 		mounted() {
 			this.getTransactions()
-			this.fav_payment_method = this.user.fav_payment_method
+			this.form = {
+				fav_payment_method: this.user.fav_payment_method,
+				paymentNumber: this.user.fav_payment_method == 'stc' ? this.user.stcpayno : this.user.paypalno
+			}
 		},
 
 		methods: {
@@ -161,11 +173,27 @@
 				return transactionsSum
 			},
 			handleSubmition() {
-				this.$axios.$post("auth/profile/update", {fav_payment_method: this.fav_payment_method}, {})
+				let formData = {
+					fav_payment_method: this.form.fav_payment_method,
+				}
+				if (this.form.fav_payment_method == 'stc') {
+					formData.stcpayno = this.form.paymentNumber
+				} else {
+					formData.paypalno = this.form.paymentNumber
+				}
+				debugger
+				this.$axios.$post("auth/profile/update", formData, {})
 					.then((res) => {
 						this.successMessage = "Payment Method has been updated.";
 						//** update data in store */
-						this.user.fav_payment_method = this.fav_payment_method
+						this.user.fav_payment_method = this.form.fav_payment_method
+						if (this.form.fav_payment_method == 'stc') {
+							this.user.stcpayno = this.form.paymentNumber
+							this.user.paypalno = null
+						} else {
+							this.user.paypalno = this.form.paymentNumber
+							this.user.stcpayno = null
+						}
 						debugger
 					});
 			},
