@@ -185,14 +185,20 @@
 						this.successMessage = res.data.message
 						let indexItem = this.transactions.data.findIndex((item) => item.id == res.data.data.id)
 						this.transactions.data.splice(indexItem, 1, res.data.data)
+						// update all transaction balance of this soldier
+						this.transactions.data.forEach((element, index) => {
+							if (element.soldier_id == res.data.data.soldier_id) {
+								this.transactions.data[index].soldier.balance = res.data.data.soldier.balance 
+							}
+						});
 						debugger
 						$('#openTransactionModal').modal('hide');
 					})
 					.catch((err) => {
 						if (err.errors)
 							alert(err.errors.transNumber[0])
-						else if(err.data) {
-							alert(err.data.message)
+						else {
+							alert(err.message)
 						}
 					})
 			},

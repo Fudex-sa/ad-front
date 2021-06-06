@@ -160,25 +160,24 @@ export default {
         return;
       }
 
-      // this.isLoading = true;
+      this.isLoading = true;
       // update store info
       this.$store.commit("i18n/i18nSetLocale", locale);
       // fetch new locale file
       import(`~/locales/${locale}`).then((module) => {
         // update i18n's locale instance
-        this.$i18n.locale = locale;
+        // this.$i18n.locale = locale;
         // set new messages from new locale file
         this.$i18n.setLocaleMessage(locale, module.default);
         // update url to point to new path, without reloading the page
         window.history.replaceState("", "", this.switchLocalePath(locale));
-
-        // setTimeout(() => {
+        setTimeout(() => {
            this.isLoading = false;
           this.$nuxt.$router.go({
             path: this.$route.fullPath,
             force: true,
           });
-        // }, 1000);
+        }, 1000);
       });
     },
     logout() {
