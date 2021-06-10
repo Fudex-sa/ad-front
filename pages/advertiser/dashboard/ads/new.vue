@@ -14,8 +14,9 @@
             v-model="form.campaign_id"
             deselect-label="Can't remove this value"
             track-by="id"
+            ref="campaigns"
             :custom-label="campaignCustomLabel"
-            placeholder="Pick A Media Type"
+            :placeholder="placeholderCampaign"
             :options="campaigns"
             :allow-empty="false"
             :class="{ 'is-invalid': errors.campaign_id }"
@@ -563,6 +564,7 @@ export default {
       value: [],
       input: "",
       search: "",
+      placeholderCampaign: 'Pick A Media Type',
       gender: [
         { name: "Male", value: "male" },
         { name: "Female", value: "female" },
@@ -787,7 +789,6 @@ export default {
       this.popupForm = !this.popupForm;
     },
     storeCampaign() {   
-      debugger   
       this.$axios
         .$post("campaigns/create", this.newCampaign)
         .then((res) => {
@@ -795,7 +796,7 @@ export default {
           this.popupForm = false;
           this.campaigns.unshift(res.data.data)
           this.resetCampaign()
-          this.form.campaign_id = res.data.data.id
+          this.$refs.campaigns.select(res.data.data)
         })
         // .catch((err) => {
         //   console.log("no");

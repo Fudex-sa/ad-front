@@ -5,7 +5,7 @@
 	"author": "Fudex",
 	"private": true,
 	"scripts": {
-		"dev": "nuxt --port 7000",
+		"dev": "nuxt --port 9000",
 		"build": "nuxt build",
 		"start": "nuxt start",
 		"generate": "nuxt generate",
