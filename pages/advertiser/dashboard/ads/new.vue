@@ -795,6 +795,7 @@ export default {
           this.popupForm = false;
           this.campaigns.unshift(res.data.data)
           this.resetCampaign()
+          this.form.campaign_id = res.data.data.id
         })
         // .catch((err) => {
         //   console.log("no");
