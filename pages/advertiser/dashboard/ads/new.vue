@@ -1,9 +1,12 @@
 <template>
   <div>
     <div class="row">
-      <div class="fixed alert alert-danger" v-if="successMessage">
+      <div class="alert alert-success" v-if="successMessage">
         {{ successMessage }}
       </div>
+      <button class="btn btn-primary text-left mb-4" @click="popup()">
+        {{$t('create campaign')}}
+      </button>
       <div class="col-sm-12">
         <div class="form-group dash-group">
           <label>{{ $t('ads.campaign')}} *</label>
@@ -38,7 +41,7 @@
         </div>
       </div>
 
-      <div class="col-sm-6">
+      <!-- <div class="col-sm-6">
         <div class="form-group dash-group">
           <label>{{ $t('ads.title_en') }}*</label>
           <input
@@ -52,7 +55,7 @@
             {{ error }}
           </p>
         </div>
-      </div>
+      </div> -->
 
       <div class="col-sm-6">
         <div class="form-group dash-group">
@@ -74,6 +77,7 @@
               <emoji-picker @emoji="insert" :search="search">
                 <div
                   class="emoji-invoker"
+                  :style="`${$i18n.locale == 'en' ? 'right: 3rem' : 'left: 3rem'}`"
                   slot="emoji-invoker"
                   slot-scope="{ events: { click: clickEvent } }"
                   @click.stop="clickEvent"
@@ -94,7 +98,8 @@
                   slot="emoji-picker"
                   slot-scope="{ emojis, insert, display }"
                 >
-                  <div class="emoji-picker">
+                  <div class="emoji-picker"
+                    :style="`${$i18n.locale == 'en' ? 'right: 2rem' : 'left: 2rem'}`">
                     <div class="emoji-picker__search">
                       <input type="text" v-model="search" v-focus />
                     </div>
@@ -124,10 +129,9 @@
       </div>
 
 
-      <div class="col-sm-6">
+      <!-- <div class="col-sm-6">
         <div class="form-group dash-group">
           <label>{{ $t('ad_content_en')}}*</label>
-          <!-- Descrition text area -->
           <textarea
             class="form-control dash-input"
             placeholder="Please Enter Ad's Content"
@@ -138,10 +142,9 @@
           <p class="text-danger p-2" v-for="error in errors.content_en">
             {{ error }}
           </p>
-          <!-- emotions -->
           
         </div>
-      </div>
+      </div> -->
       <!-- <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>Duration *</label>
@@ -171,10 +174,9 @@
           <client-only>
             <input
               type="datetime-local"
-              step="2"
               header="true"
-              show-second=false
-              show-time-header=true
+              show-second="false"
+              show-time-header="true"
               class="form-control dash-input date"
               v-model="form.start_date"
             />
@@ -369,6 +371,7 @@
           <label>City *</label>
           <multiselect
             v-model="form.city"
+            @input="selectCities"
             :options="cities"
             :multiple="true"
             :close-on-select="false"
@@ -446,7 +449,7 @@
         </div>
       </div>
 
-       <div class="col-sm-6">
+       <!-- <div class="col-sm-6">
         <div class="form-group dash-group">
           <label class="col-sm-12 p-0">Button Text EN *</label>
           <input
@@ -464,8 +467,8 @@
             {{ error }}
           </p>
         </div>
-      </div>
-      <div class="col-sm-12">
+      </div> -->
+      <div class="col-sm-6">
         <div class="form-group dash-group">
           <label class="col-sm-12 p-0">Link*</label>
           <input
@@ -494,10 +497,64 @@
       actionBtnText="Create Ad"
       v-on:handleSubmition="handleSubmition"
     />
+    <!-- The overlay layer -->
+    <div
+      class="modal-backdrop fade in"
+      v-if="popupForm"
+      @click="popupForm = false"
+    ></div>
+    <!-- form -->
+    <div class="col-sm-6 col-sm-offset-3 create-campaign" v-if="popupForm">
+        <form @submit.prevent="storeCampaign()">
+          <TextInput
+            v-model="newCampaign.title"
+            :name="$t('campaign_title_ar')"
+            rules="required"
+          />
+
+          <TextInput
+            v-model="newCampaign.title_en"
+            :name="$t('campaign_title_en')"
+          />
+          <div class="form-group dash-group">						
+							 <label data-v-e01ca4dc="" for="$t('campaign types')" class="text-red-600"><span data-v-e01ca4dc="">
+                </span> {{$t('campaign types')}}<span data-v-e01ca4dc=""> *</span></label>
+              <ValidationProvider
+                tag="div"
+                rules="required"
+                name="campaign_type"
+                v-slot="{ errors, required, ariaInput, ariaMsg }"
+              >
+              <select class="form-control"
+                :placeholder="$t('campaign types')"
+                v-model="newCampaign.type"
+                rules="required"
+                name="campaign_type"
+                >
+                  <option value="">{{$t('campaign types')}}</option>
+                  <option v-for="(value, key) in campaignsTypes" :key="key">
+                    {{value}}
+                  </option>
+              </select>
+              
+              <p v-if="!errors[0]" v-for="(error, index) in backendErrors['type']" :key="index">
+                <span class="text-danger" v-bind="ariaMsg" v-if="error"
+                  >{{ error }}
+                </span>
+              </p>
+            </ValidationProvider>
+					</div>
+          <div class="col-sm-12 text-right">
+            <button class="the-btn">{{ $t('Create Campaign')}}</button>
+          </div>
+        </form>
+    </div>
   </div>
 </template>
 
 <script>
+import TextInput from "@/components/Forms/TextInput";
+import { ValidationProvider } from "vee-validate";
 import MobilePreview from "@/components/dashboard/ads/mobilePreview";
 import ActionButtons from "@/components/dashboard/action-buttons";
 export default {
@@ -549,6 +606,20 @@ export default {
         call_of_action_txt_en: "",
         call_of_action_url: "",
       },
+      campaignsTypes: {
+        Awareness: "awareness",
+        Traffic: "traffic",
+        "App Installs": "app-installs",
+        "Video Views": "video-views",
+        Messages: "messages",
+        "Lead Generation": "lead-generation",
+      },
+      popupForm: false,
+      newCampaign: {
+        title: "",
+        title_en: "",
+        type: "",
+      },
     };
   },
   watch: {
@@ -563,10 +634,21 @@ export default {
     //   // if budget_after_tax value data type is any type other than number
     //   isNaN(this.budget_after_tax) ? this.budget_after_tax = 'Please Insert a Valid Number In Budget Field' : '';
     // }
+    'form.title': function(newVal, val) {
+      this.form.title_en = newVal
+    },
+    'form.content': function(newVal, val) {
+      this.form.content_en = newVal
+    },
+    'form.call_of_action_txt': function(newVal, val) {
+      this.form.call_of_action_txt_en = newVal
+    }
   },
   components: {
     MobilePreview,
     ActionButtons,
+    TextInput,
+    ValidationProvider
   },
   mounted() {
     this.form.owner_id = this.user.id;
@@ -581,6 +663,13 @@ export default {
     },
   },
   methods: {
+    selectCities (arr) {
+      let index = arr.findIndex((obj) => obj.id < 0)
+      if (index >= 0) {
+        this.form.city = this.cities.filter((obj) => obj.id > 0)
+      }
+      debugger
+    },
     campaignCustomLabel({ title, type }) {
       return `${title} — [${type}]`;
     },
@@ -624,6 +713,7 @@ export default {
         "language",
         "campaign_id",
       ];
+      debugger
       Object.keys(this.form).map((key) => {
         if (dropdowns.includes(key)) {
           this.handleDropdown(key);
@@ -638,27 +728,31 @@ export default {
           },
         })
         .then((res) => {
-          console.log(res);
           this.successMessage = res.message;
           setTimeout(() => {
-            this.$store.commit(
-              "localStorage/SET_PAYMENT_AMOUNT",
-              this.formData.get("budget")
-            );
-            this.$store.commit(
-              "localStorage/SET_PAYMENT_ORDER_NUMBER",
-              res.ad_id
-            );
-
-            this.$store.commit(
-              "localStorage/SET_PAYMENT_CHECKOUT_ID",
-              res.checkout
-            );
             this.$router.push({
-              path: `/${this.$i18n.locale}/advertiser/dashboard/payment`,
-              query: { advertisementId: res.ad_id },
+              path: `/${this.$i18n.locale}/advertiser/dashboard/ads/${res.ad_id}`
             });
           }, 1000);
+          // setTimeout(() => {
+          //   this.$store.commit(
+          //     "localStorage/SET_PAYMENT_AMOUNT",
+          //     this.formData.get("budget")
+          //   );
+          //   this.$store.commit(
+          //     "localStorage/SET_PAYMENT_ORDER_NUMBER",
+          //     res.ad_id
+          //   );
+
+          //   this.$store.commit(
+          //     "localStorage/SET_PAYMENT_CHECKOUT_ID",
+          //     res.checkout
+          //   );
+            // this.$router.push({
+            //   path: `/${this.$i18n.locale}/advertiser/dashboard/payment`,
+            //   query: { advertisementId: res.ad_id },
+            // });
+          // }, 1000);
         });
     },
     formatingDate(date) {
@@ -686,8 +780,34 @@ export default {
       // axios get request and the fetched data stord in cities property
       this.$axios.$get("ads/cities/" + selectedCountries).then((res) => {
         this.cities = res.data;
-      });
+        this.cities.unshift({id: -1, value: 'select all'})
+      })
     },
+    popup() {
+      this.popupForm = !this.popupForm;
+    },
+    storeCampaign() {   
+      debugger   
+      this.$axios
+        .$post("campaigns/create", this.newCampaign)
+        .then((res) => {
+          this.successMessage = res.data.message;
+          this.popupForm = false;
+          this.campaigns.unshift(res.data.data)
+          this.resetCampaign()
+        })
+        // .catch((err) => {
+        //   console.log("no");
+        //   // console.log(error.response.data.errors, 'aa')
+        // });
+    },
+    resetCampaign() {
+      this.newCampaign = {
+        title: "",
+        title_en: "",
+        type: "",
+      }
+    }
   },
   async asyncData({ app }) {
     let request = [
@@ -708,3 +828,20 @@ export default {
   layout: "dashboard",
 };
 </script>
+<style scoped>
+button {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+.create-campaign {
+  position: absolute !important;
+  top: 30vh;
+  /*left: 50vh;*/
+  z-index: 9999;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+</style>

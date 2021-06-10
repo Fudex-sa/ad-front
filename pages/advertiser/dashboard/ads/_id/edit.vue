@@ -3,7 +3,7 @@
 
 		
 		<div class="row">
-			<div class="fixed alert alert-danger" v-if="successMessage">
+			<div class="fixed alert alert-success" v-if="successMessage">
 				{{ successMessage }}
 			</div>
 			<div class="col-sm-12 col-md-6">
@@ -62,6 +62,7 @@
 							<emoji-picker @emoji="insert" :search="search">
 								<div
 									class="emoji-invoker"
+									:style="`${$i18n.locale == 'en' ? 'right: 3rem' : 'left: 3rem'}`"
 									slot="emoji-invoker"
 									slot-scope="{ events: { click: clickEvent } }"
 									@click.stop="clickEvent"
@@ -82,7 +83,7 @@
 									slot="emoji-picker"
 									slot-scope="{ emojis, insert, display }"
 								>
-									<div class="emoji-picker">
+									<div class="emoji-picker" :style="`${$i18n.locale == 'en' ? 'right: 3rem' : 'left: 3rem'}`">
 										<div class="emoji-picker__search">
 											<input type="text" v-model="search" v-focus />
 										</div>
@@ -235,6 +236,7 @@
 					<multiselect
 						v-model="form.city"
 						:options="cities"
+						@input="selectCities"
 						:multiple="true"
 						:close-on-select="false"
 						:clear-on-select="false"
@@ -243,7 +245,6 @@
 						label="value"
 						track-by="id"
 						:class="{ 'is-invalid': errors.city }"
-						@input="handleMultiDropdown('city', form['city'])"
 					>
 						<template slot="selection" slot-scope="{ values, search, isOpen }">
 							<span
@@ -413,15 +414,15 @@
 			this.formData = new FormData()
 			this.dropdownInitialSetters()
 		},
-		beforeRouteLeave(to, from, next) {
-          debugger
-          // check back button 
-          this.$store.commit(
-            "localStorage/SET_BACK_BUTTON",
-            true
-          );
-          return next();
-        },
+		// beforeRouteLeave(to, from, next) {
+        //   debugger
+        //   // check back button 
+        //   this.$store.commit(
+        //     "localStorage/SET_BACK_BUTTON",
+        //     true
+        //   );
+        //   return next();
+        // },
 		created() {
 			if (['finished', 'active'].includes(this.initialForm.status)) {
 				// not allowed
@@ -433,6 +434,14 @@
 		methods: {
 			insert(emoji) {
 				this.form.content += emoji
+			},
+			selectCities (arr) {
+				let index = arr.findIndex((obj) => obj.id < 0)
+				if (index >= 0) {
+					this.form.city = this.cities.filter((obj) => obj.id > 0)
+				}
+				this.handleMultiDropdown('city', this.form.city)
+				debugger
 			},
 			initialFormDropdown(needles, haystack) {
 				debugger
@@ -449,6 +458,7 @@
 					.then((res) => {
 						this.cities = res.data
 						this.setInitialCity()
+						this.cities.unshift({id: -1, value: 'select all'})
 					})
 					.catch((err) => {
 						console.log(err)
@@ -489,6 +499,9 @@
 				this.formData.append(key, value)
 			},
 			handleMultiDropdown(key, selected) {
+				// reset key first
+				this.formData.delete(key);
+				// set new value				
 				selected = selected.map((obj) => obj.value)
 				this.formData.append(key, selected)
 			},
@@ -506,9 +519,9 @@
 					})
 					.then((res) => {
 						this.successMessage = res.data.message
-						setTimeout(() => {
-							this.$router.push({ path: `/advertiser/dashboard/ads/${this.$route.params.id}/edit` })
-						}, 1000)
+						// setTimeout(() => {
+							this.$router.push(this.localePath(`/advertiser/dashboard/ads/${this.$route.params.id}/edit`))
+						// }, 1000)
 					})
 					.catch((err) => {
 						console.log(err)

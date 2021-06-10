@@ -852,8 +852,8 @@ textarea {
 }
 .emoji-invoker {
 	position: absolute;
-	top: 5rem;
-	right: 3rem;
+	bottom: 5rem;
+	// left: 3rem;
 	width: 2rem;
 	height: 2rem;
 	border-radius: 50%;
@@ -873,8 +873,8 @@ textarea {
 	border: 1px solid #ccc;
 	width: 20rem;
 	height: 20rem;
-	top: 8rem;
-	right: 2rem;
+	top: 15rem;
+	// right: 2rem;
 	overflow: scroll;
 	padding: 1rem;
 	box-sizing: border-box;

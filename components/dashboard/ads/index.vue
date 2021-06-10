@@ -70,7 +70,7 @@
                   >{{ $t('ads.action.edit') }}</nuxt-link>
                 </template>
                 <!-- Preview as visitor -->
-                <template v-if="user.role == 'advertiser' && ad.status !='unpaid' " >
+                <template v-if="user.role == 'advertiser'" >
                 <nuxt-link 
                   class="btn btn-info action-btn"
                   :to="localePath(`/${user.role}/dashboard/ads/${ad.id}`)"

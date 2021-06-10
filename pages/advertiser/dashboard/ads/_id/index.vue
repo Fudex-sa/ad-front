@@ -6,7 +6,11 @@
     <ad-id :ad="ad"/>
 </template> -->
 <div>
-
+    <div class="col-md-12" v-if="ad.status == 'unpaid'">
+        <a class="btn btn-info text-right mb-4" @click="paymentData()">
+        {{$t('pay now')}}
+      </a>
+    </div>
 
   <div class="col-md-6">
       <h1>Advertisement Details</h1>
@@ -258,6 +262,34 @@ Payment Not Completed
             true
           );
           return next();
+        },
+        methods: {
+          paymentData () {
+            this.$axios
+              .$get(`ads/paymentInfo/${this.ad.id}`)
+              .then((res) => {
+                setTimeout(() => {
+                  this.$store.commit(
+                    "localStorage/SET_PAYMENT_AMOUNT",
+                      this.ad.budget 
+                  );
+                  this.$store.commit(
+                    "localStorage/SET_PAYMENT_ORDER_NUMBER",
+                    this.ad.id 
+                  );
+
+                  this.$store.commit(
+                    "localStorage/SET_PAYMENT_CHECKOUT_ID",
+                    res.checkout
+                  );
+                  this.$router.push({
+                    path: `/${this.$i18n.locale}/advertiser/dashboard/payment`,
+                    query: { advertisementId: this.ad.id },
+                  });
+                }, 1000);
+              });
+    
+          }
         }
     }
 </script>
