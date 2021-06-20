@@ -14,7 +14,7 @@
 						<th width="10%">Status</th>
 						<th width="10%">Payment Method</th>
 						<th width="15%">Amount</th>
-						<th width="15%">Balance</th>
+						
 						<th width="15%">Actions</th>
 					</tr>
 				</thead>
@@ -40,9 +40,7 @@
 						<td>
 							<strong>{{ transaction.amount }}</strong>
 						</td>
-						<td>
-							<strong>{{ transaction.balance }}</strong>
-						</td>
+						
 						<td>
 							<button
 								title="cancel transaction"
