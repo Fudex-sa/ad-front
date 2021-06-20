@@ -196,7 +196,17 @@ const messages = {
   active_ads: "الإعلانات النشطة",
   transactions: "المدفوعات",
   editProfile:"تعديل الحساب",
-  paymentMethods:"طريقة الدفع"
+  paymentMethods:"طريقة الدفع",
+  slider:'السلايدر',
+  'Create Slide':'انشاء سلايد',
+  x:'',
+  x:'',
+  x:'',
+  x:'',
+  x:'',
+  x:'',
+  x:'',
+  
 
 
 

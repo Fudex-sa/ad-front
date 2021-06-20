@@ -82,13 +82,41 @@
               <span>{{ $t('settings') }}</span>
             </nuxt-link>
           </li>
+
+           <li>
+            <nuxt-link :to="localePath('admin-dashboard-slider')">
+              <img src="@/assets/img/img-a.png" class="icon-a" />
+              <img src="@/assets/img/img-b.png" class="icon-b" />
+              <span>{{ $t('slider') }}</span>
+            </nuxt-link>
+          </li>
+
+             <li>
+            <nuxt-link :to="localePath('admin-dashboard-partners')">
+              <img src="@/assets/img/img-a.png" class="icon-a" />
+              <img src="@/assets/img/img-b.png" class="icon-b" />
+              <span>{{ $t('partners') }}</span>
+            </nuxt-link>
+          </li>
+
           <li>
+            <nuxt-link :to="localePath('admin-dashboard-contact')">
+              <img src="@/assets/img/img2-a.png" class="icon-a" />
+              <img src="@/assets/img/img2-b.png" class="icon-b" />
+              <span>{{ $t('contact') }}</span>
+            </nuxt-link>
+          </li>
+
+
+           <li>
             <nuxt-link :to="localePath('admin-dashboard-wallet-soldier')">
               <img src="@/assets/img/img2-a.png" class="icon-a" />
               <img src="@/assets/img/img2-b.png" class="icon-b" />
               <span>{{ $t('wallet') }}</span>
             </nuxt-link>
           </li>
+
+
           <li>
             <a @click="logout()">
               <img src="@/assets/img/img2-a.png" class="icon-a" />

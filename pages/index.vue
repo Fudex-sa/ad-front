@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<!-- start slider -->
-		<slider></slider>
+		<slider :slides='slides'></slider>
 		<!-- end slider -->
 
 		<!-- start services -->
-		<services></services>
+		<services :services='services'></services>
 		<!-- end services -->
 
 		<!-- start video -->
@@ -41,7 +41,7 @@
 		</div>
 		<!-- end video -->
 		<!-- start clients -->
-		<clients></clients>
+		<clients :partners='partners'></clients>
 		<!-- end clients -->
 	</div>
 </template>
@@ -60,6 +60,26 @@
 	import Clients from '@/components/front/home/Clients'
 
 	export default {
+		data(){
+			return{
+				services:[],
+				slides:[]
+			}
+			
+		},
+		async asyncData({ app, $axios }) {        
+								let response = await $axios.get("home-data", {
+										headers: {
+												"Accept-Language": app.i18n.locale
+										},
+								});
+        console.log(response);
+								return {
+										services: response.data.services,
+										slides: response.data.slider,
+										partners:response.data.partners
+								};
+			},
 		components: {
 			Slider,
 			Services,

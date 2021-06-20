@@ -151,7 +151,9 @@ const messages = {
   active_ads: "Active Ads",
   transactions: "Payments",
   editProfile:"Edit Profile",
-  paymentMethods:"Payment Method"
+  paymentMethods:"Payment Method",
+  slider:'Slider',
+  'Create Slide': 'Create Slide'
 
 
 

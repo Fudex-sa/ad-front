@@ -7,7 +7,7 @@
 					<li>
 						<a href="#"><img src="~/assets/img/home.png" />Home</a>
 					</li>
-					<li class="active">Page Name</li>
+					<li class="active">{{ $i18n.locale=='ar'? 'اتصل بنا' : 'Contact us'}}</li>
 				</ul>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 					<!-- start map -->
 					<div class="col-md-6 col-sm-12 mt-50">
 						<GmapMap
-							:center="center"
+							:center="{lat:parseFloat(contacts.lat), lng:parseFloat(contacts.lng)}"
 							:zoom="20"
 							map-type-id="terrain"
 							style="width: 100%; height: 450px"
@@ -117,8 +117,7 @@
 		</div>
 		<!-- end internal page -->
 		<!-- start clients -->
-		<clients></clients>
-		<!-- end clients -->
+		
 	</div>
 </template>
 
@@ -158,8 +157,9 @@
 		},
 		async asyncData({ $axios }) {
 			let response = await $axios.$get('settings')
-			let contacts = response.data
-			let icon = '~/assets/img/map.png'
+			let contacts = response.data;
+			let icon = '~/assets/img/map.png';
+			console.log(contacts);
 			return {
 				contacts: contacts,
 				center: {

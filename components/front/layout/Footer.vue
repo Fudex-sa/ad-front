@@ -42,7 +42,7 @@
                             </li>
                             <li><a href="#">terms &amp; conditions </a></li>
                             <li>
-                                <router-link :to="{name : 'contact'}">Contact US</router-link>
+                                <nuxt-link to="/contact">Contact USddd</nuxt-link>
                             </li>
                         </ul>
                     </div>

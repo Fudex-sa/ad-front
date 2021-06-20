@@ -5,55 +5,25 @@
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li v-for="(slide,index) in slides" :key="slide.id" data-target="#myCarousel" :data-slide-to="index" :class="index===0 ? 'active' : ''"></li>                        
                     </ol>
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <div class="item active">
+                        <div :class="index===0 ? 'item active' : 'item'" v-for="(slide,index) in slides" :key="slide.id">
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <h3>AFFILIATE</h3>
-                                    <h2>Marketing</h2>
-                                    <p class="text1 bold">Lorem ipsum  amet Dolor sit amet dolor sit</p>
-                                    <p class="text2">Congue primis class felis sociis,class felis sociis primis class nam ridiculusprimis classt.</p>
-                                    <a href="#" class="the-btn hvr-radial-out">GET STARTED</a>
+                                <div class="col-sm-6">                                    
+                                    <h2>{{$i18n.locale == "ar" ? slide.line1_ar : slide.line1_en}}</h2>
+                                    <p class="text1 bold">{{$i18n.locale == "ar" ? slide.line2_ar : slide.line2_en}}</p>
+                                    <p class="text2">{{$i18n.locale == "ar" ? slide.line3_ar : slide.line3_en}}</p>
+                                    <a href="#" class="the-btn hvr-radial-out">{{$i18n.locale == "ar" ? slide.button_text_ar : slide.button_text_en}}</a>
                                 </div>
                                 <div class="col-sm-6 text-right">
-                                    <img src="~/assets/img/slider.png">
+                                    <img :src="slide.picture">
                                 </div>
                             </div>
                         </div>
-                        <div class="item ">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <h3>AFFILIATE</h3>
-                                    <h2>Marketing</h2>
-                                    <p class="text1 bold">Lorem ipsum  amet Dolor sit amet dolor sit</p>
-                                    <p class="text2">Congue primis class felis sociis,class felis sociis primis class nam ridiculusprimis classt.</p>
-                                    <a href="#" class="the-btn hvr-radial-out">GET STARTED</a>
-                                </div>
-                                <div class="col-sm-6 text-right">
-                                    <img src="@/assets/img/slider.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <h3>AFFILIATE</h3>
-                                    <h2>Marketing</h2>
-                                    <p class="text1 bold">Lorem ipsum  amet Dolor sit amet dolor sit</p>
-                                    <p class="text2">Congue primis class felis sociis,class felis sociis primis class nam ridiculusprimis classt.</p>
-                                    <a href="#" class="the-btn hvr-radial-out">GET STARTED</a>
-                                </div>
-                                <div class="col-sm-6 text-right">
-                                    <img src="@/assets/img/slider.png">
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
 
                 </div>
@@ -64,6 +34,9 @@
 
 <script>
     export default {
-
+        props:['slides'],
+        mounted:function(){
+            console.log(this.slides);
+        }
     }
 </script>

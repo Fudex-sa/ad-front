@@ -9,11 +9,12 @@
                             <p>{{ $t('we_are_proud_of_our_partner') }}</p>
                         </div>
                     </div>
-                    <div class="col-sm-2"><div class="client"><img src="@/assets/img/client1.png"></div></div>
-                    <div class="col-sm-2"><div class="client"><img src="@/assets/img/client2.png"></div></div>
-                    <div class="col-sm-2"><div class="client"><img src="@/assets/img/client3.png"></div></div>
-                    <div class="col-sm-2"><div class="client"><img src="@/assets/img/client4.png"></div></div>
-                    <div class="col-sm-2"><div class="client"><img src="@/assets/img/client5.png"></div></div>
+
+                    <div v-for='partner in partners' :key='partner.id' class="col-sm-2">
+                        <div class="client">
+                            <img :src="partner.picture">
+                        </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -23,7 +24,7 @@
 <script>
 
     export default {
-        
+        props:['partners']
     }
 
 </script>
