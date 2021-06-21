@@ -294,6 +294,7 @@
           </p>
         </div>
       </div>
+
       <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>{{ $t("twitter_link") }} *</label>
@@ -313,6 +314,54 @@
           </p>
         </div>
       </div>
+
+
+
+
+
+      
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group dash-group">
+          <label>{{ $t("google_play") }} *</label>
+          <input
+            class="form-control dash-input"            
+            type="text"
+            v-model="initialSettings.google_play"
+            :class="{ 'is-invalid': errors.google_play }"
+          />
+          <p
+            class="text-danger p-2"
+            v-for="error in errors.google_play"
+            :key="error"
+          >
+            {{ error }}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group dash-group">
+          <label>{{ $t("app_store") }} *</label>
+          <input
+            class="form-control dash-input"            
+            type="text"
+            v-model="initialSettings.app_store"
+            :class="{ 'is-invalid': errors.app_store }"
+          />
+          <p
+            class="text-danger p-2"
+            v-for="error in errors.app_store"
+            :key="error"
+          >
+            {{ error }}
+          </p>
+        </div>
+      </div>
+
+
+
+
+
       <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>{{ $t("Location longitude") }} *</label>

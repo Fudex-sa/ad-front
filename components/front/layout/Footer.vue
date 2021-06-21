@@ -42,8 +42,8 @@
                     <div class="col-md-3 col-sm-6">
                         <h4>{{ $t('download_our_app') }}</h4>
                         <div class="apps">
-                            <a href="#" title="app-store"><img src="~/assets/img/app1.png" alt="app-store"></a>
-                            <a href="#" title="google-play"><img src="~/assets/img/app2.png" alt="google-play"></a>
+                            <a :href="contacts.app_store" title="app-store"><img src="~/assets/img/app1.png" alt="app-store"></a>
+                            <a :href="contacts.google_play" title="google-play"><img src="~/assets/img/app2.png" alt="google-play"></a>
                         </div>
                         
                     </div>
@@ -54,6 +54,7 @@
 
 
 <script>
+// import axios from '@nuxtjs/axios';
 export default {
     data () {
         return {
@@ -66,5 +67,15 @@ export default {
             contacts:response.data
         }
     },
+
+    mounted () {
+        this.fetchSettings();
+    },
+    methods:{
+        async fetchSettings() {
+            const response = await this.$axios.$get('settings');
+            this.contacts = response.data;
+        }
+    }
 }
 </script>
