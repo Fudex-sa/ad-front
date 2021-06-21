@@ -8,28 +8,51 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
+						<th width="10%">No.</th>
+						<th width="10%">Date</th>
 						<th width="10%">Soldier</th>
-						<th width="10%">Payment method</th>
-						<th width="10%">Payment ID</th>
-						<th width="10%">Balance</th>						
+						<th width="10%">Status</th>
+						<th width="10%">Payment Method</th>
+						<th width="15%">Amount</th>
+						
 						<th width="15%">Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="transaction in transactions" :key="transaction.id">
-						<td>{{ transaction.username }}</td>
-						<td>{{ transaction.fav_payment_method }}</td>
-						<td>111</td>
-						<td>{{ transaction.balance }}</td>
+					<tr v-for="transaction in transactions.data" :key="transaction.id">
+						<td>{{ transaction.transNumber || 'Not Available' }}</td>
+						<td>{{ transaction.updated_at || 'Not Available' }}</td>
+						<td > <span v-if="transaction.soldier"> {{ transaction.soldier.username }} </span> </td>
 
+						<td>
+							<span
+								class="label"
+								:class="{
+									'label-info': transaction.status == 'pending',
+									'label-success': transaction.status == 'done',
+									'label-danger': transaction.status == 'canceled',
+								}"
+								>{{ transaction.status }}</span
+							>
+						</td>
+						<td > <span v-if="transaction.soldier"> {{ transaction.soldier.fav_payment_method }} </span> </td>
+
+						<td>
+							<strong>{{ transaction.amount }}</strong>
+						</td>
 						
 						<td>
-							
 							<button
-								title="Pay soldier"
+								title="cancel transaction"
+								class="fa fa-times fa-lg btn btn-danger action-btn"
+								@click="cancelTrans(transaction)"
+								v-if="transaction.status == 'pending'"
+							></button>
+							<button
+								title="done transactions"
 								class="fa fa-check fa-lg btn btn-success action-btn"
 								@click="showModal(transaction)"
-								v-if="transaction.balance != '0'"
+								v-if="transaction.status != 'done'"
 								
 							></button>
 						</td>
@@ -45,7 +68,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Pay soldier</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Transaction</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button>
@@ -56,7 +79,7 @@
 					<div class="form-group">
 						<label class="col-sm-4">current balance: </label>
 						<div class="col-sm-8">
-							<span>{{currentTransaction.balance}} Riyal</span>
+							<span>{{currentTransaction.soldier.balance}} Riyal</span>
 						</div>
 					</div>
 				</div>
@@ -93,7 +116,7 @@
 			transNumber: null
 		}),
 		async asyncData({ app }) {
-			let response = await app.$axios.$get('soldiers')
+			let response = await app.$axios.$get('soldier/transactions')
 			console.log(response.data);
 			return {
 				transactions: response.data,
@@ -153,23 +176,20 @@
 			},
 			transDone() {
 				this.$axios
-					.$post(`soldier/pay`, {
+					.$post(`soldier/transactions/${this.currentTransaction.id}/done`, {
 						transNumber: this.transNumber,
-						amount:this.currentTransaction.balance,
-						soldier_id:this.currentTransaction.id
 					})
 					.then((res) => {
-						this.successMessage = res.data.message;
-						
-						let indexItem = this.transactions.findIndex((item) => item.id == res.data.data.soldier_id);
-						//this.transactions.splice(indexItem, 1, res.data.data)
+						this.successMessage = res.data.message
+						let indexItem = this.transactions.data.findIndex((item) => item.id == res.data.data.id)
+						this.transactions.data.splice(indexItem, 1, res.data.data)
 						// update all transaction balance of this soldier
-						this.transactions.forEach((element, index) => {
-							if (element.id == res.data.data.soldier_id) {
-								this.transactions[index].balance = 0;
+						this.transactions.data.forEach((element, index) => {
+							if (element.soldier_id == res.data.data.soldier_id) {
+								this.transactions.data[index].soldier.balance = res.data.data.soldier.balance 
 							}
 						});
-						//debugger
+						debugger
 						$('#openTransactionModal').modal('hide');
 					})
 					.catch((err) => {

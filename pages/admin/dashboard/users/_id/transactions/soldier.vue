@@ -8,6 +8,13 @@
           <div class="btn the-btn mr-10 pull-right hvr-radial-out" @click="showModal()">create transaction</div>
         </div>
     </div>
+
+
+      <div class="row">
+        <h3>Current balance: {{solider_balance}} rs</h3>
+      </div>
+
+
     <client-only placeholder="Loading...">
       <v-client-table :data="tableData" :columns="columns" :options="options">
         <template span slot="paymentType" slot-scope="props">
@@ -52,7 +59,7 @@
 export default {
   data() {
     return {
-      columns: ["transNumber", "amount", "balance", "status","paymentType", "paymentNumber", "created_at"],
+      columns: ["transNumber", "amount",/* "balance",*/ "status","paymentType", "paymentNumber", "created_at"],
       tableData: [],
       form: {
         soldier_id: this.$route.params.id,
@@ -65,14 +72,14 @@ export default {
         headings: {
           transNumber: this.$t('transNumber'),
           amount: this.$t('amount'),
-          balance: this.$t('balance'),
+          // balance: this.$t('balance'),
           status: this.$t('status'),
           paymentType: 'paymentType',
           paymentNumber: 'paymentNumber',
           created_at: this.$t('created_at'),
         },
-        sortable: ["transNumber", "amount", "balance", "status", "created_at"],
-        filterable: ["transNumber", "amount", "balance", "status", "created_at"]
+        sortable: ["transNumber", "amount", /*"balance",*/ "status", "created_at"],
+        filterable: ["transNumber", "amount", /*"balance",*/ "status", "created_at"]
       }
     };
   },

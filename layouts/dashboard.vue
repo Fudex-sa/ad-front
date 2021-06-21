@@ -22,11 +22,17 @@
                 <!-- start righ-content -->
                 <div class="admin-page">
                     <nuxt />
+
+                    <br v-for="(n,index) in 30" :key="index"/>
                 </div>
             </div>
             <!-- end right-content -->
+
+            
         </div>
         <!-- end admin-content -->
+
+        
         <div class="clearfix"></div>
         <!-- start copyrights -->
         <Copyrights />
