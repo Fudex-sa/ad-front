@@ -3,11 +3,11 @@
     <div :class="`alert ${successMessageClass}`" v-if="successMessage">
 			{{ successMessage }}
 		</div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-offset-9 col-md-3">
           <div class="btn the-btn mr-10 pull-right hvr-radial-out" @click="showModal()">create transaction</div>
         </div>
-    </div>
+    </div> -->
     <client-only placeholder="Loading...">
       <v-client-table :data="tableData" :columns="columns" :options="options">
         <template span slot="paymentType" slot-scope="props">
