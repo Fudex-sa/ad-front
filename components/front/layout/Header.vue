@@ -107,39 +107,14 @@
           </div>
 
           <ul class="nav navbar-nav navbar-right navigation">
-            <li>
-              <nuxt-link :to="localePath('index')">{{
-                $t("home").toUpperCase()
-              }}</nuxt-link>
-            </li>
-            <li>
-              <a href="#">{{ $t("advertiser").toUpperCase() }}</a>
-            </li>
-            <!-- <li><a href="#">PUBLISHERS</a></li> -->
-            <li>
-              <a href="#">{{ $t("benefits").toUpperCase() }}</a>
-            </li>
-            <li>
-              <nuxt-link :to="localePath('about')">{{
-                $t("about").toUpperCase()
-              }}</nuxt-link>
-            </li>
-
-            <li>
-              <nuxt-link :to="localePath('terms')">{{
-                $t("terms_conditions").toUpperCase()
-              }}</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link :to="localePath('privacy')">{{
-                $t("privacy_policy").toUpperCase()
-              }}</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link :to="localePath('contact')">{{
-                $t("contactus").toUpperCase()
-              }}</nuxt-link>
-            </li>
+            <li><nuxt-link :to="localePath('index')">{{ $t("home_page").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="`/`+$i18n.locale+`/page/5`">{{ $t("advertiser").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="`/`+$i18n.locale+`/page/4`">{{ $t("publisher").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="`/`+$i18n.locale+`/page/3`">{{ $t("benefits").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="localePath('about')">{{ $t("about_us").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="localePath('terms')">{{ $t("terms_and_conditions").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="localePath('contact')">{{ $t("contact_us").toUpperCase() }}</nuxt-link></li>            
           </ul>
         </div>
       </div>

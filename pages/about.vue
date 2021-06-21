@@ -65,10 +65,8 @@
       </div>
     </div>
     <!-- end About page -->
-
-    <!-- Start Clients -->
-    <clients></clients>
-    <!-- End Clients -->
+    
+   
   </div>
 </template>
 

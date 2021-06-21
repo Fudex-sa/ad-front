@@ -107,6 +107,14 @@
             </nuxt-link>
           </li>
 
+          <li>
+            <nuxt-link :to="localePath('admin-dashboard-pages')">
+              <img src="@/assets/img/img2-a.png" class="icon-a" />
+              <img src="@/assets/img/img2-b.png" class="icon-b" />
+              <span>{{ $t('Pages') }}</span>
+            </nuxt-link>
+          </li>
+
 
            <li>
             <nuxt-link :to="localePath('admin-dashboard-wallet-soldier')">

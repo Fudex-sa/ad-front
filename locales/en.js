@@ -153,7 +153,14 @@ const messages = {
   editProfile:"Edit Profile",
   paymentMethods:"Payment Method",
   slider:'Slider',
-  'Create Slide': 'Create Slide'
+  'Create Slide': 'Create Slide',
+  advertiser:'Advertiser',
+  publisher:'Publisher',
+  benefits:'Benefits',
+  about_us:'About us',
+  terms_and_conditions:'Terms & Conditions',
+  contact_us:'Contact Us',
+  home_page:'Home'
 
 
 

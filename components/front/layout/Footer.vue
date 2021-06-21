@@ -15,35 +15,28 @@
                     <div class="col-md-2 col-sm-4">
                         <h4>{{ $t('service')}}</h4>
                         <ul class="links">
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">information</a></li>
-                            <li><a href="#">privacy policy</a></li>
-                            <li><a href="#">terms &amp; conditions </a></li>
-                            <li><a href="#">privacy policy</a></li>
+                            <li><router-link :to="{name : 'about'}">{{ $t('about_us') }}</router-link></li>
+                            <li><router-link :to="{name : 'privacy'}">{{ $t('privacy_policy') }}</router-link></li>                            
+                            <li><router-link :to="{name : 'terms'}">{{ $t('terms_and_conditions') }}</router-link></li>
+                            <li><nuxt-link to="/contact">{{ $t('contact_us') }}</nuxt-link></li>
                         </ul>
                     </div>
                     <div class="col-md-2 col-sm-4">
                         <h4>{{ $t('extras') }}</h4>
                         <ul class="links">
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">information</a></li>
-                            <li><a href="#">privacy policy</a></li>
-                            <li><a href="#">terms &amp; conditions </a></li>
-                            <li><a href="#">privacy policy</a></li>
+                            <li><router-link :to="{name : 'about'}">{{ $t('about_us') }}</router-link></li>
+                            <li><router-link :to="{name : 'privacy'}">{{ $t('privacy_policy') }}</router-link></li>                            
+                            <li><router-link :to="{name : 'terms'}">{{ $t('terms_and_conditions') }}</router-link></li>
+                            <li><nuxt-link to="/contact">{{ $t('contact_us') }}</nuxt-link></li>
                         </ul>
                     </div>
                     <div class="col-md-2 col-sm-6">
                         <h4>{{ $t('my_account') }}</h4>
-                        <ul class="links">
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">information</a></li>
-                            <li>
-                                <router-link :to="{name : 'privacy'}">privacy policy</router-link>
-                            </li>
-                            <li><a href="#">terms &amp; conditions </a></li>
-                            <li>
-                                <nuxt-link to="/contact">Contact USddd</nuxt-link>
-                            </li>
+                        <ul class="links">                            
+                            <li><router-link :to="{name : 'about'}">{{ $t('about_us') }}</router-link></li>
+                            <li><router-link :to="{name : 'privacy'}">{{ $t('privacy_policy') }}</router-link></li>                            
+                            <li><router-link :to="{name : 'terms'}">{{ $t('terms_and_conditions') }}</router-link></li>
+                            <li><nuxt-link to="/contact">{{ $t('contact_us') }}</nuxt-link></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -52,15 +45,7 @@
                             <a href="#" title="app-store"><img src="~/assets/img/app1.png" alt="app-store"></a>
                             <a href="#" title="google-play"><img src="~/assets/img/app2.png" alt="google-play"></a>
                         </div>
-                        <h4>{{ $t('subscription') }}</h4>
-                        <form>
-                            <div class="input-group">
-                                <input type="text" class="form-control" :placeholder="$t('email')">
-                                <div class="input-group-btn">
-                                    <button class="btn the-btn1" type="submit">{{ $t('subscripe') }}</button>
-                                </div>
-                            </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
