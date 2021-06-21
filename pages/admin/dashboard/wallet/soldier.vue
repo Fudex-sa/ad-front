@@ -5,7 +5,31 @@
 			{{ successMessage }}
 		</div>
 		<div class="table-responsive com-table">
-			<table class="table table-bordered">
+
+			<client-only placeholder="Loading...">
+      <v-client-table :data="transactions" :columns="columns" :options="options">
+							
+
+							  <template span slot="payment_id" slot-scope="props">          
+										<span>{{(props.row.fav_payment_method=='paypal'? props.row.paypalno : props.row.stcpayno)}}</span>									
+        </template>
+
+
+        <template span slot="actions" slot-scope="props">          
+											<button
+												title="Pay soldier"
+												class="fa fa-check fa-lg btn btn-success action-btn"
+												@click="showModal(props.row)"
+												v-if="props.row.balance != '0'"
+												
+											></button>
+        </template>
+      </v-client-table>
+    </client-only>
+
+
+
+			<!-- <table class="table table-bordered">
 				<thead>
 					<tr>
 						<th width="10%">Soldier</th>
@@ -25,17 +49,11 @@
 						
 						<td>
 							
-							<button
-								title="Pay soldier"
-								class="fa fa-check fa-lg btn btn-success action-btn"
-								@click="showModal(transaction)"
-								v-if="transaction.balance != '0'"
-								
-							></button>
+						
 						</td>
 					</tr>
 				</tbody>
-			</table>
+			</table> -->
 		</div>
 		<!-- pagination -->
 		<pagination :links="transactions.links" @changePage="fetchData" />
@@ -85,12 +103,25 @@
 	export default {
 		layout: 'dashboard',
 
-		data: () => ({
+		data: () => ({			
+			columns: ["username", "fav_payment_method", "balance", "payment_id","actions"],
 			transactions: [],
 			successMessage: '',
 			successMessageClass: '',
 			currentTransaction: null,
-			transNumber: null
+			transNumber: null,
+			options: {
+					headings: {						
+							username: 'Soldier',
+							fav_payment_method: 'Payment method',
+							balance: 'Balance',
+							payment_id: 'Payment ID',
+							actions: 'Actions'
+							
+					},
+					sortable: ["soldier", "fav_payment_method", "balance", "created_at"],
+					filterable: ["soldier", "fav_payment_method", "balance", "created_at"]
+			}
 		}),
 		async asyncData({ app }) {
 			let response = await app.$axios.$get('soldiers')

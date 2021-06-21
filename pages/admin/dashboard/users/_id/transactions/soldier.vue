@@ -5,7 +5,7 @@
 		</div>
     <div class="row">
         <div class="col-md-offset-9 col-md-3">
-          <div class="btn the-btn mr-10 pull-right hvr-radial-out" @click="showModal()">create transaction</div>
+          <!-- <div class="btn the-btn mr-10 pull-right hvr-radial-out" @click="showModal()">create transaction</div> -->
         </div>
     </div>
 
@@ -84,11 +84,8 @@ export default {
     };
   },
   async asyncData({ app, params }) {
-    let response = await app.$axios.$get(`soldier/transactions/${params.id}`)
-    console.log('soldier_balance: '+response.data[0].soldier.balance);
-
+    let response = await app.$axios.$get(`soldier/transactions/${params.id}`);
     let the_balance = (response.data[0]!=null)? response.data[0].soldier.balance : 0;
-    
     return {
       tableData: response.data,
       solider_balance: the_balance
