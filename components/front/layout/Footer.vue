@@ -15,28 +15,28 @@
                     <div class="col-md-2 col-sm-4">
                         <h4>{{ $t('service')}}</h4>
                         <ul class="links">
-                            <li><router-link :to="{name : 'about'}">{{ $t('about_us') }}</router-link></li>
-                            <li><router-link :to="{name : 'privacy'}">{{ $t('privacy_policy') }}</router-link></li>                            
-                            <li><router-link :to="{name : 'terms'}">{{ $t('terms_and_conditions') }}</router-link></li>
-                            <li><nuxt-link to="/contact">{{ $t('contact_us') }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('about')">{{ $t("about_us") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('terms')">{{ $t("terms_and_conditions") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('contact')">{{ $t("contact_us") }}</nuxt-link></li>                           
                         </ul>
                     </div>
                     <div class="col-md-2 col-sm-4">
                         <h4>{{ $t('extras') }}</h4>
                         <ul class="links">
-                            <li><router-link :to="{name : 'about'}">{{ $t('about_us') }}</router-link></li>
-                            <li><router-link :to="{name : 'privacy'}">{{ $t('privacy_policy') }}</router-link></li>                            
-                            <li><router-link :to="{name : 'terms'}">{{ $t('terms_and_conditions') }}</router-link></li>
-                            <li><nuxt-link to="/contact">{{ $t('contact_us') }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('about')">{{ $t("about_us") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('terms')">{{ $t("terms_and_conditions") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('contact')">{{ $t("contact_us") }}</nuxt-link></li>
                         </ul>
                     </div>
                     <div class="col-md-2 col-sm-6">
                         <h4>{{ $t('my_account') }}</h4>
                         <ul class="links">                            
-                            <li><router-link :to="{name : 'about'}">{{ $t('about_us') }}</router-link></li>
-                            <li><router-link :to="{name : 'privacy'}">{{ $t('privacy_policy') }}</router-link></li>                            
-                            <li><router-link :to="{name : 'terms'}">{{ $t('terms_and_conditions') }}</router-link></li>
-                            <li><nuxt-link to="/contact">{{ $t('contact_us') }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('about')">{{ $t("about_us") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('terms')">{{ $t("terms_and_conditions") }}</nuxt-link></li>
+                            <li><nuxt-link :to="localePath('contact')">{{ $t("contact_us") }}</nuxt-link></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-6">
