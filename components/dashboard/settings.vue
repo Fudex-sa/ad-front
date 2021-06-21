@@ -318,6 +318,49 @@
 
 
 
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group dash-group">
+          <label>{{ $t("publisher_video") }} *</label>
+          <input
+            class="form-control dash-input"          
+            type="text"
+            v-model="initialSettings.publisher_video"
+            :class="{ 'is-invalid': errors.publisher_video }"
+          />
+          <p
+            class="text-danger p-2"
+            v-for="error in errors.publisher_video"
+            :key="error"
+          >
+            {{ error }}
+          </p>
+        </div>
+      </div>
+
+      
+      <div class="col-sm-12 col-md-6">
+        <div class="form-group dash-group">
+          <label>{{ $t("advertiser_video") }} *</label>
+          <input
+            class="form-control dash-input"          
+            type="text"
+            v-model="initialSettings.advertiser_video"
+            :class="{ 'is-invalid': errors.advertiser_video }"
+          />
+          <p
+            class="text-danger p-2"
+            v-for="error in errors.advertiser_video"
+            :key="error"
+          >
+            {{ error }}
+          </p>
+        </div>
+      </div>
+
+
+
+
+
 
       
       <div class="col-sm-12 col-md-6">

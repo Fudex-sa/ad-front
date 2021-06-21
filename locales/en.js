@@ -160,8 +160,14 @@ const messages = {
   about_us:'About us',
   terms_and_conditions:'Terms & Conditions',
   contact_us:'Contact Us',
-  home_page:'Home'
-
+  home_page:'Home',
+  i_am_publisher:"I'm a publisher",
+  i_am_advertiser:"I'm an advertiser",
+  publisher_home_msg:'I Want To Monetize My Online Traffic - Site, Blog or Social Assets',
+  advertiser_home_msg:'I Want To Increase My E-Commerce Sales, Influence And	Profitability',
+  join_team:'Join me',
+  publisher_video:'Home publisher video',
+  advertiser_video:'Home advertiser video',
 
 
 

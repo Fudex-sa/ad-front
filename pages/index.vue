@@ -15,26 +15,24 @@
 					<div class="col-sm-6">
 						<video-card
 							thumbnail="_nuxt/assets/img/video1.png"
-							:videoUrl="'https://www.youtube.com/embed/yRAzlw4JM8o'"
+							:videoUrl="settings.publisher_video"
 						></video-card>
-						<h3>I'm An Advertiser</h3>
+						<h3>{{$t('i_am_publisher')}}</h3>
 						<p class="text2">
-							I Want To Increase My E-Commerce Sales, Influence And
-							Profitability
+							{{$t('publisher_home_msg')}}
 						</p>
-						<a href="#" class="the-btn hvr-radial-out">Join Team</a>
+						<nuxt-link class="the-btn hvr-radial-out" :to='"/auth/register"'>{{$t('join_team')}}</nuxt-link>						
 					</div>
 					<div class="col-sm-6">
 						<video-card
 							thumbnail="_nuxt/assets/img/video1.png"
-							:videoUrl="'https://www.youtube.com/embed/yRAzlw4JM8o'"
-						></video-card>
-						<h3>I'm A Publisher</h3>
+							:videoUrl="settings.advertiser_video"
+						></video-card>						
+						<h3>{{$t('i_am_advertiser')}}</h3>
 						<p class="text2">
-							I Want To Monetize My Online Traffic - Site, Blog or Social Assets
-							- To Maximize
+								{{$t('advertiser_home_msg')}}
 						</p>
-						<a href="#" class="the-btn hvr-radial-out">Join Team</a>
+						<nuxt-link class="the-btn hvr-radial-out" :to='"/auth/register"'>{{$t('join_team')}}</nuxt-link>	
 					</div>
 				</div>
 			</div>
@@ -73,11 +71,12 @@
 												"Accept-Language": app.i18n.locale
 										},
 								});
-        console.log(response);
+        console.log(response.data.settings);
 								return {
 										services: response.data.services,
 										slides: response.data.slider,
-										partners:response.data.partners
+										partners:response.data.partners,
+										settings:response.data.settings
 								};
 			},
 		components: {
