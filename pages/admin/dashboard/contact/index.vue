@@ -6,9 +6,8 @@
     <client-only placeholder="Loading...">
       <v-client-table :data="tableData" :columns="columns" :options="options">
                         
-        <template span slot="actions" slot-scope="props">
-          <span class="fa fa-trash-o fa-sm btn btn-danger action-btn" @click="deleteRecord(props.row.id)"></span>
-          <router-link class="fa fa-sm btn btn-info action-btn" :to="{ path: `/${$i18n.locale}/admin/dashboard/partners/${props.row.id}/edit`}">{{$t('edit')}}</router-link>
+        <template span slot="actions" slot-scope="props">          
+          <router-link class="fa fa-sm btn btn-info action-btn" :to="{ path: `/${$i18n.locale}/admin/dashboard/contact/${props.row.id}/show`}">{{$t('Reply')}}</router-link>
         </template>
       </v-client-table>
     </client-only>
@@ -23,8 +22,7 @@ export default {
       columns:[],
       tableData: [],
       options: {       
-        headings: {
-         
+        headings: {         
           actions: 'Actions'
         },
         sortable: [],
