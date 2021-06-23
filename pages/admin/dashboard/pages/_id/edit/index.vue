@@ -60,6 +60,9 @@
             
             <select class='form-control' v-model="record.type" :class="{ 'is-invalid' : errors.type}">
                 <option value="services">{{$t('services')}}</option>
+                <option value="footer_col_1">{{$t('footer_col_1')}}</option>
+                <option value="footer_col_2">{{$t('footer_col_2')}}</option>
+                <option value="footer_col_3">{{$t('footer_col_3')}}</option>
                 <option value="others">{{$t('others')}}</option>
             </select>
             <p class="text-danger p-2" v-for="error in errors.type" :key="error">{{error}}</p>
@@ -126,7 +129,6 @@
 
             onFileChange(e) {
                 this.record.picture = this.$refs.picture.files[0];
-                console.log(this.record.picture);
             }
 
            

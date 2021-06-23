@@ -14,29 +14,26 @@
                     </div>
                     <div class="col-md-2 col-sm-4">
                         <h4>{{ $t('service')}}</h4>
-                        <ul class="links">
-                            <li><nuxt-link :to="localePath('about')">{{ $t("about_us") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('terms')">{{ $t("terms_and_conditions") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('contact')">{{ $t("contact_us") }}</nuxt-link></li>                           
+                        <ul class="links">                            
+                            <li v-for="page in footer_pages.footer_col_1" :key="page.id">
+                                <nuxt-link :to="`page/${page.id}`">{{ $i18n.locale=='ar'? page.title_ar : page.title_en }}</nuxt-link>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-2 col-sm-4">
                         <h4>{{ $t('extras') }}</h4>
                         <ul class="links">
-                            <li><nuxt-link :to="localePath('about')">{{ $t("about_us") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('terms')">{{ $t("terms_and_conditions") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('contact')">{{ $t("contact_us") }}</nuxt-link></li>
+                             <li v-for="page in footer_pages.footer_col_2" :key="page.id">
+                                <nuxt-link :to="`page/${page.id}`">{{ $i18n.locale=='ar'? page.title_ar : page.title_en }}</nuxt-link>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-2 col-sm-6">
                         <h4>{{ $t('my_account') }}</h4>
                         <ul class="links">                            
-                            <li><nuxt-link :to="localePath('about')">{{ $t("about_us") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('terms')">{{ $t("terms_and_conditions") }}</nuxt-link></li>
-                            <li><nuxt-link :to="localePath('contact')">{{ $t("contact_us") }}</nuxt-link></li>
+                             <li v-for="page in footer_pages.footer_col_3" :key="page.id">
+                                <nuxt-link :to="`page/${page.id}`">{{ $i18n.locale=='ar'? page.title_ar : page.title_en }}</nuxt-link>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -58,7 +55,8 @@
 export default {
     data () {
         return {
-            contacts : []
+            contacts : [],
+            footer_pages:[]
         }
     },
     async asyncData({$axios}){
@@ -70,12 +68,18 @@ export default {
 
     mounted () {
         this.fetchSettings();
+        this.fetchFooterPages();
     },
     methods:{
         async fetchSettings() {
             const response = await this.$axios.$get('settings');
             this.contacts = response.data;
-        }
+        },
+        async fetchFooterPages() {
+            const response = await this.$axios.$get('footer-pages');
+            this.footer_pages = response.data;
+        },
+        
     }
 }
 </script>

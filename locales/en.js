@@ -168,7 +168,10 @@ const messages = {
   join_team:'Join me',
   publisher_video:'Home publisher video',
   advertiser_video:'Home advertiser video',
-  download_our_apps:'Download our apps'
+  download_our_apps:'Download our apps',
+  footer_col_1:'Footer left',
+  footer_col_2:'Footer center',
+  footer_col_3:'Footer right',
 
 
 
