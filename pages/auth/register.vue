@@ -8,7 +8,24 @@
             <p>{{ $t('Enter Your Data to Continue') }} </p>
           </div>
         </div>
+
+
+
+
+
         <div class="col-sm-12">
+
+          <div class="row">
+            <div class="col-md-3 col-sm-3"></div>
+             <div class="col-md-6 col-sm-6 text-center">
+                <h4>{{ $t('download_our_apps') }}</h4>
+                <div class="apps text-center">
+                    <a :href="contacts.app_store" title="app-store"><img src="~/assets/img/app1.png" alt="app-store"></a>
+                    <a :href="contacts.google_play" title="google-play"><img src="~/assets/img/app2.png" alt="google-play"></a>
+                </div>                        
+              </div>
+          </div>
+
           <!-- start tabs -->
           <ul class="nav nav-pills">
             <li :class="{ active: formType == 'advertiser' }">
@@ -124,6 +141,8 @@ export default {
     return {
       message: "",
       formType: "advertiser",
+      contacts : [],
+
       form: {
         company: "",
         email: "",
@@ -134,6 +153,13 @@ export default {
     };
   },
   methods: {
+
+    async fetchSettings() {
+            const response = await this.$axios.$get('settings');
+            this.contacts = response.data;
+    },
+
+
     changeForm(type) {
       this.formType = type;
       this.form.company = "";
@@ -143,6 +169,7 @@ export default {
       this.form.password_confirmation = "";
       this.form.role = this.formType;
     },
+    
     signup() {
       this.form.company == "" ? delete this.form.company : "";
 
@@ -184,6 +211,9 @@ export default {
           }
         });
     }
+  },
+  mounted () {
+      this.fetchSettings();
   }
 };
 </script>

@@ -168,6 +168,7 @@ const messages = {
   join_team:'Join me',
   publisher_video:'Home publisher video',
   advertiser_video:'Home advertiser video',
+  download_our_apps:'Download our apps'
 
 
 

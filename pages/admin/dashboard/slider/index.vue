@@ -18,7 +18,7 @@
           <!-- <span>{{props.row.fav_payment_method ? :src="imagePath(category.cover_img)"props.row.fav_payment_method : '--'}}</span> -->
         </template>       
         <template span slot="actions" slot-scope="props">
-          <span class="fa fa-trash-o fa-sm btn btn-danger action-btn" @click="deleteUser(props.row.id)"></span>
+          <span class="fa fa-trash-o fa-sm btn btn-danger action-btn" @click="deleteRecord(props.row.id)"></span>
           <router-link class="fa fa-sm btn btn-info action-btn" :to="{ path: `/${$i18n.locale}/admin/dashboard/slider/${props.row.id}/edit`}">{{$t('edit')}}</router-link>
         </template>
       </v-client-table>
@@ -70,9 +70,9 @@ export default {
       // deleteUser(){
       //     console.log("Delete...");
       // },
-      deleteUser(id) {
+      deleteRecord(id) {
       this.$axios
-        .$delete(`users/${id}`)
+        .$delete(`slider/${id}`)
         .then(res => {
           // print success message
           this.successMessage = res.data.message;

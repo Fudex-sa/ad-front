@@ -83,10 +83,9 @@
 						<thead>
 							<tr>
 								<th width="10%">No.</th>
-								<th width="10%">Date</th>
-								<th width="10%">Status</th>
-								<th width="15%">Amount</th>
-								<th width="15%">Balance</th>
+								<th width="15%">Date</th>
+								<th width="15%">Status</th>								
+								<th width="20%">Balance</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -97,12 +96,9 @@
 									<span class="label label-danger">{{
 										transaction.status
 									}}</span>
-								</td>
+								</td>								
 								<td>
 									<strong>{{ transaction.amount }}</strong>
-								</td>
-								<td>
-									<strong>{{ transaction.balance }}</strong>
 								</td>
 							</tr>
 						</tbody>

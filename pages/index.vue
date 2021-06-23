@@ -71,7 +71,7 @@
 												"Accept-Language": app.i18n.locale
 										},
 								});
-        console.log(response.data.settings);
+        
 								return {
 										services: response.data.services,
 										slides: response.data.slider,
