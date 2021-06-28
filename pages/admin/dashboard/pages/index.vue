@@ -18,7 +18,7 @@
           <!-- <span>{{props.row.fav_payment_method ? :src="imagePath(category.cover_img)"props.row.fav_payment_method : '--'}}</span> -->
         </template>       
         <template span slot="actions" slot-scope="props">
-          <span class="fa fa-trash-o fa-sm btn btn-danger action-btn" @click="deleteRecord(props.row.id)"></span>
+          <span v-if='props.row.type!="navbar"' class="fa fa-trash-o fa-sm btn btn-danger action-btn" @click="deleteRecord(props.row.id)"></span>
           <router-link class="fa fa-sm btn btn-info action-btn" :to="{ path: `/${$i18n.locale}/admin/dashboard/pages/${props.row.id}/edit`}">{{$t('edit')}}</router-link>
         </template>
       </v-client-table>
@@ -58,9 +58,7 @@ export default {
   },
   async asyncData({ app }) {
     let response = await app.$axios.$get("pages");
-    let cols = app.i18n.locale=='ar'?
-          ['picture','title_ar','desc_ar','type','created_at','updated_at','actions'] :
-          ['picture','title_en','desc_en','type','created_at','updated_at','actions'] ;
+    let cols =  ['picture','title_ar','title_en','type','actions'] ;
     return {
       tableData: response.data.data,
       columns:cols

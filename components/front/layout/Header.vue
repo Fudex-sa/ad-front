@@ -107,13 +107,18 @@
           </div>
 
           <ul class="nav navbar-nav navbar-right navigation">
-            <li><nuxt-link :to="localePath('index')">{{ $t("home_page").toUpperCase() }}</nuxt-link></li>
+            <!--
             <li><nuxt-link :to="`/`+$i18n.locale+`/page/5`">{{ $t("advertiser").toUpperCase() }}</nuxt-link></li>
             <li><nuxt-link :to="`/`+$i18n.locale+`/page/4`">{{ $t("publisher").toUpperCase() }}</nuxt-link></li>
             <li><nuxt-link :to="`/`+$i18n.locale+`/page/3`">{{ $t("benefits").toUpperCase() }}</nuxt-link></li>
             <li><nuxt-link :to="localePath('about')">{{ $t("about_us").toUpperCase() }}</nuxt-link></li>
             <li><nuxt-link :to="localePath('terms')">{{ $t("terms_and_conditions").toUpperCase() }}</nuxt-link></li>
-            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="localePath('privacy')">{{ $t("privacy_policy").toUpperCase() }}</nuxt-link></li> -->
+             <li><nuxt-link :to="localePath('index')">{{ $t("home_page").toUpperCase() }}</nuxt-link></li>
+            <li><nuxt-link :to="localePath('about')">{{ $t("about_us").toUpperCase() }}</nuxt-link></li>
+            <li v-for="nav_page in nav_pages" :key="nav_page.id">
+              <nuxt-link :to="`/`+$i18n.locale+`/page/`+nav_page.id+``">{{ $i18n.locale == 'ar'? nav_page.title_ar:nav_page.title_en.toUpperCase() }}</nuxt-link>
+             </li>
             <li><nuxt-link :to="localePath('contact')">{{ $t("contact_us").toUpperCase() }}</nuxt-link></li>            
           </ul>
         </div>
@@ -127,9 +132,17 @@ export default {
   data() {
     return {
       isLoading: false,
+      nav_pages:[]
     };
   },
+  mounted(){
+     this.fetchNavPages();
+  },
   methods: {
+    async fetchNavPages(){
+      const response = await this.$axios.$get('nav-pages');
+      this.nav_pages = response.data.navbar;
+    },
     switchMyLang(locale) {
       if (locale === this.$store.state.i18n.locale) {
         return;

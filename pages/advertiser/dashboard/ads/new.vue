@@ -509,13 +509,14 @@
         <form @submit.prevent="storeCampaign()">
           <TextInput
             v-model="newCampaign.title"
-            :name="$t('campaign_title_ar')"
+            :name="$t('campaign_title')"
             rules="required"
           />
 
           <TextInput
             v-model="newCampaign.title_en"
             :name="$t('campaign_title_en')"
+            class='hidden'
           />
           <div class="form-group dash-group">						
 							 <label data-v-e01ca4dc="" for="$t('campaign types')" class="text-red-600"><span data-v-e01ca4dc="">
@@ -564,7 +565,7 @@ export default {
       value: [],
       input: "",
       search: "",
-      placeholderCampaign: 'Pick A Media Type',
+      placeholderCampaign: 'Pick A Campaign',
       gender: [
         { name: "Male", value: "male" },
         { name: "Female", value: "female" },

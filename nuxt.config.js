@@ -105,7 +105,7 @@ export default {
      * Axios Configuration
      */
     axios: {
-        baseURL: "http://dev.fudexsb.com/demo/adsol-back/public/api/",
+        baseURL: "http://adsoldier.fudex-tech.net/adsol-back/public/api/",
         //  "http://api.adsoldier.api-ksa.com/api/",
         redirectError: {
             401: "/auth/login",

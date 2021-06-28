@@ -179,7 +179,7 @@ const messages = {
   'Already have an account': "لديك حساب بالفعل",
   'Advertiser sign up': "تسجيل كمعلن",
   'Soldier sign up': "تسجيل كجندي نشر",
-  min_ad_view_duration: 'أقل مدة للإعلان',
+  min_ad_view_duration: 'أقل مدة لزيارة الاعلان بالثواني',
   solider_ad_max_profit: 'أقصى قيمة للإعلان',
   "solider_ad_max_currency":" عملة أقصي قيمة للإعلان",
   Soldier: "المحفظة",

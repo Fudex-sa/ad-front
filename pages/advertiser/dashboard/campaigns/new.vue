@@ -44,7 +44,7 @@
           <TextInput
             :key="index"
             v-model="form.ar.title"
-            :name="$t('campaign_title_ar')"
+            :name="$t('campaign_title')"
             rules="required"
           />
 
@@ -52,6 +52,7 @@
             :key="index+'en'"
             v-model="form.en.title"
             :name="$t('campaign_title_en')"
+            class='hidden'
             
           />
 

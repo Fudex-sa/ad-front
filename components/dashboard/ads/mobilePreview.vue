@@ -61,7 +61,7 @@
 						<img :src="form.mediaPreview" alt />
 						<video :src="form.mediaPreview" controls autoplay="autoplay" muted></video>
 					</div>
-					<div class="dot"></div>
+					<div style='right:60%' class="dot"></div>
 				</div>
 			</div>
 			<!-- desktop -->
