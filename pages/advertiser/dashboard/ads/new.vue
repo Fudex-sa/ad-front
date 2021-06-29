@@ -645,6 +645,10 @@ export default {
     },
     'form.call_of_action_txt': function(newVal, val) {
       this.form.call_of_action_txt_en = newVal
+    },
+    'form.media_type':function(new_val,old_val){
+      console.log(new_val);
+      this.form.media_type = new_val;
     }
   },
   components: {
@@ -671,7 +675,7 @@ export default {
       if (index >= 0) {
         this.form.city = this.cities.filter((obj) => obj.id > 0)
       }
-      debugger
+      
     },
     campaignCustomLabel({ title, type }) {
       return `${title} — [${type}]`;
@@ -681,6 +685,8 @@ export default {
     },
     handleFileUpload(value) {
       this.form.media_type = value.selectedMedia_type;
+     
+      this.formData.delete('media[]');
       Object.keys(value.media).map((key) => {
         return this.formData.append("media[]", value.media[key]);
       });
@@ -716,7 +722,7 @@ export default {
         "language",
         "campaign_id",
       ];
-      debugger
+      
       Object.keys(this.form).map((key) => {
         if (dropdowns.includes(key)) {
           this.handleDropdown(key);

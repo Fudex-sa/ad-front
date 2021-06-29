@@ -52,19 +52,7 @@
               media: [],
             },
             categories: [
-              // 'Entertainment',
-              // 'Sport',
-              // 'Beauty & Body Care',
-              // 'Business & Management',
-              // 'News',
-              // 'Food & Drinks',
-              // 'Kids',
-              // 'Cars & Vehicles',
-              // 'Technology',
-              // 'Games',
-              // 'Home & Garden',
-              // 'Travelling',
-              // 'Health'
+            
             ],
             successMessage: ''
           }
@@ -79,6 +67,13 @@
                 categories: response.data
             }
         },
+        updated() {
+          $('.media').on('change', (event) => {
+           //this.previewMedia(event)            
+            this.form.media = [...event.target.files];
+          });
+
+         },
 
         methods: {
           handleSubmition () {
@@ -87,7 +82,11 @@
               formData.append('title', this.form.title)
               formData.append('description', this.form.description)
               formData.append('category', this.form.category)
-              formData.append('media[]', this.form.media)
+              //formData.append('media[]', this.form.media)
+
+              Object.keys(this.form.media).map((key) => {
+               return formData.append("media[]", this.form.media[key]);
+              });
 
               this.$axios.$post('libraries/create',
                                  formData, 
@@ -108,7 +107,7 @@
                           })
           },
           handleFileUpload() {
-            this.form.media = event.target.files[0];
+            this.form.media = event.target.files;
           }
         },
         

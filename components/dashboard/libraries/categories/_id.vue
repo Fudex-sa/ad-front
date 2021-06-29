@@ -2,12 +2,13 @@
   <div>
     <!-- the gallery -->
     <div
-      @click="index = thumbIndex"
+      
       class="row"
     >
       <div 
         v-for="(image, thumbIndex) in library.media"
         :key="thumbIndex"
+        @click="index=thumbIndex"
         class="col-xs-6 col-md-4 img-box">
         <img :src="image" class="thumbnail">
       </div>
@@ -71,7 +72,7 @@
           }
         },
         
-          methods: {
+      methods: {
     generateShorterLink() {
       this.$axios
         .$post(

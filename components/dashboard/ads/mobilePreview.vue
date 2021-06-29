@@ -58,19 +58,19 @@
 				<h4>Mobile Preview</h4>
 				<div class="mobile-frame1">
 					<div class="mobile-frame2">
-						<img :src="form.mediaPreview" alt />
-						<video :src="form.mediaPreview" controls autoplay="autoplay" muted></video>
+						<img v-if="form.selectedMedia_type.value!='video'"  :src="form.mediaPreview" alt />
+						<video v-if="form.selectedMedia_type.value=='video'" :src="form.mediaPreview" controls autoplay="autoplay" muted></video>
 					</div>
 					<div style='right:60%' class="dot"></div>
 				</div>
 			</div>
 			<!-- desktop -->
 			<div class="col-sm-3">
-				<h4>Desktop Preview</h4>
+				<h4 @click="logTheType">Desktop Preview</h4>
 				<div class="desktop-frame1">
 					<div class="desktop-frame2">
-						<img :src="form.mediaPreview" alt />
-						<video :src="form.mediaPreview" autoplay="autoplay" controls></video>
+						<img v-if="form.selectedMedia_type.value!='video'" :src="form.mediaPreview" alt />
+						<video v-if="form.selectedMedia_type.value=='video'" :src="form.mediaPreview" autoplay="autoplay" controls  muted></video>
 					</div>
 				</div>
 			</div>
@@ -109,11 +109,17 @@
 		updated() {
 			$('.media').on('change', (event) => {
 				this.previewMedia(event)
+				
 				this.form.media = [...event.target.files]
 				this.$emit('fileUploaded', this.form)
-			})
-		},
+			});
 
+		},
+		watch:{
+		'form.selectedMedia_type': function(newVal, val) {
+      this.form.selectedMedia_type = newVal
+    }
+		},
 		mounted() {
 			if (this.initialMediaType) {
 				this.form.selectedMedia_type = this.initialFormDropdown(
@@ -141,6 +147,10 @@
 					this.form.mediaPreview = reader.result
 				}
 			},
+
+
+			logTheType(){console.log("theTypeIs: "+this.form.selectedMedia_type)}
+
 		},
 	}
 </script>

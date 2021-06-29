@@ -21,6 +21,7 @@
         async asyncData({app, params, error}) {
            try{
              let response = await app.$axios.$get(`libraries/${params.id}`);
+             console.log(response.data);
                 return {
                     task: response.data
                 }
