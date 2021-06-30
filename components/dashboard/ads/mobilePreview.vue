@@ -60,8 +60,10 @@
 					<div class="mobile-frame2">
 						<img v-if="form.selectedMedia_type.value!='video'"  :src="form.mediaPreview" alt />
 						<video v-if="form.selectedMedia_type.value=='video'" :src="form.mediaPreview" controls autoplay="autoplay" muted></video>
+
+						 <button class="btn-frame-red">{{button_text}}</button>
 					</div>
-					<div style='right:60%' class="dot"></div>
+					<div class="dot"></div>
 				</div>
 			</div>
 			<!-- desktop -->
@@ -71,6 +73,7 @@
 					<div class="desktop-frame2">
 						<img v-if="form.selectedMedia_type.value!='video'" :src="form.mediaPreview" alt />
 						<video v-if="form.selectedMedia_type.value=='video'" :src="form.mediaPreview" autoplay="autoplay" controls  muted></video>
+						<button class="btn-frame-red">{{button_text}}</button>
 					</div>
 				</div>
 			</div>
@@ -89,6 +92,10 @@
 				type: String,
 				default: '',
 			},
+			button_text: {
+				type: String,
+				default: '',
+			}
 		},
 
 		data() {
@@ -154,3 +161,25 @@
 		},
 	}
 </script>
+
+<style scoped>
+.mobile-preview .desktop-frame1 .dot, .mobile-preview .mobile-frame1 .dot {
+  right: calc(50% - 15px);
+	}
+
+	.mobile-preview .mobile-frame1 {
+    position: relative;
+	}
+
+	button.btn-frame-red {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e50216;
+    color: #fff;
+    border: 0;
+    padding: 5px 14px;
+    border-radius: 4px;
+}
+</style>

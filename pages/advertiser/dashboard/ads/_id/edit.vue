@@ -340,6 +340,7 @@
 				@fileUploaded="handleFileUpload"
 				:initialMediaType="initialForm.media_type.value"
 				:initialMediaPreview="initialForm.media.length >0  !== null ?  initialForm.media[0]: null"
+				:button_text='initialForm.call_of_action_txt'
 			/>
 
 			<!-- <mobile-preview 
