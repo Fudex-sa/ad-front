@@ -63,6 +63,7 @@
                 <option value="footer_col_1">{{$t('footer_col_1')}}</option>
                 <option value="footer_col_2">{{$t('footer_col_2')}}</option>
                 <option value="footer_col_3">{{$t('footer_col_3')}}</option>
+                <option value="navbar">{{$t('navbar')}}</option>
                 <option value="others">{{$t('others')}}</option>
             </select>
             <p class="text-danger p-2" v-for="error in errors.type" :key="error">{{error}}</p>
