@@ -1,8 +1,14 @@
 <template>
   <div class="row-2">
-    <div class="fixed alert alert-danger" v-if="successMessage">
+    <div class="fixed alert alert-danger" v-if="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <div class="fixed alert alert-success" v-if="successMessage">
       {{ successMessage }}
     </div>
+
+
     <!-- Campaign Types Cards -->
     <div class="col-md-4" v-for="(value, key) in campaignsTypes" :key="key">
       <button class="white-box text-center mb-30" @click="popup(value)">
@@ -96,6 +102,7 @@ export default {
     return {
       defaultLanguage: "",
       successMessage: "",
+      errorMessage: "",
       campaignsTypes: {
         Awareness: "awareness",
         Traffic: "traffic",
@@ -138,6 +145,7 @@ export default {
       this.formData.append("title_en", this.form.en.title);
       this.formData.append("title", this.form.ar.title);
 
+      
       this.$axios
         .$post("campaigns/create", this.formData)
         .then((res) => {
@@ -148,8 +156,7 @@ export default {
           }, 300);
         })
         .catch((err) => {
-          console.log("no");
-          // console.log(error.response.data.errors, 'aa')
+          this.errorMessage = "Campaign title MUST be unique";
         });
     },
     async onSubmit() {
