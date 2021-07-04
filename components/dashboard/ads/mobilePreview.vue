@@ -71,7 +71,7 @@
 				<h4 @click="logTheType">Desktop Preview</h4>
 				<div class="desktop-frame1">
 					<div class="desktop-frame2">
-						<img v-if="form.selectedMedia_type.value!='video'" :src="form.mediaPreview" alt />
+						<img v-if="form.selectedMedia_type.value!='video'" :src="form.mediaPreview" @click="changeMediaCounter" alt />
 						<video v-if="form.selectedMedia_type.value=='video'" :src="form.mediaPreview" autoplay="autoplay" controls  muted></video>
 						<button class="btn-frame-red">{{button_text}}</button>
 					</div>
@@ -100,6 +100,8 @@
 
 		data() {
 			return {
+				files : [],
+				media_counter:0,
 				media_type: [
 					{ name: 'Image', value: 'image' },
 					{ name: 'Slider', value: 'slider' },
@@ -141,15 +143,25 @@
 		},
 
 		methods: {
+			changeMediaCounter(){
+				//if(this.form.selectedMedia_type=='slider'){
+					this.media_counter ++ ;
+					this.media_counter  = this.media_counter%this.files.length;
+					let reader = new FileReader();
+					reader.readAsDataURL(this.files[this.media_counter])
+					reader.onloadend = (e) => {
+						this.form.mediaPreview = reader.result
+					}							
+			//	}
+			},
 			initialFormDropdown(needles, haystack) {
 				return haystack.find(({ value }) => needles.includes(value))
 			},
 			previewMedia(event) {
 				let reader = new FileReader()
-				let file = event.target.files[0]
-
+				this.files = event.target.files;
+				let file = this.files[0];	
 				reader.readAsDataURL(file)
-
 				reader.onloadend = (e) => {
 					this.form.mediaPreview = reader.result
 				}

@@ -258,10 +258,10 @@ Payment Not Completed
           this.changeMediaCounter();          
         },
         methods: {
-          changeMediaCounter(){
-            this.media_counter ++ ;
-            this.media_counter  = this.media_counter%3;
+          changeMediaCounter(){            
+            this.media_counter  = (this.ad.media != null)? this.media_counter%this.ad.media.length : 0;
             this.media_preview = this.ad.media[this.media_counter];
+            this.media_counter ++ ;
           },
           paymentData () {
             this.$axios
@@ -298,5 +298,24 @@ Payment Not Completed
 }
 .mobile-preview .desktop-frame1 {
     max-width: 350px;
+}
+.mobile-preview .desktop-frame1 .dot, .mobile-preview .mobile-frame1 .dot {
+  right: calc(50% - 15px);
+	}
+
+	.mobile-preview .mobile-frame1 {
+    position: relative;
+	}
+
+	button.btn-frame-red {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e50216;
+    color: #fff;
+    border: 0;
+    padding: 5px 14px;
+    border-radius: 4px;
 }
 </style>

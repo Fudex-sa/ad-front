@@ -6,7 +6,7 @@
       id="myCarousel"
       class="carousel slide"
       data-ride="carousel"
-      v-if="gallery.media_type != 'image' "
+      v-if="gallery.media_type == 'image' "
     >
       <!-- Indicators -->
       <!--            <ol class="carousel-indicators">
@@ -44,7 +44,13 @@
     >
       <!-- Indicators -->
             <ol class="carousel-indicators">                
-                <li data-target="#myCarousel-slider" :class="{ active: (index == 0)}" v-for="(media,index) in gallery.media" :key="index" :data-slide-to="index"></li>
+              <li
+              data-target="#myCarousel-slider"
+              :class="{ active: (index == 0)}"
+              v-for="(media,index) in gallery.media"
+              :key="index" data-slide-to="index">
+
+              </li>
             </ol>
      
       <!-- Wrapper for slides -->

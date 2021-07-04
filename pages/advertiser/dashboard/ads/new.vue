@@ -492,7 +492,7 @@
     <!-- <img :src="form.media" alt /> -->
     <!-- <video :src="form.media" autoplay="autoplay"></video> -->
     <!-- mobile preview -->
-    <mobile-preview @fileUploaded="handleFileUpload" />
+    <mobile-preview @fileUploaded="handleFileUpload" :button_text='form.call_of_action_txt'/>
     <!-- action buttons -->
     <action-buttons
       actionBtnText="Create Ad"
