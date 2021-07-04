@@ -63,7 +63,7 @@
           />
 
           <div class="col-sm-12 text-right">
-            <button class="the-btn">{{ $t('Create Campaign')}}</button>
+            <button class="the-btn" id='create-camp-btn'>{{ $t('Create Campaign')}}</button>
           </div>
         </form>
       </ValidationObserver>
@@ -160,7 +160,9 @@ export default {
         });
     },
     async onSubmit() {
-      console.log(this.form);
+      $('#create-camp-btn').addClass('disabled');
+      console.log('submitted');
+      console.log($('.disabled'))
       const isValid = await this.$refs.observer.validate();
       if (!isValid) {
         // ABORT!!

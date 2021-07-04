@@ -194,16 +194,8 @@ Payment Not Completed
 				<h4>Desktop Preview</h4>
 				<div class="desktop-frame1 col-sm-6">
 					<div class="desktop-frame2">
-						<img :src="ad.media[0]" alt v-if="ad.media_type =='image'" />
-            <!-- <video autoplay controls >
-  <source :src="ad.media[0]" type="video/mp4">
-</video> -->
-
-
-
-<video :src="ad.media[0]" type="video/mp4" frameborder="0" allowfullscreen autoplay loop  controls v-else></video>
-
-
+						<img :src="media_preview" @click="changeMediaCounter" alt v-if="ad.media_type !='video'" />
+            <video :src="ad.media[0]" type="video/mp4" frameborder="0" allowfullscreen autoplay loop  controls v-else></video>
 					</div>
 				</div>
 			</div>
@@ -212,11 +204,8 @@ Payment Not Completed
 				<h4>Mobile Preview</h4>
 				<div class="mobile-frame1 col-sm-6">
 					<div class="mobile-frame2">
-						<img :src="ad.media[0]" alt v-if="ad.media_type =='image'" />
-						<!-- <video :src="ad.media[0]" autoplay="autoplay"></video> -->
-            
-<video :src="ad.media[0]" type="video/mp4" frameborder="0" allowfullscreen autoplay loop muted controls v-else></video>
-
+						<img :src="media_preview" @click="changeMediaCounter" alt v-if="ad.media_type !='video'" />
+            <video :src="ad.media[0]" type="video/mp4" frameborder="0" allowfullscreen autoplay loop muted controls v-else></video>
 					</div>
 					<div class="dot"></div>
 				</div>
@@ -236,7 +225,9 @@ Payment Not Completed
     export default{
         data() {
             return {
-                ad: ''
+                ad: '',
+                media_counter:0,
+                media_preview:''
             }
         },
         components:{
@@ -263,7 +254,15 @@ Payment Not Completed
           );
           return next();
         },
+        mounted(){
+          this.changeMediaCounter();          
+        },
         methods: {
+          changeMediaCounter(){
+            this.media_counter ++ ;
+            this.media_counter  = this.media_counter%3;
+            this.media_preview = this.ad.media[this.media_counter];
+          },
           paymentData () {
             this.$axios
               .$get(`ads/paymentInfo/${this.ad.id}`)

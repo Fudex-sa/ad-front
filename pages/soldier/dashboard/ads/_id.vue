@@ -18,6 +18,7 @@
         async asyncData({app, params, error}) {
             try {
                 let response = await app.$axios.$get(`ads/${params.id}`);
+               
                 return {
                     ad: response.data
                 }

@@ -2,7 +2,7 @@
   <div class="container">
     <!-- if media type is image -->
     <div
-      v-if="(ad.media && ad.media_type == 'image' || ad.media && ad.media_type == 'slider')"
+      v-if="(ad.media && (ad.media_type == 'image' || ad.media && ad.media_type == 'slider'))"
       v-for="media in ad.media"
       :key="media.id"
       class="col-xs-6 col-md-4 img-box"
@@ -79,7 +79,7 @@ export default {
   },
 
   mounted() {
-    this.generateShorterLink();
+    this.generateShorterLink();    
   },
   computed: {
     referralLink() {
@@ -87,7 +87,7 @@ export default {
       //     '/' +
       //     this.user.utm);
       return (
-        "http://dev.fudexsb.com:55555" +
+        "http://adsoldier.fudex-tech.net:55555" +
         this.$route.path.substring(this.$route.path.lastIndexOf("/")) +
         "/" +
         this.user.utm

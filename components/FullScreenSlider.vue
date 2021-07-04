@@ -6,7 +6,7 @@
       id="myCarousel"
       class="carousel slide"
       data-ride="carousel"
-      v-if="gallery.media_type == 'image' "
+      v-if="gallery.media_type != 'image' "
     >
       <!-- Indicators -->
       <!--            <ol class="carousel-indicators">
@@ -32,6 +32,44 @@
         </div>
       </div>
     </div>
+
+
+
+
+     <div
+      id="myCarousel-slider"
+      class="carousel slide"
+      data-ride="carousel"
+      v-if="gallery.media_type == 'slider' "
+    >
+      <!-- Indicators -->
+            <ol class="carousel-indicators">                
+                <li data-target="#myCarousel-slider" :class="{ active: (index == 0)}" v-for="(media,index) in gallery.media" :key="index" :data-slide-to="index"></li>
+            </ol>
+     
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div
+          class="item"
+          v-for="(media, index) in gallery.media"
+          :key="index"
+          :class="{ active: (index == 0)}"
+        >
+          <div class="row">
+            <div class="col-sm-12">
+              <!-- image -->
+              <img :src="media" alt />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
     <!-- video -->
     <template v-if=" gallery.media_type == 'video' ">
       <!-- <video :src="gallery.media[0]" autoplay></video> -->
@@ -50,7 +88,7 @@
 export default {
   props: ["gallery", "type"],
   mounted() {
-    this.storeAnalytics();
+    this.storeAnalytics();    
   },
   methods: {
     storeAnalytics() {
