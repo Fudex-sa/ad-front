@@ -88,7 +88,8 @@
 export default {
   props: ["gallery", "type"],
   mounted() {
-    this.storeAnalytics();    
+    this.storeAnalytics();
+    console.log(this.gallery);
   },
   methods: {
     storeAnalytics() {
