@@ -7,6 +7,7 @@
       <button class="btn btn-primary text-left mb-4" @click="popup()">
         {{$t('create campaign')}}
       </button>
+
       <div class="col-sm-12">
         <div class="form-group dash-group">
           <label>{{ $t('ads.campaign')}} *</label>
@@ -42,21 +43,6 @@
         </div>
       </div>
 
-      <!-- <div class="col-sm-6">
-        <div class="form-group dash-group">
-          <label>{{ $t('ads.title_en') }}*</label>
-          <input
-            class="form-control dash-input"
-            placeholder="Example Ad"
-            type="text"
-            v-model="form.title_en"
-            :class="{ 'is-invalid': errors.title_en }"
-          />
-          <p class="text-danger p-2" v-for="error in errors.title_en">
-            {{ error }}
-          </p>
-        </div>
-      </div> -->
 
       <div class="col-sm-6">
         <div class="form-group dash-group">
@@ -129,46 +115,6 @@
         </div>
       </div>
 
-
-      <!-- <div class="col-sm-6">
-        <div class="form-group dash-group">
-          <label>{{ $t('ad_content_en')}}*</label>
-          <textarea
-            class="form-control dash-input"
-            placeholder="Please Enter Ad's Content"
-            type="text"
-            v-model="form.content_en"
-            :class="{ 'is-invalid': errors.content_en }"
-          ></textarea>
-          <p class="text-danger p-2" v-for="error in errors.content_en">
-            {{ error }}
-          </p>
-          
-        </div>
-      </div> -->
-      <!-- <div class="col-sm-12 col-md-6">
-        <div class="form-group dash-group">
-          <label>Duration *</label>
-          <client-only>
-            <date-picker
-              v-model="date"
-              class="form-control dash-input date"
-              range
-              :shortcuts="shortcuts"
-              :placeholder="placeholder"
-              lang="eng"
-              :class="{ 'is-invalid': errors.start_date || errors.end_date }"
-            />
-            <p class="text-danger p-2" v-for="error in errors.end_date">
-              {{ error }}
-            </p>
-            <p class="text-danger p-2" v-for="error in errors.start_date">
-              {{ error }}
-            </p>
-          </client-only>
-        </div>
-      </div> -->
-
       <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>Start Date *</label>
@@ -181,15 +127,7 @@
               class="form-control dash-input date"
               v-model="form.start_date"
             />
-            <!-- <date-picker
-              v-model="date"
-              class="form-control dash-input date"
-              range
-              :shortcuts="shortcuts"
-              :placeholder="placeholder"
-              lang="eng"
-              :class="{ 'is-invalid': errors.start_date || errors.end_date }"
-            /> -->
+
             <p class="text-danger p-2" v-for="error in errors.end_date">
               {{ error }}
             </p>
@@ -199,39 +137,7 @@
           </client-only>
         </div>
       </div>
-      <!-- <div class="col-sm-12 col-md-6">
-        <div class="form-group dash-group">
-          <label>Media Type *</label>
-          <multiselect
-            v-model="form.media_type"
-            :options="media_type"
-            :preserve-search="true"
-            placeholder="Pick A Media Type"
-            label="name"
-            track-by="name"
-            :class="{ 'is-invalid' : errors.media_type}"
-          ></multiselect>
-          <p class="text-danger p-2" v-for="error in errors.media_type">{{error}}</p>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-offset-6 col-md-6 p-4" v-if=" form.media_type !== '' ">
-        <div class="form-group dash-group">
-          <label>Upload Your File</label>
-          <div class="row">
-            <div class="col-xs-6">
-              <input type="file" @change.prevent="handleFileUpload" multiple />
-            </div>
-            <p
-              class="col-xs-6 mt-10 hint"
-              v-if=" (['slider', 'image']).includes(form.media_type) "
-            >Image Ideal Dimension is more than 200 x 200 with extensions(jpg,jpeg,png)</p>
-            <p
-              class="col-xs-6 mt-10 hint"
-              v-if=" form.media_type == 'video' "
-            >Video size mustn't exceed 5 MB with extensions(MP4)</p>
-          </div>
-        </div>
-      </div>-->
+
       <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>Budget *</label>
@@ -253,12 +159,7 @@
           >SAR</span
         >
       </div>
-      <!--         <div class="col-sm-12 col-md-6">
-          <div class="form-group dash-group">
-            <label>Budget After Taxes*</label>
-            <input class="form-control dash-input" v-model="budget_after_tax" disabled>
-          </div>
-      </div>-->
+
       <div class="col-sm-12 col-md-6">
         <div class="form-group dash-group">
           <label>Gender *</label>
@@ -450,25 +351,6 @@
         </div>
       </div>
 
-       <!-- <div class="col-sm-6">
-        <div class="form-group dash-group">
-          <label class="col-sm-12 p-0">Button Text EN *</label>
-          <input
-            class="form-control dash-input"
-            placeholder="Please Enter The Link"
-            type="text"
-            v-model="form.call_of_action_txt_en"
-            :class="{ 'is-invalid': errors.call_of_action_txt_en }"
-          />
-          <p
-            class="text-danger p-2"
-            v-for="(error, index) in errors.call_of_action_txt_en"
-            :key="index"
-          >
-            {{ error }}
-          </p>
-        </div>
-      </div> -->
       <div class="col-sm-6">
         <div class="form-group dash-group">
           <label class="col-sm-12 p-0">Link*</label>
@@ -489,15 +371,22 @@
         </div>
       </div>
     </div>
-    <!-- <img :src="form.media" alt /> -->
-    <!-- <video :src="form.media" autoplay="autoplay"></video> -->
+
     <!-- mobile preview -->
     <mobile-preview @fileUploaded="handleFileUpload" :button_text='form.call_of_action_txt'/>
     <!-- action buttons -->
     <action-buttons
-      actionBtnText="Create Ad"
+      :actionBtnText="save_button_title"
       v-on:handleSubmition="handleSubmition"
     />
+
+
+    
+
+
+
+
+
     <!-- The overlay layer -->
     <div
       class="modal-backdrop fade in"
@@ -565,9 +454,15 @@ import TextInput from "@/components/Forms/TextInput";
 import { ValidationProvider } from "vee-validate";
 import MobilePreview from "@/components/dashboard/ads/mobilePreview";
 import ActionButtons from "@/components/dashboard/action-buttons";
+
+import VueButtonSpinner from 'vue-button-spinner';
+
 export default {
   data() {
     return {
+      save_button_title:'Create ad',
+      isLoading: false,
+      status: '',
       value: [],
       input: "",
       search: "",
@@ -577,11 +472,7 @@ export default {
         { name: "Female", value: "female" },
         { name: "Both", value: "both" },
       ],
-      // media_type: [
-      //   { name: "Image", value: "image" },
-      //   { name: "Slider", value: "slider" },
-      //   { name: "Video", value: "video" }
-      // ],
+     
       successMessage: "",
       campaigns: "",
       analytics: "",
@@ -636,13 +527,7 @@ export default {
       this.form.start_date = this.formatingDate(this.date[0]);
       this.form.end_date = this.formatingDate(this.date[1]);
     },
-    // 'form.budget': function() {
-    //   let budget = parseInt(this.form.budget) + ((this.form.budget * this.settings.taxes) / 100);
-    //   // if budget field is empty then epmty the budget after tax field also
-    //   this.form.budget == '' ? this.budget_after_tax = '' : this.budget_after_tax = budget;
-    //   // if budget_after_tax value data type is any type other than number
-    //   isNaN(this.budget_after_tax) ? this.budget_after_tax = 'Please Insert a Valid Number In Budget Field' : '';
-    // }
+   
     'form.title': function(newVal, val) {
       this.form.title_en = newVal
     },
@@ -661,7 +546,8 @@ export default {
     MobilePreview,
     ActionButtons,
     TextInput,
-    ValidationProvider
+    ValidationProvider,
+    VueButtonSpinner
   },
   mounted() {
     this.form.owner_id = this.user.id;
@@ -689,7 +575,7 @@ export default {
     insert(emoji) {
       this.form.content += emoji;
     },
-    handleFileUpload(value) {
+    handleFileUpload(value) {      
       this.form.media_type = value.selectedMedia_type;
      
       this.formData.delete('media[]');
@@ -718,6 +604,10 @@ export default {
       this.formData.append(key, value);
     },
     handleSubmition() {
+
+      this.isLoading = true;      
+      this.save_button_title = 'Saving ...';
+
       let dropdowns = [
         "media_type",
         "gender",
@@ -743,31 +633,20 @@ export default {
           },
         })
         .then((res) => {
+          this.save_button_title = 'Create Ad';
+          this.isLoading = false
+          this.status = true // or success
           this.successMessage = res.message;
           setTimeout(() => {
             this.$router.push({
               path: `/${this.$i18n.locale}/advertiser/dashboard/ads/${res.ad_id}`
             });
           }, 1000);
-          // setTimeout(() => {
-          //   this.$store.commit(
-          //     "localStorage/SET_PAYMENT_AMOUNT",
-          //     this.formData.get("budget")
-          //   );
-          //   this.$store.commit(
-          //     "localStorage/SET_PAYMENT_ORDER_NUMBER",
-          //     res.ad_id
-          //   );
-
-          //   this.$store.commit(
-          //     "localStorage/SET_PAYMENT_CHECKOUT_ID",
-          //     res.checkout
-          //   );
-            // this.$router.push({
-            //   path: `/${this.$i18n.locale}/advertiser/dashboard/payment`,
-            //   query: { advertisementId: res.ad_id },
-            // });
-          // }, 1000);
+         
+        }).catch((res)=>{
+          this.save_button_title = 'Create Ad';
+          this.isLoading = false
+          this.status = true // or success
         });
     },
     formatingDate(date) {
