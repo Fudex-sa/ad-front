@@ -146,13 +146,15 @@
 			changeMediaCounter(){
 				//if(this.form.selectedMedia_type=='slider'){
 					this.media_counter ++ ;
-					this.media_counter  = this.media_counter%this.files.length;
-					let reader = new FileReader();
-					reader.readAsDataURL(this.files[this.media_counter])
-					reader.onloadend = (e) => {
-						this.form.mediaPreview = reader.result
-					}							
-			//	}
+					if(this.files.length){
+						this.media_counter  = this.media_counter%this.files.length;
+						let reader = new FileReader();
+						reader.readAsDataURL(this.files[this.media_counter])
+						reader.onloadend = (e) => {
+							this.form.mediaPreview = reader.result
+						}							
+					}
+								
 			},
 			initialFormDropdown(needles, haystack) {
 				return haystack.find(({ value }) => needles.includes(value))
