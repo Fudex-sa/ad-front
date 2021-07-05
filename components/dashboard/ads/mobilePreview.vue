@@ -204,12 +204,13 @@
     border-radius: 4px;
 }
 
-.mobile-preview .desktop-frame1 .desktop-frame2 img, .mobile-preview .desktop-frame1 .desktop-frame2 video, .mobile-preview .desktop-frame1 .mobile-frame2 img, .mobile-preview .desktop-frame1 .mobile-frame2 video, .mobile-preview .mobile-frame1 .desktop-frame2 img, .mobile-preview .mobile-frame1 .desktop-frame2 video, .mobile-preview .mobile-frame1 .mobile-frame2 img, .mobile-preview .mobile-frame1 .mobile-frame2 video {
-    position: absolute;
+.mobile-preview .desktop-frame1 .desktop-frame2 img, .mobile-preview .desktop-frame1 .desktop-frame2 video, .mobile-preview .desktop-frame1 .mobile-frame2 img, .mobile-preview .desktop-frame1 .mobile-frame2 video, .mobile-preview .mobile-frame1 .desktop-frame2 img, .mobile-preview .mobile-frame1 .desktop-frame2 video, .mobile-preview .mobile-frame1 .mobile-frame2 img, .mobile-preview .mobile-frame1 .mobile-frame2 video {    
     left: 0;
     top: 0;
-    width: 100%;
-    /* height: 100%; */
-    border-radius: 5px;
+    width: 100%;    
+    border-radius: 5px;				
+    background-color: #d3d3d3;
+    overflow: hidden;
+				position: relative;    
 }
 </style>
