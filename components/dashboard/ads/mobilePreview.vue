@@ -58,7 +58,7 @@
 				<h4>Mobile Preview</h4>
 				<div class="mobile-frame1">
 					<div class="mobile-frame2">
-						<img v-if="form.selectedMedia_type.value!='video'"  :src="form.mediaPreview" alt style='width: 100%;height: auto;position: relative;' />
+						<img v-if="form.selectedMedia_type.value!='video'"  :src="form.mediaPreview" alt  />
 						<video v-if="form.selectedMedia_type.value=='video'" :src="form.mediaPreview" controls autoplay="autoplay" muted></video>
 
 						 <button class="btn-frame-red">{{button_text}}</button>
@@ -71,7 +71,7 @@
 				<h4 @click="logTheType">Desktop Preview</h4>
 				<div class="desktop-frame1">
 					<div class="desktop-frame2">
-						<img v-if="form.selectedMedia_type.value!='video'" :src="form.mediaPreview" @click="changeMediaCounter" alt style='width: 100%;height: auto;position: relative;' />
+						<img v-if="form.selectedMedia_type.value!='video'" :src="form.mediaPreview" @click="changeMediaCounter" alt  />
 						<video v-if="form.selectedMedia_type.value=='video'" :src="form.mediaPreview" autoplay="autoplay" controls  muted></video>
 						<button class="btn-frame-red">{{button_text}}</button>
 					</div>
@@ -200,5 +200,14 @@
     border: 0;
     padding: 5px 14px;
     border-radius: 4px;
+}
+
+.mobile-preview .desktop-frame1 .desktop-frame2 img, .mobile-preview .desktop-frame1 .desktop-frame2 video, .mobile-preview .desktop-frame1 .mobile-frame2 img, .mobile-preview .desktop-frame1 .mobile-frame2 video, .mobile-preview .mobile-frame1 .desktop-frame2 img, .mobile-preview .mobile-frame1 .desktop-frame2 video, .mobile-preview .mobile-frame1 .mobile-frame2 img, .mobile-preview .mobile-frame1 .mobile-frame2 video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 5px;
 }
 </style>

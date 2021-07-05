@@ -27,15 +27,16 @@
 		"nuxt-vue-multiselect": "^1.0.4",
 		"nuxt-vuex-localstorage": "^1.2.6",
 		"sass-loader": "^8.0.2",
+		"vee-validate": "^3.4.5",
 		"vue-apexcharts": "^1.5.2",
 		"vue-chartjs": "^3.5.0",
 		"vue-cryptojs": "^2.1.4",
 		"vue-emoji-picker": "^1.0.1",
 		"vue-light-gallery": "^1.0.1",
+		"vue-loading-overlay": "^4.0.3",
 		"vue-tables-2": "^1.6.23",
 		"vue2-datepicker": "^2.13.4",
-		"vue2-google-maps": "^0.10.7",
-		"vee-validate": "^3.4.5"
+		"vue2-google-maps": "^0.10.7"
 	},
 	"devDependencies": {}
 }
