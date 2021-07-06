@@ -455,7 +455,7 @@ import { ValidationProvider } from "vee-validate";
 import MobilePreview from "@/components/dashboard/ads/mobilePreview";
 import ActionButtons from "@/components/dashboard/action-buttons";
 
-import VueButtonSpinner from 'vue-button-spinner';
+
 
 export default {
   data() {
@@ -546,8 +546,8 @@ export default {
     MobilePreview,
     ActionButtons,
     TextInput,
-    ValidationProvider,
-    VueButtonSpinner
+    ValidationProvider
+    
   },
   mounted() {
     this.form.owner_id = this.user.id;
