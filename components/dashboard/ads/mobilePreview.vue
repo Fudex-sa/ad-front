@@ -70,7 +70,7 @@
 			<div class="col-sm-3">
 				<h4 @click="logTheType">Desktop Preview</h4>
 				<div class="desktop-frame1">
-					<div class="desktop-frame2">
+					<div class="desktop-frame2" style='overflow:hidden'>
 						<img v-if="form.selectedMedia_type.value!='video'" :src="form.mediaPreview" @click="changeMediaCounter" alt  />
 						<video v-if="form.selectedMedia_type.value=='video'" :src="form.mediaPreview" autoplay="autoplay" controls  muted></video>
 						<button class="btn-frame-red">{{button_text}}</button>
@@ -212,5 +212,7 @@
     background-color: #d3d3d3;
     overflow: hidden;
 				position: relative;    
+				height:auto;
 }
+
 </style>

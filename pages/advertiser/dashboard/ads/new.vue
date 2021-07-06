@@ -606,7 +606,7 @@ export default {
     handleSubmition() {
 
       this.isLoading = true;      
-      this.save_button_title = 'Saving ...';
+      this.save_button_title = 'Uploading ...';
 
       let dropdowns = [
         "media_type",
