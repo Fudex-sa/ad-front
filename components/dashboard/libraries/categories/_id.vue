@@ -1,11 +1,12 @@
 <template>
   <div>
     <!-- the gallery -->
-    <div
-      
+    <div      
       class="row"
+      v-if="library.media_type !='video'" 
     >
-      <div 
+      <div
+        
         v-for="(image, thumbIndex) in library.media"
         :key="thumbIndex"
         @click="index=thumbIndex"
@@ -13,6 +14,18 @@
         <img :src="image" class="thumbnail">
       </div>
     </div>
+
+
+    <div      
+      class="row"
+      v-if="library.media_type =='video'" 
+    >
+      <div class="col-xs-6 col-md-4 img-box">
+        <video :src="library.media[0]" autoplay="autoplay" controls  muted></video>
+      </div>
+    </div>
+
+
     <!-- description -->
     <p class="lead mt-30 white-box">{{library.description}}</p>
     <!-- utm button -->
@@ -31,6 +44,7 @@
       :index="index"
       :disable-scroll="true"
       @close="index = null"
+      v-if="library.media_type != 'video'"
     />
   </div>
 </template>
@@ -54,6 +68,9 @@
         },
         mounted() {
     this.generateShorterLink();
+    console.log('dddddddddddddddddddddd');
+    console.log(this.library);
+    console.log('dddddddddddddddddddddd');
   },
         computed:{
           getMedia() {

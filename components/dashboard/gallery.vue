@@ -35,8 +35,8 @@
                 class="thumbnail m-auto" 
                 v-if="gallery.media_type == 'image'">
                 <!-- if media is video -->
-                <video
-                :src="videoPath(gallery.media[0])"
+                <video                
+                :src="gallery.media[0]"
                  v-if="gallery.media_type == 'video'"
                  class="thumbnail m-auto"></video>
                <p class="lead bold link2">{{gallery.title}}</p>
@@ -53,6 +53,9 @@
         ],
         mounted() {
             this.libraryLink()
+            console.log('dddddddddddddddddddddddddddddddddddddddd');
+            console.log(this.galleries);
+            console.log('dddddddddddddddddddddddddddddddddddddddd');
             console.log(this.$route.params.categoryId);
         },
          methods: {
