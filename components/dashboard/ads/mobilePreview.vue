@@ -116,11 +116,17 @@
 		},
 
 		updated() {
-			$('.media').on('change', (event) => {
-				this.previewMedia(event)
-				
-				this.form.media = [...event.target.files]
-				this.$emit('fileUploaded', this.form)
+			$('.media').on('change', (event) => {				
+				var that = $(this);
+				var the_files = [...event.target.files];
+
+				if(the_files[0].type.indexOf('video')!=-1 && the_files[0].size>(4*1024*1024)){
+					alert('Maximum video size is 4 MB, please choose a smaller video');
+				}else{
+					this.previewMedia(event);
+					this.form.media = the_files;
+					this.$emit('fileUploaded', this.form);
+				}				
 			});
 
 		},

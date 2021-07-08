@@ -577,7 +577,10 @@ export default {
     },
     handleFileUpload(value) {      
       this.form.media_type = value.selectedMedia_type;
-     
+      if(this.form.media_type=='video'){
+        console.log(value.media); 
+      }
+      return;
       this.formData.delete('media[]');
       Object.keys(value.media).map((key) => {
         return this.formData.append("media[]", value.media[key]);
