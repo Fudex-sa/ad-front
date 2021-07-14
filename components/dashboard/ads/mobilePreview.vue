@@ -120,8 +120,8 @@
 				var that = $(this);
 				var the_files = [...event.target.files];
 
-				if(the_files[0].type.indexOf('video')!=-1 && the_files[0].size>(4*1024*1024)){
-					alert('Maximum video size is 4 MB, please choose a smaller video');
+				if(the_files[0].type.indexOf('video')!=-1 && the_files[0].size>(100*1024*1024)){
+					alert('Maximum video size is 100 MB, please choose a smaller video');
 				}else{
 					this.previewMedia(event);
 					this.form.media = the_files;
@@ -183,6 +183,12 @@
 </script>
 
 <style scoped>
+.mobile-preview .desktop-frame1, .mobile-preview .mobile-frame1{
+    max-width: 190px;
+}
+.mobile-preview .desktop-frame1 {
+    max-width: 350px;
+}
 .mobile-preview .desktop-frame1 .dot, .mobile-preview .mobile-frame1 .dot {
   right: calc(50% - 15px);
 	}
@@ -190,13 +196,6 @@
 	.mobile-preview .mobile-frame1 {
     position: relative;
 	}
-
-
-.desktop-frame2 img{
-	width: 100%;
-	height: auto;
-	position: relative;
-}
 
 	button.btn-frame-red {
     position: absolute;
@@ -209,16 +208,4 @@
     padding: 5px 14px;
     border-radius: 4px;
 }
-
-.mobile-preview .desktop-frame1 .desktop-frame2 img, .mobile-preview .desktop-frame1 .desktop-frame2 video, .mobile-preview .desktop-frame1 .mobile-frame2 img, .mobile-preview .desktop-frame1 .mobile-frame2 video, .mobile-preview .mobile-frame1 .desktop-frame2 img, .mobile-preview .mobile-frame1 .desktop-frame2 video, .mobile-preview .mobile-frame1 .mobile-frame2 img, .mobile-preview .mobile-frame1 .mobile-frame2 video {    
-    left: 0;
-    top: 0;
-    width: 100%;    
-    border-radius: 5px;				
-    background-color: #d3d3d3;
-    overflow: hidden;
-				position: relative;    
-				height:auto;
-}
-
 </style>

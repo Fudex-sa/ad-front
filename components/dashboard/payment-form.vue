@@ -17,7 +17,7 @@ export default {
     },
     redirectURL() {
       if (process.client) {
-        return "http://dev.fudexsb.com/demo/adsol-back/public/payment/status/web";
+        return "http://adsoldier.fudex-tech.net/adsol-back/public/payment/status/web";
         // return window.location.href + "/status/";
       }
     },
